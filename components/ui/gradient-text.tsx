@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 
 export interface GradientTextProps {
     children: React.ReactNode
-    variant?: 'blue' | 'purple' | 'cyan' | 'green' | 'rainbow' | 'custom'
+    variant?: 'blue' | 'purple' | 'cyan' | 'green' | 'rainbow'
     customGradient?: string
     className?: string
 }

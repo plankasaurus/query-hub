@@ -21,7 +21,7 @@ export async function parseCSVBuffer(buffer: Buffer): Promise<{ rows: CSVRow[], 
         const stream = Readable.from(buffer)
 
         stream
-            .pipe(parse({ headers: true, skipEmptyLines: true }))
+            .pipe(parse({ headers: true }))
             .on('data', (row: CSVRow) => {
                 rows.push(row)
                 rowCount++

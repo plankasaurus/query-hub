@@ -8,9 +8,19 @@ import { Database, Play, BarChart3, Download } from 'lucide-react'
 import { QueryConfig } from '@/lib/query-builder'
 import Link from 'next/link'
 
+// Define the type for our mock data
+type MockDataRow = {
+    name: string
+    age: number
+    city: string
+    salary: number
+    department: string
+    hire_date: string
+}
+
 // Mock data for demonstration - in real app this would come from API
 const mockColumns = ['name', 'age', 'city', 'salary', 'department', 'hire_date']
-const mockData = [
+const mockData: MockDataRow[] = [
     { name: 'John Doe', age: 30, city: 'New York', salary: 75000, department: 'Engineering', hire_date: '2020-01-15' },
     { name: 'Jane Smith', age: 28, city: 'San Francisco', salary: 80000, department: 'Marketing', hire_date: '2019-06-20' },
     { name: 'Bob Johnson', age: 35, city: 'Chicago', salary: 90000, department: 'Sales', hire_date: '2018-03-10' },
@@ -27,7 +37,7 @@ export default function QueryBuilderPage() {
         limit: 100
     })
 
-    const [queryResults, setQueryResults] = useState<any[]>([])
+    const [queryResults, setQueryResults] = useState<MockDataRow[]>([])
     const [isExecuting, setIsExecuting] = useState(false)
     const [executionTime, setExecutionTime] = useState<number | null>(null)
 
@@ -50,7 +60,7 @@ export default function QueryBuilderPage() {
             currentQuery.filters.forEach(filter => {
                 if (filter.field && filter.value) {
                     results = results.filter(row => {
-                        const fieldValue = row[filter.field]
+                        const fieldValue = row[filter.field as keyof MockDataRow]
                         switch (filter.operator) {
                             case 'eq':
                                 return fieldValue == filter.value
@@ -78,8 +88,8 @@ export default function QueryBuilderPage() {
                 results.sort((a, b) => {
                     for (const sort of currentQuery.sort) {
                         if (sort.field) {
-                            const aVal = a[sort.field]
-                            const bVal = b[sort.field]
+                            const aVal = a[sort.field as keyof MockDataRow]
+                            const bVal = b[sort.field as keyof MockDataRow]
                             if (aVal < bVal) return sort.direction === 1 ? -1 : 1
                             if (aVal > bVal) return sort.direction === 1 ? 1 : -1
                         }
