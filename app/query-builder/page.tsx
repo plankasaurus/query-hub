@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react'
 import { QueryBuilder } from '@/components/query-builder'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SourceFileResults } from '@/components/source-file-results'
 import { Button } from '@/components/ui/button'
-import { Database, BarChart3, Download, MessageSquare, FileText, BarChart, ChevronDown, History, Mic } from 'lucide-react'
-import Link from 'next/link'
+import { Database, BarChart3, Download, History, ChevronDown } from 'lucide-react'
 import { DataJoinOut } from '@/lib/types'
 import {
     DropdownMenu,
@@ -80,98 +79,55 @@ export default function QueryBuilderPage() {
     const exportResults = () => {
         if (queryResults.length === 0) return
 
-        // Export the data arrays from all results
-        const allData = queryResults.flatMap(result => result.data_used)
-        if (allData.length === 0) return
+        // Group results by source file
+        const groupedResults = queryResults.reduce((acc, result) => {
+            const source = result.source
+            if (!acc[source]) {
+                acc[source] = []
+            }
+            acc[source].push(result)
+            return acc
+        }, {} as Record<string, DataJoinOut[]>)
 
-        const csvContent = [
-            Object.keys(allData[0]).join(','),
-            ...allData.map(row => Object.values(row).map(value =>
-                typeof value === 'object' ? JSON.stringify(value) : String(value)
-            ).join(','))
-        ].join('\n')
+        let exportedCount = 0
 
-        const blob = new Blob([csvContent], { type: 'text/csv' })
-        const url = window.URL.createObjectURL(blob)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = 'query-results.csv'
-        a.click()
-        window.URL.revokeObjectURL(url)
-    }
+        // Export each source file as a separate CSV
+        Object.entries(groupedResults).forEach(([source, sourceResults]) => {
+            // Get all data from this source file
+            const allData = sourceResults.flatMap(result => result.data_used)
+            if (allData.length === 0) return
 
-    // Helper function to render analysis content recursively
-    const renderAnalysisContent = (content: any, depth: number = 0): React.ReactNode => {
-        if (typeof content === 'string') {
-            return <p className="text-base leading-relaxed">{content}</p>
+            try {
+                // Create CSV content
+                const csvContent = [
+                    Object.keys(allData[0]).join(','),
+                    ...allData.map(row => Object.values(row).map(value =>
+                        typeof value === 'object' ? JSON.stringify(value) : String(value)
+                    ).join(','))
+                ].join('\n')
+
+                // Create and download the file
+                const blob = new Blob([csvContent], { type: 'text/csv' })
+                const url = window.URL.createObjectURL(blob)
+                const a = document.createElement('a')
+                a.href = url
+
+                // Create a clean filename from the source
+                const cleanSource = source.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_')
+                a.download = `${cleanSource}_data.csv`
+
+                a.click()
+                window.URL.revokeObjectURL(url)
+                exportedCount++
+            } catch (error) {
+                console.error(`Error exporting ${source}:`, error)
+            }
+        })
+
+        // Show user feedback
+        if (exportedCount > 0) {
+            alert(`Successfully exported ${exportedCount} CSV file${exportedCount !== 1 ? 's' : ''}!`)
         }
-
-        if (Array.isArray(content)) {
-            return (
-                <div className="space-y-2">
-                    {content.map((item, index) => (
-                        <div key={index} className="ml-4">
-                            {renderAnalysisContent(item, depth + 1)}
-                        </div>
-                    ))}
-                </div>
-            )
-        }
-
-        if (typeof content === 'object' && content !== null) {
-            return (
-                <div className="space-y-3">
-                    {Object.entries(content).map(([key, value]) => (
-                        <div key={key} className="border-l-2 border-muted pl-4">
-                            <h4 className="font-medium text-base capitalize mb-2 text-green-600 dark:text-green-400">
-                                {key.replace(/([A-Z])/g, ' $1').trim()}
-                            </h4>
-                            {renderAnalysisContent(value, depth + 1)}
-                        </div>
-                    ))}
-                </div>
-            )
-        }
-
-        return <span className="text-base">{String(content)}</span>
-    }
-
-    // Helper function to render data content recursively
-    const renderDataContent = (data: any, depth: number = 0): React.ReactNode => {
-        if (typeof data === 'string' || typeof data === 'number' || typeof data === 'boolean') {
-            return <span className="text-base">{String(data)}</span>
-        }
-
-        if (data === null || data === undefined) {
-            return <span className="text-base text-muted-foreground">-</span>
-        }
-
-        if (Array.isArray(data)) {
-            return (
-                <div className="space-y-1">
-                    {data.map((item, index) => (
-                        <div key={index} className="ml-2">
-                            {renderDataContent(item, depth + 1)}
-                        </div>
-                    ))}
-                </div>
-            )
-        }
-
-        if (typeof data === 'object') {
-            return (
-                <div className="space-y-1">
-                    {Object.entries(data).map(([key, value]) => (
-                        <div key={key} className="text-base">
-                            <span className="font-medium text-muted-foreground">{key}: </span>
-                            {renderDataContent(value, depth + 1)}
-                        </div>
-                    ))}
-                </div>
-            )
-        }
-
-        return <span className="text-base">{String(data)}</span>
     }
 
     return (
@@ -243,160 +199,15 @@ export default function QueryBuilderPage() {
 
                 {/* Results Section - Full Width */}
                 {queryResults.length > 0 && (
-                    <div className="space-y-8">
-                        {/* Results Header */}
-                        <div className="flex items-center justify-between">
-                            <div className="space-y-2">
-                                <h2 className="text-2xl font-semibold text-green-600 dark:text-green-400">Query Results</h2>
-                                <div className="flex items-center space-x-4 text-base text-muted-foreground">
-                                    <span>{queryResults.length} result{queryResults.length !== 1 ? 's' : ''}</span>
-                                    {executionTime && (
-                                        <>
-                                            <span>•</span>
-                                            <span>Executed in {executionTime}ms</span>
-                                        </>
-                                    )}
-                                </div>
-                            </div>
-
-                            <div className="flex space-x-3">
-                                <Button variant="outline" onClick={exportResults}>
-                                    <Download className="h-4 w-4 mr-2" />
-                                    Export Data
-                                </Button>
-                                <Button onClick={() => {
-                                    // Store query results in localStorage for charts page
-                                    localStorage.setItem('queryResults', JSON.stringify(queryResults))
-                                    window.location.href = '/charts'
-                                }}>
-                                    <BarChart3 className="h-4 w-4 mr-2" />
-                                    Visualize
-                                </Button>
-                            </div>
-                        </div>
-
-                        {/* Results Content */}
-                        <div className="space-y-8">
-                            {queryResults.map((result, resultIndex) => (
-                                <Card key={resultIndex} className="shadow-lg border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
-                                    <CardContent className="p-8">
-                                        {/* Analysis Section */}
-                                        <div className="space-y-6 mb-8">
-                                            <div className="flex items-center space-x-3 mb-4">
-                                                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                                                    <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
-                                                </div>
-                                                <h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Analysis</h3>
-                                            </div>
-
-                                            {/* Result */}
-                                            {result.result && (
-                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Result</h4>
-                                                    <p className="text-base leading-relaxed">{result.result}</p>
-                                                </div>
-                                            )}
-
-                                            {/* Overview */}
-                                            {result.overview && (
-                                                <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-xl border border-yellow-200 dark:border-yellow-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-yellow-600 dark:text-yellow-400">Overview</h4>
-                                                    <p className="text-base leading-relaxed">{result.overview}</p>
-                                                </div>
-                                            )}
-
-                                            {/* Key Findings */}
-                                            {result.analysis?.key_findings && result.analysis.key_findings.length > 0 && (
-                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Key Findings</h4>
-                                                    <ul className="space-y-2">
-                                                        {result.analysis.key_findings.map((finding, index) => (
-                                                            <li key={index} className="flex items-start space-x-2">
-                                                                <span className="mt-1 text-green-600 dark:text-green-400">•</span>
-                                                                <span className="text-base leading-relaxed">{finding}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            )}
-
-                                            {/* Trends */}
-                                            {result.analysis?.trends && result.analysis.trends.length > 0 && (
-                                                <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-xl border border-yellow-200 dark:border-yellow-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-yellow-600 dark:text-yellow-400">Trends</h4>
-                                                    <ul className="space-y-2">
-                                                        {result.analysis.trends.map((trend, index) => (
-                                                            <li key={index} className="flex items-start space-x-2">
-                                                                <span className="text-yellow-600 dark:text-yellow-400 mt-1">•</span>
-                                                                <span className="text-base leading-relaxed">{trend}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            )}
-
-                                            {/* Source */}
-                                            {result.source && (
-                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Source</h4>
-                                                    <p className="text-base leading-relaxed">{result.source}</p>
-                                                </div>
-                                            )}
-                                        </div>
-
-                                        {/* Data Used Section */}
-                                        <div className="space-y-6">
-                                            <div className="flex items-center space-x-3 mb-4">
-                                                <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
-                                                    <BarChart className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
-                                                </div>
-                                                <h3 className="text-2xl font-semibold text-yellow-600 dark:text-yellow-400">Data Used</h3>
-                                            </div>
-
-                                            {result.data_used && result.data_used.length > 0 ? (
-                                                <div className="border rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm">
-                                                    <div className="overflow-x-auto">
-                                                        <table className="w-full text-base">
-                                                            <thead className="bg-muted/50">
-                                                                <tr>
-                                                                    {Object.keys(result.data_used[0]).map(column => (
-                                                                        <th key={column} className="px-6 py-4 text-left font-semibold text-foreground">
-                                                                            {column}
-                                                                        </th>
-                                                                    ))}
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                {result.data_used.slice(0, 10).map((row: any, index: number) => (
-                                                                    <tr key={index} className="border-t hover:bg-muted/30 transition-colors">
-                                                                        {Object.values(row).map((value, colIndex) => (
-                                                                            <td key={colIndex} className="px-6 py-4">
-                                                                                {renderDataContent(value)}
-                                                                            </td>
-                                                                        ))}
-                                                                    </tr>
-                                                                ))}
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    {result.data_used.length > 10 && (
-                                                        <div className="px-6 py-4 text-base text-muted-foreground border-t bg-muted/30">
-                                                            Showing first 10 of {result.data_used.length} data points
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            ) : (
-                                                <div className="text-center py-12 text-muted-foreground">
-                                                    <BarChart className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                                                    <p className="text-lg">No data used in analysis</p>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    </div>
+                    <SourceFileResults
+                        results={queryResults}
+                        onExport={exportResults}
+                        onVisualize={() => {
+                            // Store query results in localStorage for charts page
+                            localStorage.setItem('queryResults', JSON.stringify(queryResults))
+                            window.location.href = '/charts'
+                        }}
+                    />
                 )}
 
                 {/* Empty State */}

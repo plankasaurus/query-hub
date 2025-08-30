@@ -78,7 +78,7 @@ export function QueryBuilder({ onQueryChange, onExecute, query, onVoiceInput, is
                                 onRecordingChange={setIsRecording}
                             />
                         </div>
-                        <Button type="submit" disabled={!query.trim()}>
+                        <Button type="submit" disabled={!query.trim() || isRecording}>
                             Execute Query
                         </Button>
                     </form>
