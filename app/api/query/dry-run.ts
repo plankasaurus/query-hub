@@ -9,11 +9,11 @@ import { createPartFromText } from '@google/genai';
 const testDataDir = path.join(__dirname, 'test-data');
 
 const testDataFiles = fs.readdirSync(testDataDir)
-    .filter(file => file.endsWith('.json'))
-    .map(file => ({
-        filename: file,
-        filepath: path.join(testDataDir, file)
-    }));
+  .filter(file => file.endsWith('.json'))
+  .map(file => ({
+    filename: file,
+    filepath: path.join(testDataDir, file)
+  }));
 
 console.log(`Found ${testDataFiles.length} test data files:`);
 
@@ -21,47 +21,47 @@ const userQuery = "How has the total number of registered marriages and the crud
 
 async function query() {
 
-    const datasets: string[] = [];
-    // Map.
-    const mapper = testDataFiles.map(async ({ filename, filepath }) => {
-        try {
-            const fileContent = fs.readFileSync(filepath, 'utf-8');
-            // Assert well formed.
-            const data = JSON.parse(fileContent);
-            const dataString = JSON.stringify(data);
+  const datasets: string[] = [];
+  // Map.
+  const mapper = testDataFiles.map(async ({ filename, filepath }) => {
+    try {
+      const fileContent = fs.readFileSync(filepath, 'utf-8');
+      // Assert well formed.
+      const data = JSON.parse(fileContent);
+      const dataString = JSON.stringify(data);
 
-            const result = await generateWithParts(
-                `You're an expert data analyst helping answer questions based on datasets. 
+      const result = await generateWithParts(
+        `You're an expert data analyst helping answer questions based on datasets. 
 
                 Respond in a strict JSON format returning if the dataset is useful or not. 
 
                 { "useful": boolean }
                 `,
-                [
-                    { text: userQuery },
+        [
+          { text: userQuery },
 
-                    createPartFromText(dataString)
-                ]
-            );
-            console.log("Is useful", result, dataString.slice(0, 200));
-            if (result.useful === true) {
-                datasets.push(dataString);
-            }
-        } catch (error) {
-            console.error(`Error processing ${filename}:`, error);
-        }
-    });
-    await Promise.all(mapper);
-    console.log("datasets matched", datasets.length);
+          createPartFromText(dataString)
+        ]
+      );
+      console.log("Is useful", result, dataString.slice(0, 200));
+      if (result.useful === true) {
+        datasets.push(dataString);
+      }
+    } catch (error) {
+      console.error(`Error processing ${filename}:`, error);
+    }
+  });
+  await Promise.all(mapper);
+  console.log("datasets matched", datasets.length);
 
-    const joins = [];
-    for (let i = 0; i < datasets.length; i++) {
-        const dataset = datasets[i];
-        // TODO: add file name.
-        const awaiter = async () => {
-            try {
-                const analysis = await generateWithParts(
-                    `You are an expert data analyst. Your task is to analyze the provided dataset to answer the user's question.
+  const joins = [];
+  for (let i = 0; i < datasets.length; i++) {
+    const dataset = datasets[i];
+    // TODO: add file name.
+    const awaiter = async () => {
+      try {
+        const analysis = await generateWithParts(
+          `You are an expert data analyst. Your task is to analyze the provided dataset to answer the user's question.
                 
                     **Instructions:**
                     1.  Provide a comprehensive analysis based ONLY on the data provided. Do not invent or infer information that isn't present in the dataset.
@@ -72,6 +72,7 @@ async function query() {
                     **JSON Output Structure:**
                     {
                         "result": "A concise, direct answer to the user's query.",
+                        "source": "The name of the source file used to answer the user's question.",
                         "overview": "A high-level summary of the analysis performed and the main findings.",
                         "analysis": {
                             "key_findings": [
@@ -88,23 +89,23 @@ async function query() {
                         ]
                     }
                     `,
-                    [
-                        { text: `User Question: ${userQuery}` },
-                        { text: `Dataset: ${createPartFromText(dataset)}` }
-                    ]
-                );
-                return analysis;
-            } catch (error) {
-                console.error(`Error analyzing dataset ${i + 1}:`, error);
-                return null;
-            }
-        };
-        joins.push(awaiter());
-    }
-    const results = await Promise.all(joins);
-    console.log(results);
-    console.log(JSON.stringify(results, null, 2));
-
+          [
+            { text: `User Question: ${userQuery}` },
+            { text: `Dataset: ${createPartFromText(dataset)}` }
+          ]
+        );
+        return analysis;
+      } catch (error) {
+        console.error(`Error analyzing dataset ${i + 1}:`, error);
+        return null;
+      }
+    };
+    joins.push(awaiter());
+  }
+  const results = await Promise.all(joins);
+  // console.log(results);
+  // console.log(JSON.stringify(results, null, 2));
+  return results;
 }
 query().catch(console.error);
 
