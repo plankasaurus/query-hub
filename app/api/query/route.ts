@@ -1,6 +1,94 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getRowsCollection } from '@/lib/mongodb'
 import { DataJoinOut } from '@/lib/types'
+import { querySeedAndKV } from './queryAction'
+
+const transformedResults_PLACEHOLDER: DataJoinOut[] = [
+    {
+        "result": "The total number of registered marriages and the crude marriage rate both experienced a decrease from 2019 to 2020, coinciding with the COVID-19 pandemic. There was a rebound in 2021, followed by a further increase in 2022. The pandemic years (2020-2021) show a dip in both metrics, with 2022 showing signs of recovery beyond pre-pandemic levels.",
+        "overview": "The analysis focuses on the year-on-year changes in the total number of registered marriages and the crude marriage rate, particularly examining the impact of the COVID-19 pandemic (2020-2021) and subsequent recovery. The analysis calculates the percentage change for both metrics to quantify the impact and recovery.",
+        "source": "my file.csv",
+        "analysis": {
+            "key_findings": [
+                "Both the total number of registered marriages and the crude marriage rate decreased from 2019 to 2020, indicating a negative impact from the COVID-19 pandemic.",
+                "2021 saw a rebound in both metrics compared to 2020, suggesting an initial recovery phase.",
+                "2022 shows a further increase in both the total number of registered marriages and the crude marriage rate, surpassing pre-pandemic levels (2019).",
+                "The largest year-on-year decrease in total registered marriages was between 2019 and 2020 (-16.84%).",
+                "The largest year-on-year increase in total registered marriages was between 2020 and 2021 (24.64%).",
+                "The largest year-on-year decrease in crude marriage rate was between 2019 and 2020 (-16.67%).",
+                "The largest year-on-year increase in crude marriage rate was between 2020 and 2021 (24.07%)."
+            ],
+            "trends": [
+                "A downward trend in both total registered marriages and crude marriage rate during the peak of the COVID-19 pandemic (2020).",
+                "An upward trend in both metrics following the initial pandemic year, indicating a recovery phase (2021 and 2022)."
+            ]
+        },
+        "data_used": [
+            {
+                "year": 2019,
+                "registered_marriages": 927000,
+                "crude_marriage_rate": 6
+            },
+            {
+                "year": 2020,
+                "registered_marriages": 771000,
+                "crude_marriage_rate": 5
+            },
+            {
+                "year": 2021,
+                "registered_marriages": 961000,
+                "crude_marriage_rate": 6.2
+            },
+            {
+                "year": 2022,
+                "registered_marriages": 1079000,
+                "crude_marriage_rate": 6.9
+            }
+        ]
+    },
+    {
+        "result": "The total number of registered marriages and the crude marriage rate both experienced a decrease from 2019 to 2020, coinciding with the COVID-19 pandemic. There was a rebound in 2021, followed by a further increase in 2022. The pandemic years (2020-2021) show a dip in both metrics, with 2022 showing signs of recovery beyond pre-pandemic levels.",
+        "overview": "The analysis focuses on the year-on-year changes in the total number of registered marriages and the crude marriage rate, particularly examining the impact of the COVID-19 pandemic (2020-2021) and subsequent recovery. The analysis calculates the percentage change for both metrics to quantify the impact and recovery.",
+        "source": "your file.csv",
+        "analysis": {
+            "key_findings": [
+                "Both the total number of registered marriages and the crude marriage rate decreased from 2019 to 2020, indicating a negative impact from the COVID-19 pandemic.",
+                "2021 saw a rebound in both metrics compared to 2020, suggesting an initial recovery phase.",
+                "2022 shows a further increase in both the total number of registered marriages and the crude marriage rate, surpassing pre-pandemic levels (2019).",
+                "The largest year-on-year decrease in total registered marriages was between 2019 and 2020 (-16.84%).",
+                "The largest year-on-year increase in total registered marriages was between 2020 and 2021 (24.64%).",
+                "The largest year-on-year decrease in crude marriage rate was between 2019 and 2020 (-16.67%).",
+                "The largest year-on-year increase in crude marriage rate was between 2020 and 2021 (24.07%)."
+            ],
+            "trends": [
+                "A downward trend in both total registered marriages and crude marriage rate during the peak of the COVID-19 pandemic (2020).",
+                "An upward trend in both metrics following the initial pandemic year, indicating a recovery phase (2021 and 2022)."
+            ]
+        },
+        "data_used": [
+            {
+                "year": 2019,
+                "registered_marriages": 927000,
+                "crude_marriage_rate": 6
+            },
+            {
+                "year": 2020,
+                "registered_marriages": 771000,
+                "crude_marriage_rate": 5
+            },
+            {
+                "year": 2021,
+                "registered_marriages": 961000,
+                "crude_marriage_rate": 6.2
+            },
+            {
+                "year": 2022,
+                "registered_marriages": 1079000,
+                "crude_marriage_rate": 6.9
+            }
+        ]
+    }
+]
 
 export async function POST(request: NextRequest) {
     try {
@@ -14,92 +102,12 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        const transformedResults: DataJoinOut[] = [
-            {
-                "result": "The total number of registered marriages and the crude marriage rate both experienced a decrease from 2019 to 2020, coinciding with the COVID-19 pandemic. There was a rebound in 2021, followed by a further increase in 2022. The pandemic years (2020-2021) show a dip in both metrics, with 2022 showing signs of recovery beyond pre-pandemic levels.",
-                "overview": "The analysis focuses on the year-on-year changes in the total number of registered marriages and the crude marriage rate, particularly examining the impact of the COVID-19 pandemic (2020-2021) and subsequent recovery. The analysis calculates the percentage change for both metrics to quantify the impact and recovery.",
-                "source": "my file.csv",
-                "analysis": {
-                    "key_findings": [
-                        "Both the total number of registered marriages and the crude marriage rate decreased from 2019 to 2020, indicating a negative impact from the COVID-19 pandemic.",
-                        "2021 saw a rebound in both metrics compared to 2020, suggesting an initial recovery phase.",
-                        "2022 shows a further increase in both the total number of registered marriages and the crude marriage rate, surpassing pre-pandemic levels (2019).",
-                        "The largest year-on-year decrease in total registered marriages was between 2019 and 2020 (-16.84%).",
-                        "The largest year-on-year increase in total registered marriages was between 2020 and 2021 (24.64%).",
-                        "The largest year-on-year decrease in crude marriage rate was between 2019 and 2020 (-16.67%).",
-                        "The largest year-on-year increase in crude marriage rate was between 2020 and 2021 (24.07%)."
-                    ],
-                    "trends": [
-                        "A downward trend in both total registered marriages and crude marriage rate during the peak of the COVID-19 pandemic (2020).",
-                        "An upward trend in both metrics following the initial pandemic year, indicating a recovery phase (2021 and 2022)."
-                    ]
-                },
-                "data_used": [
-                    {
-                        "year": 2019,
-                        "registered_marriages": 927000,
-                        "crude_marriage_rate": 6
-                    },
-                    {
-                        "year": 2020,
-                        "registered_marriages": 771000,
-                        "crude_marriage_rate": 5
-                    },
-                    {
-                        "year": 2021,
-                        "registered_marriages": 961000,
-                        "crude_marriage_rate": 6.2
-                    },
-                    {
-                        "year": 2022,
-                        "registered_marriages": 1079000,
-                        "crude_marriage_rate": 6.9
-                    }
-                ]
-            },
-            {
-                "result": "The total number of registered marriages and the crude marriage rate both experienced a decrease from 2019 to 2020, coinciding with the COVID-19 pandemic. There was a rebound in 2021, followed by a further increase in 2022. The pandemic years (2020-2021) show a dip in both metrics, with 2022 showing signs of recovery beyond pre-pandemic levels.",
-                "overview": "The analysis focuses on the year-on-year changes in the total number of registered marriages and the crude marriage rate, particularly examining the impact of the COVID-19 pandemic (2020-2021) and subsequent recovery. The analysis calculates the percentage change for both metrics to quantify the impact and recovery.",
-                "source": "your file.csv",
-                "analysis": {
-                    "key_findings": [
-                        "Both the total number of registered marriages and the crude marriage rate decreased from 2019 to 2020, indicating a negative impact from the COVID-19 pandemic.",
-                        "2021 saw a rebound in both metrics compared to 2020, suggesting an initial recovery phase.",
-                        "2022 shows a further increase in both the total number of registered marriages and the crude marriage rate, surpassing pre-pandemic levels (2019).",
-                        "The largest year-on-year decrease in total registered marriages was between 2019 and 2020 (-16.84%).",
-                        "The largest year-on-year increase in total registered marriages was between 2020 and 2021 (24.64%).",
-                        "The largest year-on-year decrease in crude marriage rate was between 2019 and 2020 (-16.67%).",
-                        "The largest year-on-year increase in crude marriage rate was between 2020 and 2021 (24.07%)."
-                    ],
-                    "trends": [
-                        "A downward trend in both total registered marriages and crude marriage rate during the peak of the COVID-19 pandemic (2020).",
-                        "An upward trend in both metrics following the initial pandemic year, indicating a recovery phase (2021 and 2022)."
-                    ]
-                },
-                "data_used": [
-                    {
-                        "year": 2019,
-                        "registered_marriages": 927000,
-                        "crude_marriage_rate": 6
-                    },
-                    {
-                        "year": 2020,
-                        "registered_marriages": 771000,
-                        "crude_marriage_rate": 5
-                    },
-                    {
-                        "year": 2021,
-                        "registered_marriages": 961000,
-                        "crude_marriage_rate": 6.2
-                    },
-                    {
-                        "year": 2022,
-                        "registered_marriages": 1079000,
-                        "crude_marriage_rate": 6.9
-                    }
-                ]
-            }
-        ]
+        console.log("hi query route", userQuery);
+        console.log(querySeedAndKV);
+        // const transformedResults = await querySeedAndKV(userQuery);
+        const transformedResults = ["A"];
+        console.log("transformedResults", transformedResults);
+
 
         return NextResponse.json({
             success: true,

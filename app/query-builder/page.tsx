@@ -20,6 +20,7 @@ export default function QueryBuilderPage() {
     const [executionTime, setExecutionTime] = useState<number | null>(null)
     const [queryHistory, setQueryHistory] = useState<Array<{ query: string, results: DataJoinOut[], timestamp: Date }>>([])
     const [isVoiceInput, setIsVoiceInput] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
     const handleQueryChange = (newQuery: string) => {
         setQuery(newQuery)
@@ -36,6 +37,7 @@ export default function QueryBuilderPage() {
         if (!query.trim()) return
 
         setIsExecuting(true)
+        setError(null)
         const startTime = Date.now()
 
         try {
@@ -49,20 +51,31 @@ export default function QueryBuilderPage() {
 
             if (response.ok) {
                 const data = await response.json()
-                setQueryResults(data.results || [])
-                setExecutionTime(Date.now() - startTime)
 
-                // Add to query history
-                setQueryHistory(prev => [{
-                    query: query,
-                    results: data.results || [],
-                    timestamp: new Date()
-                }, ...prev.slice(0, 4)]) // Keep last 5 queries
+                if (data.success) {
+                    setQueryResults(data.results || [])
+                    setExecutionTime(Date.now() - startTime)
+
+                    // Add to query history
+                    setQueryHistory(prev => [{
+                        query: query,
+                        results: data.results || [],
+                        timestamp: new Date()
+                    }, ...prev.slice(0, 4)]) // Keep last 5 queries
+                } else {
+                    setError(data.message || 'Query failed - no relevant data found')
+                    setQueryResults([])
+                }
             } else {
-                console.error('Query execution failed:', response.statusText)
+                const errorData = await response.json().catch(() => ({}))
+                const errorMessage = errorData.message || errorData.error || `Query failed with status: ${response.status}`
+                setError(errorMessage)
+                console.error('Query execution failed:', response.statusText, errorData)
                 setQueryResults([])
             }
         } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'Network error occurred'
+            setError(errorMessage)
             console.error('Query execution failed:', error)
             setQueryResults([])
         } finally {
@@ -195,6 +208,23 @@ export default function QueryBuilderPage() {
                         isVoiceInput={isVoiceInput}
                         onTranscriptUpdate={handleQueryChange}
                     />
+
+                    {/* Error Display */}
+                    {error && (
+                        <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                            <div className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                                <span className="text-sm text-red-700 dark:text-red-300 font-medium">
+                                    Error: {error}
+                                </span>
+                            </div>
+                            {error.includes('GEMINI_API_KEY') && (
+                                <p className="text-xs text-red-600 dark:text-red-400 mt-2">
+                                    Please set the GEMINI_API_KEY environment variable. See env.example for details.
+                                </p>
+                            )}
+                        </div>
+                    )}
                 </div>
 
                 {/* Results Section - Full Width */}
