@@ -10,7 +10,7 @@ export interface PromptConfig {
 const DEFAULT_CONFIG = {
     model: "gemini-2.0-flash",
     temperature: 0.1,
-    maxOutputTokens: 4096,
+    maxOutputTokens: 10000,
     apiKey: process.env.GEMINI_API_KEY || '',
 }
 
@@ -37,6 +37,7 @@ export async function generateWithParts(
         },
     });
     const modelOut = response.text || "";
+    console.log("modelOut", modelOut);
     const content = modelOut.match(/```json\s*([\s\S]*?)\s*```/);
     if (!content || content.length < 1) throw new Error("No valid JSON in response");
     try {

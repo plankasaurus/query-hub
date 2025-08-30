@@ -1,0 +1,684 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics",
+    "filename": "Marriages and Divorces (Australia) 2024.xlsx - Table 1.csv"
+  },
+  "fields": [
+    {
+      "name": "indicator",
+      "data_type": "string",
+      "description": "Name of the marriage indicator or category."
+    },
+    {
+      "name": "unit",
+      "data_type": "categorical",
+      "description": "Unit of measurement for the indicator (e.g., no. for number, rate for rate per population, % for percentage, years for years)."
+    },
+    {
+      "name": "year_2020",
+      "data_type": "float",
+      "description": "Value of the indicator for the year 2020."
+    },
+    {
+      "name": "year_2021",
+      "data_type": "float",
+      "description": "Value of the indicator for the year 2021."
+    },
+    {
+      "name": "year_2022",
+      "data_type": "float",
+      "description": "Value of the indicator for the year 2022."
+    },
+    {
+      "name": "year_2023",
+      "data_type": "float",
+      "description": "Value of the indicator for the year 2023."
+    },
+    {
+      "name": "year_2024",
+      "data_type": "float",
+      "description": "Value of the indicator for the year 2024."
+    }
+  ],
+  "data": [
+    {
+      "indicator": "Total marriages registered",
+      "unit": "no.",
+      "year_2020": 78987,
+      "year_2021": 89167,
+      "year_2022": 127161,
+      "year_2023": 118439,
+      "year_2024": 120844
+    },
+    {
+      "indicator": "Crude marriage rate (aged 16 and over)",
+      "unit": "rate",
+      "year_2020": 3.8,
+      "year_2021": 4.3,
+      "year_2022": 6.1,
+      "year_2023": 5.5,
+      "year_2024": 5.5
+    },
+    {
+      "indicator": "New South Wales",
+      "unit": "no.",
+      "year_2020": 27609,
+      "year_2021": 27314,
+      "year_2022": 44953,
+      "year_2023": 39018,
+      "year_2024": 39659
+    },
+    {
+      "indicator": "Victoria",
+      "unit": "no.",
+      "year_2020": 16628,
+      "year_2021": 18740,
+      "year_2022": 33231,
+      "year_2023": 29816,
+      "year_2024": 32050
+    },
+    {
+      "indicator": "Queensland",
+      "unit": "no.",
+      "year_2020": 15917,
+      "year_2021": 21627,
+      "year_2022": 25014,
+      "year_2023": 23826,
+      "year_2024": 23595
+    },
+    {
+      "indicator": "South Australia",
+      "unit": "no.",
+      "year_2020": 5429,
+      "year_2021": 6778,
+      "year_2022": 7268,
+      "year_2023": 7782,
+      "year_2024": 7500
+    },
+    {
+      "indicator": "Western Australia",
+      "unit": "no.",
+      "year_2020": 9561,
+      "year_2021": 10305,
+      "year_2022": 11237,
+      "year_2023": 13120,
+      "year_2024": 13366
+    },
+    {
+      "indicator": "Tasmania",
+      "unit": "no.",
+      "year_2020": 2016,
+      "year_2021": 2328,
+      "year_2022": 2821,
+      "year_2023": 2506,
+      "year_2024": 2364
+    },
+    {
+      "indicator": "Northern Territory",
+      "unit": "no.",
+      "year_2020": 549,
+      "year_2021": 796,
+      "year_2022": 819,
+      "year_2023": 794,
+      "year_2024": 738
+    },
+    {
+      "indicator": "Australian Capital Territory",
+      "unit": "no.",
+      "year_2020": 1278,
+      "year_2021": 1279,
+      "year_2022": 1818,
+      "year_2023": 1562,
+      "year_2024": 1554
+    },
+    {
+      "indicator": "Male marriages of the same gender",
+      "unit": "no.",
+      "year_2020": 1116,
+      "year_2021": 1075,
+      "year_2022": 1767,
+      "year_2023": 1735,
+      "year_2024": 1893
+    },
+    {
+      "indicator": "Female marriages of the same gender",
+      "unit": "no.",
+      "year_2020": 1785,
+      "year_2021": 1770,
+      "year_2022": 2667,
+      "year_2023": 2619,
+      "year_2024": 2622
+    },
+    {
+      "indicator": "Marriages including a person of non-binary gender",
+      "unit": "no.",
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 159,
+      "year_2023": 204,
+      "year_2024": 231
+    },
+    {
+      "indicator": "Total marriages including the same or non-binary gender",
+      "unit": "no.",
+      "year_2020": 2901,
+      "year_2021": 2845,
+      "year_2022": 4593,
+      "year_2023": 4558,
+      "year_2024": 4746
+    },
+    {
+      "indicator": "As a proportion of all marriages",
+      "unit": "%",
+      "year_2020": 3.7,
+      "year_2021": 3.2,
+      "year_2022": 3.6,
+      "year_2023": 3.8,
+      "year_2024": 3.9
+    },
+    {
+      "indicator": "16–19",
+      "unit": "no.",
+      "year_2020": 235,
+      "year_2021": 194,
+      "year_2022": 218,
+      "year_2023": 224,
+      "year_2024": 250
+    },
+    {
+      "indicator": "20–24",
+      "unit": "no.",
+      "year_2020": 6719,
+      "year_2021": 6452,
+      "year_2022": 7872,
+      "year_2023": 7226,
+      "year_2024": 7720
+    },
+    {
+      "indicator": "25–29",
+      "unit": "no.",
+      "year_2020": 21653,
+      "year_2021": 25232,
+      "year_2022": 34085,
+      "year_2023": 30384,
+      "year_2024": 31371
+    },
+    {
+      "indicator": "30–34",
+      "unit": "no.",
+      "year_2020": 20304,
+      "year_2021": 25108,
+      "year_2022": 36922,
+      "year_2023": 33341,
+      "year_2024": 33609
+    },
+    {
+      "indicator": "35–39",
+      "unit": "no.",
+      "year_2020": 10434,
+      "year_2021": 12004,
+      "year_2022": 17870,
+      "year_2023": 17001,
+      "year_2024": 17372
+    },
+    {
+      "indicator": "40–44",
+      "unit": "no.",
+      "year_2020": 5284,
+      "year_2021": 5635,
+      "year_2022": 8741,
+      "year_2023": 8732,
+      "year_2024": 8998
+    },
+    {
+      "indicator": "45–49",
+      "unit": "no.",
+      "year_2020": 4259,
+      "year_2021": 4148,
+      "year_2022": 5991,
+      "year_2023": 5836,
+      "year_2024": 5631
+    },
+    {
+      "indicator": "50–54",
+      "unit": "no.",
+      "year_2020": 3130,
+      "year_2021": 3457,
+      "year_2022": 5130,
+      "year_2023": 5025,
+      "year_2024": 4966
+    },
+    {
+      "indicator": "55–59",
+      "unit": "no.",
+      "year_2020": 2562,
+      "year_2021": 2562,
+      "year_2022": 3654,
+      "year_2023": 3704,
+      "year_2024": 3692
+    },
+    {
+      "indicator": "60–64",
+      "unit": "no.",
+      "year_2020": 1634,
+      "year_2021": 1698,
+      "year_2022": 2617,
+      "year_2023": 2664,
+      "year_2024": 2729
+    },
+    {
+      "indicator": "65–69",
+      "unit": "no.",
+      "year_2020": 962,
+      "year_2021": 903,
+      "year_2022": 1421,
+      "year_2023": 1533,
+      "year_2024": 1522
+    },
+    {
+      "indicator": "70–74",
+      "unit": "no.",
+      "year_2020": 642,
+      "year_2021": 549,
+      "year_2022": 843,
+      "year_2023": 817,
+      "year_2024": 817
+    },
+    {
+      "indicator": "75 and over",
+      "unit": "no.",
+      "year_2020": 456,
+      "year_2021": 441,
+      "year_2022": 604,
+      "year_2023": 700,
+      "year_2024": 742
+    },
+    {
+      "indicator": "Total",
+      "unit": "no.",
+      "year_2020": 78274,
+      "year_2021": 88383,
+      "year_2022": 125968,
+      "year_2023": 117187,
+      "year_2024": 119423
+    },
+    {
+      "indicator": "16–19",
+      "unit": "rate",
+      "year_2020": 0.4,
+      "year_2021": 0.3,
+      "year_2022": 0.3,
+      "year_2023": 0.3,
+      "year_2024": 0.4
+    },
+    {
+      "indicator": "20–24",
+      "unit": "rate",
+      "year_2020": 7.7,
+      "year_2021": 7.7,
+      "year_2022": 9.3,
+      "year_2023": 8.1,
+      "year_2024": 8.3
+    },
+    {
+      "indicator": "25–29",
+      "unit": "rate",
+      "year_2020": 22.8,
+      "year_2021": 27.5,
+      "year_2022": 36.9,
+      "year_2023": 31.2,
+      "year_2024": 31
+    },
+    {
+      "indicator": "30–34",
+      "unit": "rate",
+      "year_2020": 21.5,
+      "year_2021": 26.7,
+      "year_2022": 39,
+      "year_2023": 33.9,
+      "year_2024": 33.2
+    },
+    {
+      "indicator": "35–39",
+      "unit": "rate",
+      "year_2020": 11.4,
+      "year_2021": 12.9,
+      "year_2022": 19,
+      "year_2023": 17.7,
+      "year_2024": 17.6
+    },
+    {
+      "indicator": "40–44",
+      "unit": "rate",
+      "year_2020": 6.6,
+      "year_2021": 6.9,
+      "year_2022": 10.4,
+      "year_2023": 9.9,
+      "year_2024": 9.8
+    },
+    {
+      "indicator": "45–49",
+      "unit": "rate",
+      "year_2020": 5.1,
+      "year_2021": 5.1,
+      "year_2022": 7.5,
+      "year_2023": 7.3,
+      "year_2024": 7
+    },
+    {
+      "indicator": "50–54",
+      "unit": "rate",
+      "year_2020": 4.1,
+      "year_2021": 4.4,
+      "year_2022": 6.3,
+      "year_2023": 6.1,
+      "year_2024": 6
+    },
+    {
+      "indicator": "55–59",
+      "unit": "rate",
+      "year_2020": 3.3,
+      "year_2021": 3.4,
+      "year_2022": 4.8,
+      "year_2023": 4.9,
+      "year_2024": 4.9
+    },
+    {
+      "indicator": "60–64",
+      "unit": "rate",
+      "year_2020": 2.3,
+      "year_2021": 2.4,
+      "year_2022": 3.6,
+      "year_2023": 3.6,
+      "year_2024": 3.7
+    },
+    {
+      "indicator": "65–69",
+      "unit": "rate",
+      "year_2020": 1.6,
+      "year_2021": 1.5,
+      "year_2022": 2.3,
+      "year_2023": 2.4,
+      "year_2024": 2.3
+    },
+    {
+      "indicator": "70–74",
+      "unit": "rate",
+      "year_2020": 1.2,
+      "year_2021": 1,
+      "year_2022": 1.5,
+      "year_2023": 1.5,
+      "year_2024": 1.5
+    },
+    {
+      "indicator": "75 and over",
+      "unit": "rate",
+      "year_2020": 0.6,
+      "year_2021": 0.5,
+      "year_2022": 0.7,
+      "year_2023": 0.7,
+      "year_2024": 0.8
+    },
+    {
+      "indicator": "Median age at marriage",
+      "unit": "years",
+      "year_2020": 32.2,
+      "year_2021": 32.1,
+      "year_2022": 32.5,
+      "year_2023": 32.9,
+      "year_2024": 32.8
+    },
+    {
+      "indicator": "16–19",
+      "unit": "no.",
+      "year_2020": 746,
+      "year_2021": 601,
+      "year_2022": 675,
+      "year_2023": 686,
+      "year_2024": 777
+    },
+    {
+      "indicator": "20–24",
+      "unit": "no.",
+      "year_2020": 10708,
+      "year_2021": 10518,
+      "year_2022": 12749,
+      "year_2023": 11410,
+      "year_2024": 12012
+    },
+    {
+      "indicator": "25–29",
+      "unit": "no.",
+      "year_2020": 25619,
+      "year_2021": 30747,
+      "year_2022": 42410,
+      "year_2023": 37420,
+      "year_2024": 38274
+    },
+    {
+      "indicator": "30–34",
+      "unit": "no.",
+      "year_2020": 18942,
+      "year_2021": 23073,
+      "year_2022": 34718,
+      "year_2023": 32571,
+      "year_2024": 32323
+    },
+    {
+      "indicator": "35–39",
+      "unit": "no.",
+      "year_2020": 8809,
+      "year_2021": 9516,
+      "year_2022": 14501,
+      "year_2023": 14186,
+      "year_2024": 14743
+    },
+    {
+      "indicator": "40–44",
+      "unit": "no.",
+      "year_2020": 4595,
+      "year_2021": 4741,
+      "year_2022": 7324,
+      "year_2023": 7528,
+      "year_2024": 7661
+    },
+    {
+      "indicator": "45–49",
+      "unit": "no.",
+      "year_2020": 3764,
+      "year_2021": 3752,
+      "year_2022": 5412,
+      "year_2023": 5262,
+      "year_2024": 5160
+    },
+    {
+      "indicator": "50–54",
+      "unit": "no.",
+      "year_2020": 2663,
+      "year_2021": 2948,
+      "year_2022": 4464,
+      "year_2023": 4354,
+      "year_2024": 4277
+    },
+    {
+      "indicator": "55–59",
+      "unit": "no.",
+      "year_2020": 1775,
+      "year_2021": 1852,
+      "year_2022": 2620,
+      "year_2023": 2640,
+      "year_2024": 2686
+    },
+    {
+      "indicator": "60–64",
+      "unit": "no.",
+      "year_2020": 964,
+      "year_2021": 1024,
+      "year_2022": 1538,
+      "year_2023": 1529,
+      "year_2024": 1552
+    },
+    {
+      "indicator": "65–69",
+      "unit": "no.",
+      "year_2020": 545,
+      "year_2021": 533,
+      "year_2022": 738,
+      "year_2023": 775,
+      "year_2024": 772
+    },
+    {
+      "indicator": "70–74",
+      "unit": "no.",
+      "year_2020": 293,
+      "year_2021": 277,
+      "year_2022": 361,
+      "year_2023": 372,
+      "year_2024": 383
+    },
+    {
+      "indicator": "75 and over",
+      "unit": "no.",
+      "year_2020": 191,
+      "year_2021": 205,
+      "year_2022": 248,
+      "year_2023": 257,
+      "year_2024": 294
+    },
+    {
+      "indicator": "Total",
+      "unit": "no.",
+      "year_2020": 79614,
+      "year_2021": 89787,
+      "year_2022": 127758,
+      "year_2023": 118990,
+      "year_2024": 120915
+    },
+    {
+      "indicator": "16–19",
+      "unit": "rate",
+      "year_2020": 1.3,
+      "year_2021": 1.1,
+      "year_2022": 1.2,
+      "year_2023": 1.1,
+      "year_2024": 1.2
+    },
+    {
+      "indicator": "20–24",
+      "unit": "rate",
+      "year_2020": 12.9,
+      "year_2021": 13.4,
+      "year_2022": 16.1,
+      "year_2023": 13.7,
+      "year_2024": 14
+    },
+    {
+      "indicator": "25–29",
+      "unit": "rate",
+      "year_2020": 27.3,
+      "year_2021": 34.1,
+      "year_2022": 47,
+      "year_2023": 39.4,
+      "year_2024": 39
+    },
+    {
+      "indicator": "30–34",
+      "unit": "rate",
+      "year_2020": 19.7,
+      "year_2021": 24.1,
+      "year_2022": 35.9,
+      "year_2023": 32.5,
+      "year_2024": 31.5
+    },
+    {
+      "indicator": "35–39",
+      "unit": "rate",
+      "year_2020": 9.5,
+      "year_2021": 10.1,
+      "year_2022": 15.2,
+      "year_2023": 14.5,
+      "year_2024": 14.7
+    },
+    {
+      "indicator": "40–44",
+      "unit": "rate",
+      "year_2020": 5.6,
+      "year_2021": 5.7,
+      "year_2022": 8.5,
+      "year_2023": 8.4,
+      "year_2024": 8.2
+    },
+    {
+      "indicator": "45–49",
+      "unit": "rate",
+      "year_2020": 4.4,
+      "year_2021": 4.5,
+      "year_2022": 6.6,
+      "year_2023": 6.4,
+      "year_2024": 6.3
+    },
+    {
+      "indicator": "50–54",
+      "unit": "rate",
+      "year_2020": 3.3,
+      "year_2021": 3.6,
+      "year_2022": 5.3,
+      "year_2023": 5.1,
+      "year_2024": 5
+    },
+    {
+      "indicator": "55–59",
+      "unit": "rate",
+      "year_2020": 2.2,
+      "year_2021": 2.3,
+      "year_2022": 3.4,
+      "year_2023": 3.4,
+      "year_2024": 3.4
+    },
+    {
+      "indicator": "60–64",
+      "unit": "rate",
+      "year_2020": 1.3,
+      "year_2021": 1.4,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 2
+    },
+    {
+      "indicator": "65–69",
+      "unit": "rate",
+      "year_2020": 0.8,
+      "year_2021": 0.8,
+      "year_2022": 1.1,
+      "year_2023": 1.1,
+      "year_2024": 1.1
+    },
+    {
+      "indicator": "70–74",
+      "unit": "rate",
+      "year_2020": 0.5,
+      "year_2021": 0.5,
+      "year_2022": 0.6,
+      "year_2023": 0.6,
+      "year_2024": 0.6
+    },
+    {
+      "indicator": "75 and over",
+      "unit": "rate",
+      "year_2020": 0.2,
+      "year_2021": 0.2,
+      "year_2022": 0.2,
+      "year_2023": 0.2,
+      "year_2024": 0.2
+    },
+    {
+      "indicator": "Median age at marriage",
+      "unit": "years",
+      "year_2020": 30.6,
+      "year_2021": 30.5,
+      "year_2022": 30.9,
+      "year_2023": 31.2,
+      "year_2024": 31.2
+    }
+  ]
+}

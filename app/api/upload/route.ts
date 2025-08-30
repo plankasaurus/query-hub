@@ -4,6 +4,7 @@ import { writeFile, mkdir } from 'fs/promises'
 import path from 'path'
 import { generateWithParts } from '../model';
 import { createPartFromText } from '@google/genai';
+import { metadata } from '@/app/layout';
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,30 +24,33 @@ export async function POST(request: NextRequest) {
 
     // Call LLM to clean/standardize
     const promptContents = [
-      {text: "Parse this file, return the output as a JSON"},
-        createPartFromText(originalContent),
+      { text: "Parse this file, return the output as a JSON" },
+      createPartFromText(originalContent),
     ]
 
     const SI = `You are a data ingestion assistant. 
-        Your job is to analyze a sample dataset (CSV, JSON, Excel workbooks, or other structured text), clean, and standardize it and produce:
+        Your job is to analyze a dataset (CSV), clean, and standardize it and produce:
         1. A cleaned and standardized the data.
-        2. Add a metadata field that includes the source of this dataset and a description of the dataset contents
-        3. Column/field names normalized to snake_case.
-        4. Datatypes for each field (string, integer, float, boolean, date, datetime, categorical, etc.).
-        5. A short description of each field, based on the data if possible.
+        2. Column/field names normalized to snake_case.
+        3. Datatypes for each field (string, integer, float, boolean, date, datetime, categorical, etc.).
+        4. A short description of each field, based on the data if possible.
 
         Rules:
         - Never hallucinate fields that don’t exist in the data.
-        - Output must be in strict JSON format.`;
+        - Output must be in strict JSON format.
+        - Add a metadata field { "source": "The source of the data" }
+
+        `;
 
     const standardizedData = await generateWithParts(SI, promptContents);
+    standardizedData["metadata"]["filename"] = file.name;
 
     // Ensure uploads folder exists
     const uploadDir = path.join(process.cwd(), 'public', 'uploads')
     await mkdir(uploadDir, { recursive: true })
 
     // Sanitize filename (optional)
-    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 255)
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 255).replace(".csv", ".json");
 
     const filePath = path.join(uploadDir, safeName)
     await writeFile(filePath, JSON.stringify(standardizedData, null, 2), 'utf-8')

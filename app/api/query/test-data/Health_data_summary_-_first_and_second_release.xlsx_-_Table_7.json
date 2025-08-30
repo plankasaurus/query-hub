@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Census of Population and Housing: Health data summary, 2021",
+    "filename": "Health data summary - first and second release.xlsx - Table 7.csv"
+  },
+  "fields": [
+    {
+      "name": "long_term_health_condition",
+      "description": "Type of long-term health condition reported by individuals.",
+      "data_type": "categorical"
+    },
+    {
+      "name": "has_need_for_assistance",
+      "description": "Number of people who have need for assistance with core activities.",
+      "data_type": "integer"
+    },
+    {
+      "name": "does_not_have_need_for_assistance",
+      "description": "Number of people who do not have need for assistance with core activities.",
+      "data_type": "integer"
+    },
+    {
+      "name": "not_stated",
+      "description": "Number of people whose need for assistance was not stated.",
+      "data_type": "integer"
+    },
+    {
+      "name": "total",
+      "description": "Total number of people in the category.",
+      "data_type": "integer"
+    },
+    {
+      "name": "sex",
+      "description": "Sex of the individuals in the row.",
+      "data_type": "categorical"
+    }
+  ],
+  "data": [
+    {
+      "long_term_health_condition": "Arthritis",
+      "has_need_for_assistance": 154778,
+      "does_not_have_need_for_assistance": 626940,
+      "not_stated": 8337,
+      "total": 790053,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Asthma",
+      "has_need_for_assistance": 80262,
+      "does_not_have_need_for_assistance": 822180,
+      "not_stated": 6964,
+      "total": 909407,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Cancer (including remission)",
+      "has_need_for_assistance": 71390,
+      "does_not_have_need_for_assistance": 275073,
+      "not_stated": 3472,
+      "total": 349930,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Dementia (including Alzheimer’s)",
+      "has_need_for_assistance": 61589,
+      "does_not_have_need_for_assistance": 13947,
+      "not_stated": 2621,
+      "total": 78154,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Diabetes (excluding gestational diabetes)",
+      "has_need_for_assistance": 119931,
+      "does_not_have_need_for_assistance": 527096,
+      "not_stated": 6574,
+      "total": 653595,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Heart disease (including heart attack or angina)",
+      "has_need_for_assistance": 130359,
+      "does_not_have_need_for_assistance": 468132,
+      "not_stated": 6603,
+      "total": 605094,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Kidney disease",
+      "has_need_for_assistance": 38783,
+      "does_not_have_need_for_assistance": 79023,
+      "not_stated": 1470,
+      "total": 119271,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Lung condition (including COPD or emphysema)(e)",
+      "has_need_for_assistance": 65843,
+      "does_not_have_need_for_assistance": 144883,
+      "not_stated": 2575,
+      "total": 213301,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Mental health condition (including depression or anxiety)",
+      "has_need_for_assistance": 196421,
+      "does_not_have_need_for_assistance": 668330,
+      "not_stated": 7778,
+      "total": 872532,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Stroke",
+      "has_need_for_assistance": 54758,
+      "does_not_have_need_for_assistance": 70711,
+      "not_stated": 1819,
+      "total": 127292,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Any other long-term health condition(s)(f)",
+      "has_need_for_assistance": 260338,
+      "does_not_have_need_for_assistance": 625150,
+      "not_stated": 7147,
+      "total": 892634,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "No long-term health condition(s)",
+      "has_need_for_assistance": 77932,
+      "does_not_have_need_for_assistance": 7621001,
+      "not_stated": 59014,
+      "total": 7757945,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Not stated",
+      "has_need_for_assistance": 16670,
+      "does_not_have_need_for_assistance": 366541,
+      "not_stated": 699368,
+      "total": 1082583,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Total males(d)",
+      "has_need_for_assistance": 683931,
+      "does_not_have_need_for_assistance": 11069482,
+      "not_stated": 791736,
+      "total": 12545154,
+      "sex": "MALES"
+    },
+    {
+      "long_term_health_condition": "Arthritis",
+      "has_need_for_assistance": 310050,
+      "does_not_have_need_for_assistance": 1035446,
+      "not_stated": 14841,
+      "total": 1360338,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Asthma",
+      "has_need_for_assistance": 125606,
+      "does_not_have_need_for_assistance": 1023673,
+      "not_stated": 9331,
+      "total": 1158613,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Cancer (including remission)",
+      "has_need_for_assistance": 78681,
+      "does_not_have_need_for_assistance": 299688,
+      "not_stated": 3853,
+      "total": 382225,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Dementia (including Alzheimer’s)",
+      "has_need_for_assistance": 93298,
+      "does_not_have_need_for_assistance": 13354,
+      "not_stated": 4352,
+      "total": 111003,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Diabetes (excluding gestational diabetes)",
+      "has_need_for_assistance": 131448,
+      "does_not_have_need_for_assistance": 407599,
+      "not_stated": 6071,
+      "total": 545121,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Heart disease (including heart attack or angina)",
+      "has_need_for_assistance": 130979,
+      "does_not_have_need_for_assistance": 257453,
+      "not_stated": 5573,
+      "total": 394002,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Kidney disease",
+      "has_need_for_assistance": 42592,
+      "does_not_have_need_for_assistance": 68193,
+      "not_stated": 1715,
+      "total": 112506,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Lung condition (including COPD or emphysema)(e)",
+      "has_need_for_assistance": 74896,
+      "does_not_have_need_for_assistance": 150030,
+      "not_stated": 2887,
+      "total": 227809,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Mental health condition (including depression or anxiety)",
+      "has_need_for_assistance": 233132,
+      "does_not_have_need_for_assistance": 1114471,
+      "not_stated": 11410,
+      "total": 1359011,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Stroke",
+      "has_need_for_assistance": 53663,
+      "does_not_have_need_for_assistance": 51927,
+      "not_stated": 1731,
+      "total": 107317,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Any other long-term health condition(s)(f)",
+      "has_need_for_assistance": 296354,
+      "does_not_have_need_for_assistance": 842908,
+      "not_stated": 10030,
+      "total": 1149291,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "No long-term health condition(s)",
+      "has_need_for_assistance": 63935,
+      "does_not_have_need_for_assistance": 7414700,
+      "not_stated": 56132,
+      "total": 7534773,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Not stated",
+      "has_need_for_assistance": 15490,
+      "does_not_have_need_for_assistance": 362601,
+      "not_stated": 605578,
+      "total": 983670,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Total females(d)",
+      "has_need_for_assistance": 780487,
+      "does_not_have_need_for_assistance": 11395218,
+      "not_stated": 701938,
+      "total": 12877635,
+      "sex": "FEMALES"
+    },
+    {
+      "long_term_health_condition": "Arthritis",
+      "has_need_for_assistance": 464828,
+      "does_not_have_need_for_assistance": 1662391,
+      "not_stated": 23178,
+      "total": 2150396,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Asthma",
+      "has_need_for_assistance": 205863,
+      "does_not_have_need_for_assistance": 1845856,
+      "not_stated": 16298,
+      "total": 2068020,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Cancer (including remission)",
+      "has_need_for_assistance": 150070,
+      "does_not_have_need_for_assistance": 574761,
+      "not_stated": 7332,
+      "total": 732152,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Dementia (including Alzheimer’s)",
+      "has_need_for_assistance": 154884,
+      "does_not_have_need_for_assistance": 27305,
+      "not_stated": 6974,
+      "total": 189162,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Diabetes (excluding gestational diabetes)",
+      "has_need_for_assistance": 251378,
+      "does_not_have_need_for_assistance": 934692,
+      "not_stated": 12645,
+      "total": 1198721,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Heart disease (including heart attack or angina)",
+      "has_need_for_assistance": 261334,
+      "does_not_have_need_for_assistance": 725587,
+      "not_stated": 12174,
+      "total": 999096,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Kidney disease",
+      "has_need_for_assistance": 81380,
+      "does_not_have_need_for_assistance": 147213,
+      "not_stated": 3187,
+      "total": 231777,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Lung condition (including COPD or emphysema)(e)",
+      "has_need_for_assistance": 140736,
+      "does_not_have_need_for_assistance": 294917,
+      "not_stated": 5457,
+      "total": 441109,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Mental health condition (including depression or anxiety)",
+      "has_need_for_assistance": 429554,
+      "does_not_have_need_for_assistance": 1782801,
+      "not_stated": 19192,
+      "total": 2231543,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Stroke",
+      "has_need_for_assistance": 108419,
+      "does_not_have_need_for_assistance": 122639,
+      "not_stated": 3548,
+      "total": 234609,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Any other long-term health condition(s)(f)",
+      "has_need_for_assistance": 556693,
+      "does_not_have_need_for_assistance": 1468060,
+      "not_stated": 17178,
+      "total": 2041929,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "No long-term health condition(s)",
+      "has_need_for_assistance": 141871,
+      "does_not_have_need_for_assistance": 15035701,
+      "not_stated": 115145,
+      "total": 15292718,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Not stated",
+      "has_need_for_assistance": 32155,
+      "does_not_have_need_for_assistance": 729148,
+      "not_stated": 1304942,
+      "total": 2066251,
+      "sex": "PERSONS"
+    },
+    {
+      "long_term_health_condition": "Total persons(d)",
+      "has_need_for_assistance": 1464415,
+      "does_not_have_need_for_assistance": 22464703,
+      "not_stated": 1493676,
+      "total": 25422788,
+      "sex": "PERSONS"
+    }
+  ]
+}

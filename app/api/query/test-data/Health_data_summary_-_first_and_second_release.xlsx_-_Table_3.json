@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics",
+    "filename": "Health data summary - first and second release.xlsx - Table 3.csv"
+  },
+  "fields": [
+    {
+      "name": "long_term_health_condition",
+      "type": "categorical",
+      "description": "Type of long-term health condition reported by individuals."
+    },
+    {
+      "name": "new_south_wales",
+      "type": "integer",
+      "description": "Count of persons in New South Wales reporting the condition."
+    },
+    {
+      "name": "victoria",
+      "type": "integer",
+      "description": "Count of persons in Victoria reporting the condition."
+    },
+    {
+      "name": "queensland",
+      "type": "integer",
+      "description": "Count of persons in Queensland reporting the condition."
+    },
+    {
+      "name": "south_australia",
+      "type": "integer",
+      "description": "Count of persons in South Australia reporting the condition."
+    },
+    {
+      "name": "western_australia",
+      "type": "integer",
+      "description": "Count of persons in Western Australia reporting the condition."
+    },
+    {
+      "name": "tasmania",
+      "type": "integer",
+      "description": "Count of persons in Tasmania reporting the condition."
+    },
+    {
+      "name": "northern_territory",
+      "type": "integer",
+      "description": "Count of persons in the Northern Territory reporting the condition."
+    },
+    {
+      "name": "capital_territory",
+      "type": "integer",
+      "description": "Count of persons in the Capital Territory reporting the condition."
+    },
+    {
+      "name": "total_count",
+      "type": "integer",
+      "description": "Total count of persons across all regions reporting the condition."
+    }
+  ],
+  "data": [
+    {
+      "long_term_health_condition": "Arthritis",
+      "new_south_wales": 679359,
+      "victoria": 518633,
+      "queensland": 456139,
+      "south_australia": 179605,
+      "western_australia": 202847,
+      "tasmania": 68070,
+      "northern_territory": 10374,
+      "capital_territory": 35106,
+      "total_count": 2150396
+    },
+    {
+      "long_term_health_condition": "Asthma",
+      "new_south_wales": 625835,
+      "victoria": 543047,
+      "queensland": 438183,
+      "south_australia": 159294,
+      "western_australia": 195300,
+      "tasmania": 52171,
+      "northern_territory": 13085,
+      "capital_territory": 40839,
+      "total_count": 2068020
+    },
+    {
+      "long_term_health_condition": "Cancer (including remission)",
+      "new_south_wales": 227981,
+      "victoria": 179326,
+      "queensland": 159887,
+      "south_australia": 57008,
+      "western_australia": 72864,
+      "tasmania": 19104,
+      "northern_territory": 3698,
+      "capital_territory": 12182,
+      "total_count": 732152
+    },
+    {
+      "long_term_health_condition": "Dementia (including Alzheimer’s)",
+      "new_south_wales": 62706,
+      "victoria": 45946,
+      "queensland": 37680,
+      "south_australia": 17330,
+      "western_australia": 17612,
+      "tasmania": 4395,
+      "northern_territory": 835,
+      "capital_territory": 2634,
+      "total_count": 189162
+    },
+    {
+      "long_term_health_condition": "Diabetes (excluding gestational diabetes)",
+      "new_south_wales": 388747,
+      "victoria": 303371,
+      "queensland": 231642,
+      "south_australia": 101606,
+      "western_australia": 117182,
+      "tasmania": 28394,
+      "northern_territory": 10093,
+      "capital_territory": 17501,
+      "total_count": 1198721
+    },
+    {
+      "long_term_health_condition": "Heart disease (including heart attack or angina)",
+      "new_south_wales": 316840,
+      "victoria": 243130,
+      "queensland": 215678,
+      "south_australia": 82321,
+      "western_australia": 94523,
+      "tasmania": 25185,
+      "northern_territory": 7151,
+      "capital_territory": 14098,
+      "total_count": 999096
+    },
+    {
+      "long_term_health_condition": "Kidney disease",
+      "new_south_wales": 77272,
+      "victoria": 57437,
+      "queensland": 47737,
+      "south_australia": 16153,
+      "western_australia": 20352,
+      "tasmania": 6326,
+      "northern_territory": 2264,
+      "capital_territory": 4194,
+      "total_count": 231777
+    },
+    {
+      "long_term_health_condition": "Lung condition (including COPD or emphysema)(e)",
+      "new_south_wales": 135909,
+      "victoria": 97270,
+      "queensland": 106989,
+      "south_australia": 36054,
+      "western_australia": 42087,
+      "tasmania": 14027,
+      "northern_territory": 2716,
+      "capital_territory": 5998,
+      "total_count": 441109
+    },
+    {
+      "long_term_health_condition": "Mental health condition (including depression or anxiety)",
+      "new_south_wales": 646412,
+      "victoria": 571150,
+      "queensland": 496662,
+      "south_australia": 175203,
+      "western_australia": 220581,
+      "tasmania": 63861,
+      "northern_territory": 11979,
+      "capital_territory": 45517,
+      "total_count": 2231543
+    },
+    {
+      "long_term_health_condition": "Stroke",
+      "new_south_wales": 73269,
+      "victoria": 59844,
+      "queensland": 49769,
+      "south_australia": 18763,
+      "western_australia": 21573,
+      "tasmania": 6836,
+      "northern_territory": 1272,
+      "capital_territory": 3237,
+      "total_count": 234609
+    },
+    {
+      "long_term_health_condition": "Any other long-term health condition(s)(f)",
+      "new_south_wales": 626827,
+      "victoria": 519110,
+      "queensland": 434963,
+      "south_australia": 156640,
+      "western_australia": 196431,
+      "tasmania": 49458,
+      "northern_territory": 14099,
+      "capital_territory": 44128,
+      "total_count": 2041929
+    },
+    {
+      "long_term_health_condition": "No long-term health condition(s)",
+      "new_south_wales": 4925422,
+      "victoria": 3969506,
+      "queensland": 3001387,
+      "south_australia": 1032317,
+      "western_australia": 1629249,
+      "tasmania": 305093,
+      "northern_territory": 149823,
+      "capital_territory": 277197,
+      "total_count": 15292718
+    },
+    {
+      "long_term_health_condition": "Not stated",
+      "new_south_wales": 654833,
+      "victoria": 492709,
+      "queensland": 459562,
+      "south_australia": 123383,
+      "western_australia": 235428,
+      "tasmania": 43649,
+      "northern_territory": 28397,
+      "capital_territory": 27308,
+      "total_count": 2066251
+    },
+    {
+      "long_term_health_condition": "Total persons(c)",
+      "new_south_wales": 8072163,
+      "victoria": 6503491,
+      "queensland": 5156138,
+      "south_australia": 1781516,
+      "western_australia": 2660026,
+      "tasmania": 557571,
+      "northern_territory": 232605,
+      "capital_territory": 454499,
+      "total_count": 25422788
+    }
+  ]
+}

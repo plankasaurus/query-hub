@@ -19,112 +19,150 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const audioChunksRef = useRef<Blob[]>([])
     const recognitionRef = useRef<any>(null)
+    const isInitializedRef = useRef(false)
+    const currentTranscriptRef = useRef('')
 
     useEffect(() => {
         // Check if browser supports speech recognition
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             setIsSupported(true)
-            // Initialize speech recognition
-            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-            recognitionRef.current = new SpeechRecognition()
-            recognitionRef.current.continuous = true
-            recognitionRef.current.interimResults = true
-            recognitionRef.current.lang = 'en-US'
+            initializeSpeechRecognition()
+        }
+    }, []) // Only run once on mount
 
-            recognitionRef.current.onresult = (event: any) => {
-                let finalTranscript = ''
-                let interimTranscript = ''
+    const initializeSpeechRecognition = () => {
+        if (isInitializedRef.current) return
 
-                for (let i = event.resultIndex; i < event.results.length; i++) {
-                    const transcript = event.results[i][0].transcript
-                    if (event.results[i].isFinal) {
-                        finalTranscript += transcript
-                    } else {
-                        interimTranscript += transcript
-                    }
-                }
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+        recognitionRef.current = new SpeechRecognition()
+        recognitionRef.current.continuous = true
+        recognitionRef.current.interimResults = true
+        recognitionRef.current.lang = 'en-US'
 
-                // Accumulate the transcript and update the input field in real-time
-                if (finalTranscript) {
-                    const newTranscript = currentTranscript + ' ' + finalTranscript
-                    setCurrentTranscript(newTranscript)
-                    onTranscriptUpdate(newTranscript.trim())
+        recognitionRef.current.onresult = (event: any) => {
+            let finalTranscript = ''
+            let interimTranscript = ''
+
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                const transcript = event.results[i][0].transcript
+                if (event.results[i].isFinal) {
+                    finalTranscript += transcript
+                } else {
+                    interimTranscript += transcript
                 }
             }
 
-            recognitionRef.current.onerror = (event: any) => {
-                console.error('Speech recognition error:', event.error)
-                let errorMessage = 'Speech recognition error occurred'
+            // Accumulate the transcript and update the input field in real-time
+            if (finalTranscript) {
+                const newTranscript = currentTranscriptRef.current + ' ' + finalTranscript
+                currentTranscriptRef.current = newTranscript
+                setCurrentTranscript(newTranscript)
+                onTranscriptUpdate(newTranscript.trim())
+            }
+        }
 
-                switch (event.error) {
-                    case 'no-speech':
-                        errorMessage = 'No speech detected. Please try speaking again.'
-                        break
-                    case 'audio-capture':
-                        errorMessage = 'Microphone access denied. Please check your microphone permissions.'
-                        break
-                    case 'not-allowed':
-                        errorMessage = 'Microphone access denied. Please allow microphone access and try again.'
-                        break
-                    case 'network':
-                        errorMessage = 'Network error. Please check your internet connection.'
-                        break
-                    case 'service-not-allowed':
-                        errorMessage = 'Speech recognition service not available.'
-                        break
-                }
+        recognitionRef.current.onerror = (event: any) => {
+            console.error('Speech recognition error:', event.error)
+            let errorMessage = 'Speech recognition error occurred'
 
-                // Show error to user (you could add a toast notification here)
-                console.warn(errorMessage)
-                stopRecording()
+            switch (event.error) {
+                case 'no-speech':
+                    errorMessage = 'No speech detected. Please try speaking again.'
+                    break
+                case 'audio-capture':
+                    errorMessage = 'Microphone access denied. Please check your microphone permissions.'
+                    break
+                case 'not-allowed':
+                    errorMessage = 'Microphone access denied. Please allow microphone access and try again.'
+                    break
+                case 'network':
+                    errorMessage = 'Network error. Please check your internet connection.'
+                    break
+                case 'service-not-allowed':
+                    errorMessage = 'Speech recognition service not available.'
+                    break
             }
 
-            recognitionRef.current.onend = () => {
-                if (isRecording && !isPaused) {
-                    // Restart if we're still supposed to be recording
+            // Show error to user (you could add a toast notification here)
+            console.warn(errorMessage)
+            stopRecording()
+        }
+
+        recognitionRef.current.onend = () => {
+            if (isRecording && !isPaused) {
+                // Restart if we're still supposed to be recording
+                try {
                     recognitionRef.current?.start()
+                } catch (error) {
+                    console.error('Failed to restart speech recognition:', error)
+                    stopRecording()
                 }
             }
         }
-    }, [isRecording, isPaused])
+
+        isInitializedRef.current = true
+    }
 
     const startRecording = async () => {
         try {
             if (isSupported && recognitionRef.current) {
-                setCurrentTranscript('') // Reset transcript when starting new recording
-                recognitionRef.current.start()
+                // Reset transcript when starting new recording
+                setCurrentTranscript('')
+                currentTranscriptRef.current = ''
+
+                // Ensure the recognition instance is ready
+                if (recognitionRef.current.state === 'inactive') {
+                    recognitionRef.current.start()
+                }
+
                 onRecordingChange(true)
                 setIsPaused(false)
             }
         } catch (error) {
             console.error('Failed to start recording:', error)
+            // If there's an error, try to reinitialize
+            isInitializedRef.current = false
+            initializeSpeechRecognition()
         }
     }
 
     const stopRecording = () => {
         if (recognitionRef.current) {
-            recognitionRef.current.stop()
-            // Send the complete accumulated transcript
-            if (currentTranscript.trim()) {
-                onTranscript(currentTranscript.trim())
+            try {
+                recognitionRef.current.stop()
+                // Send the complete accumulated transcript
+                if (currentTranscriptRef.current.trim()) {
+                    onTranscript(currentTranscriptRef.current.trim())
+                }
+            } catch (error) {
+                console.error('Error stopping recording:', error)
             }
         }
         onRecordingChange(false)
         setIsPaused(false)
         setCurrentTranscript('') // Reset transcript
+        currentTranscriptRef.current = ''
     }
 
     const pauseRecording = () => {
         if (recognitionRef.current) {
-            recognitionRef.current.stop()
-            setIsPaused(true)
+            try {
+                recognitionRef.current.stop()
+                setIsPaused(true)
+            } catch (error) {
+                console.error('Error pausing recording:', error)
+            }
         }
     }
 
     const resumeRecording = () => {
         if (recognitionRef.current) {
-            recognitionRef.current.start()
-            setIsPaused(false)
+            try {
+                recognitionRef.current.start()
+                setIsPaused(false)
+            } catch (error) {
+                console.error('Error resuming recording:', error)
+            }
         }
     }
 
@@ -155,18 +193,7 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
                 </Button>
             ) : (
                 <div className="flex items-center space-x-2">
-                    <Button
-                        variant="outline"
-                        onClick={isPaused ? resumeRecording : pauseRecording}
-                        className={`px-3 ${isPaused
-                            ? 'bg-yellow-50 text-yellow-600 border-yellow-200 dark:bg-yellow-900/20 dark:text-yellow-400 dark:border-yellow-800'
-                            : 'bg-blue-50 text-blue-600 border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800'
-                            }`}
-                        title={isPaused ? "Resume recording" : "Pause recording"}
-                        aria-label={isPaused ? "Resume recording" : "Pause recording"}
-                    >
-                        {isPaused ? <Mic className="h-4 w-4" /> : <MicOff className="h-4 w-4" />}
-                    </Button>
+
                     <Button
                         variant="outline"
                         onClick={stopRecording}
@@ -193,3 +220,4 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
         </div>
     )
 }
+
