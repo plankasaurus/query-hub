@@ -7,54 +7,62 @@ import { Button } from '@/components/ui/button'
 import { BarChart3, Upload, Database, Download } from 'lucide-react'
 import Link from 'next/link'
 
-// Mock data for demonstration - in real app this would come from query results or API
+// Realistic ABS data for demonstration
 const mockData = [
-    { name: 'Engineering', count: 45, avgSalary: 85000, totalBudget: 3825000 },
-    { name: 'Marketing', count: 32, avgSalary: 72000, totalBudget: 2304000 },
-    { name: 'Sales', count: 28, avgSalary: 78000, totalBudget: 2184000 },
-    { name: 'HR', count: 15, avgSalary: 65000, totalBudget: 975000 },
-    { name: 'Finance', count: 22, avgSalary: 82000, totalBudget: 1804000 },
-    { name: 'Operations', count: 18, avgSalary: 70000, totalBudget: 1260000 },
+    { state: 'New South Wales', population: 8166000, median_age: 38.4, median_income: 85000, unemployment_rate: 4.2 },
+    { state: 'Victoria', population: 6681000, median_age: 37.8, median_income: 82000, unemployment_rate: 4.1 },
+    { state: 'Queensland', population: 5265000, median_age: 37.2, median_income: 78000, unemployment_rate: 4.5 },
+    { state: 'Western Australia', population: 2752000, median_age: 36.9, median_income: 88000, unemployment_rate: 3.8 },
+    { state: 'South Australia', population: 1771000, median_age: 40.1, median_income: 75000, unemployment_rate: 4.3 },
+    { state: 'Tasmania', population: 541000, median_age: 42.3, median_income: 68000, unemployment_rate: 4.7 },
+    { state: 'ACT', population: 456000, median_age: 35.7, median_income: 95000, unemployment_rate: 3.2 },
+    { state: 'Northern Territory', population: 249000, median_age: 32.8, median_income: 72000, unemployment_rate: 4.9 },
 ]
 
-const mockColumns = ['name', 'count', 'avgSalary', 'totalBudget']
+const mockColumns = ['state', 'population', 'median_age', 'median_income', 'unemployment_rate']
 
 export default function ChartsPage() {
-    const [selectedDataset, setSelectedDataset] = useState('department-stats')
+    const [selectedDataset, setSelectedDataset] = useState('state-stats')
 
     const datasets = [
         {
-            id: 'department-stats',
-            name: 'Department Statistics',
-            description: 'Employee count, average salary, and total budget by department',
+            id: 'state-stats',
+            name: 'State Overview',
+            description: 'Population, demographics, and economic indicators by state/territory',
             data: mockData,
             columns: mockColumns
         },
         {
-            id: 'salary-distribution',
-            name: 'Salary Distribution',
-            description: 'Salary ranges and employee distribution',
+            id: 'population-distribution',
+            name: 'Population Spread',
+            description: 'How Australia\'s population is distributed across states and territories',
             data: [
-                { range: '50k-60k', count: 12, percentage: 15 },
-                { range: '60k-70k', count: 25, percentage: 31 },
-                { range: '70k-80k', count: 28, percentage: 35 },
-                { range: '80k-90k', count: 15, percentage: 19 }
+                { state: 'NSW', population: 8166000, percentage: 32.1 },
+                { state: 'VIC', population: 6681000, percentage: 26.3 },
+                { state: 'QLD', population: 5265000, percentage: 20.7 },
+                { state: 'WA', population: 2752000, percentage: 10.8 },
+                { state: 'SA', population: 1771000, percentage: 7.0 },
+                { state: 'TAS', population: 541000, percentage: 2.1 },
+                { state: 'ACT', population: 456000, percentage: 1.8 },
+                { state: 'NT', population: 249000, percentage: 1.0 }
             ],
-            columns: ['range', 'count', 'percentage']
+            columns: ['state', 'population', 'percentage']
         },
         {
-            id: 'city-breakdown',
-            name: 'City Breakdown',
-            description: 'Employee distribution across different cities',
+            id: 'economic-indicators',
+            name: 'Economic Health',
+            description: 'Income levels and employment rates across different states',
             data: [
-                { city: 'New York', count: 35, percentage: 25 },
-                { city: 'San Francisco', count: 28, percentage: 20 },
-                { city: 'Chicago', count: 22, percentage: 16 },
-                { city: 'Boston', count: 18, percentage: 13 },
-                { city: 'Seattle', count: 15, percentage: 11 },
-                { city: 'Other', count: 20, percentage: 15 }
+                { state: 'ACT', median_income: 95000, unemployment_rate: 3.2, economic_rating: 'Excellent' },
+                { state: 'WA', median_income: 88000, unemployment_rate: 3.8, economic_rating: 'Very Good' },
+                { state: 'NSW', median_income: 85000, unemployment_rate: 4.2, economic_rating: 'Good' },
+                { state: 'VIC', median_income: 82000, unemployment_rate: 4.1, economic_rating: 'Good' },
+                { state: 'QLD', median_income: 78000, unemployment_rate: 4.5, economic_rating: 'Good' },
+                { state: 'SA', median_income: 75000, unemployment_rate: 4.3, economic_rating: 'Fair' },
+                { state: 'NT', median_income: 72000, unemployment_rate: 4.9, economic_rating: 'Fair' },
+                { state: 'TAS', median_income: 68000, unemployment_rate: 4.7, economic_rating: 'Fair' }
             ],
-            columns: ['city', 'count', 'percentage']
+            columns: ['state', 'median_income', 'unemployment_rate', 'economic_rating']
         }
     ]
 
@@ -63,9 +71,9 @@ export default function ChartsPage() {
     return (
         <div className="space-y-6">
             <div className="text-center space-y-4">
-                <h1 className="text-3xl font-bold text-primary">Data Visualization</h1>
+                <h1 className="text-3xl font-bold text-abs-orange">Turn Numbers Into Stories</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Transform your data into interactive charts and graphs. Choose from multiple chart types and customize your visualizations.
+                    Charts that actually make sense. See patterns, spot trends, and understand what your data is really telling you.
                 </p>
             </div>
 
@@ -74,7 +82,7 @@ export default function ChartsPage() {
                 <div className="space-y-4">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Datasets</CardTitle>
+                            <CardTitle className="text-abs-blue">Pick your dataset</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-3">
                             {datasets.map((dataset) => (
@@ -84,8 +92,8 @@ export default function ChartsPage() {
                                     className={`
                     w-full text-left p-3 rounded-lg border transition-colors
                     ${selectedDataset === dataset.id
-                                            ? 'border-primary bg-primary/5'
-                                            : 'border-muted hover:border-primary/50'
+                                            ? 'border-abs-blue bg-abs-blue/5'
+                                            : 'border-muted hover:border-abs-blue/50'
                                         }
                   `}
                                 >
@@ -101,19 +109,19 @@ export default function ChartsPage() {
                     {/* Quick Actions */}
                     <Card>
                         <CardHeader>
-                            <CardTitle>Quick Actions</CardTitle>
+                            <CardTitle className="text-abs-green">What next?</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-3">
                             <Link href="/upload">
-                                <Button variant="outline" className="w-full justify-start">
+                                <Button variant="outline" className="w-full justify-start border-abs-blue text-abs-blue hover:bg-abs-blue/10">
                                     <Upload className="h-4 w-4 mr-2" />
-                                    Upload New Data
+                                    Add more data
                                 </Button>
                             </Link>
                             <Link href="/query-builder">
-                                <Button variant="outline" className="w-full justify-start">
+                                <Button variant="outline" className="w-full justify-start border-abs-green text-abs-green hover:bg-abs-green/10">
                                     <Database className="h-4 w-4 mr-2" />
-                                    Build Query
+                                    Build a query
                                 </Button>
                             </Link>
                         </CardContent>
@@ -132,47 +140,47 @@ export default function ChartsPage() {
             {/* Chart Types Guide */}
             <Card>
                 <CardHeader>
-                    <CardTitle>Chart Types Guide</CardTitle>
+                    <CardTitle className="text-abs-dark-blue">Chart types explained</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div className="text-center space-y-2">
-                            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto">
-                                <BarChart3 className="h-8 w-8 text-blue-600" />
+                            <div className="w-16 h-16 bg-abs-blue/10 rounded-lg flex items-center justify-center mx-auto">
+                                <BarChart3 className="h-8 w-8 text-abs-blue" />
                             </div>
-                            <h3 className="font-semibold">Bar Charts</h3>
+                            <h3 className="font-semibold text-abs-blue">Bar Charts</h3>
                             <p className="text-sm text-muted-foreground">
-                                Compare categories with rectangular bars
+                                Compare states, territories, or categories side by side
                             </p>
                         </div>
 
                         <div className="text-center space-y-2">
-                            <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto">
-                                <BarChart3 className="h-8 w-8 text-green-600" />
+                            <div className="w-16 h-16 bg-abs-green/10 rounded-lg flex items-center justify-center mx-auto">
+                                <BarChart3 className="h-8 w-8 text-abs-green" />
                             </div>
-                            <h3 className="font-semibold">Line Charts</h3>
+                            <h3 className="font-semibold text-abs-green">Line Charts</h3>
                             <p className="text-sm text-muted-foreground">
-                                Show trends and changes over time
+                                Watch how things change over time - perfect for trends
                             </p>
                         </div>
 
                         <div className="text-center space-y-2">
-                            <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto">
-                                <BarChart3 className="h-8 w-8 text-purple-600" />
+                            <div className="w-16 h-16 bg-abs-orange/10 rounded-lg flex items-center justify-center mx-auto">
+                                <BarChart3 className="h-8 w-8 text-abs-orange" />
                             </div>
-                            <h3 className="font-semibold">Pie Charts</h3>
+                            <h3 className="font-semibold text-abs-orange">Pie Charts</h3>
                             <p className="text-sm text-muted-foreground">
-                                Display parts of a whole as percentages
+                                See how the whole picture breaks down into parts
                             </p>
                         </div>
 
                         <div className="text-center space-y-2">
-                            <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto">
-                                <BarChart3 className="h-8 w-8 text-orange-600" />
+                            <div className="w-16 h-16 bg-abs-red/10 rounded-lg flex items-center justify-center mx-auto">
+                                <BarChart3 className="h-8 w-8 text-abs-red" />
                             </div>
-                            <h3 className="font-semibold">Area Charts</h3>
+                            <h3 className="font-semibold text-abs-red">Area Charts</h3>
                             <p className="text-sm text-muted-foreground">
-                                Show volume and cumulative data
+                                Show volume and how things stack up over time
                             </p>
                         </div>
                     </div>

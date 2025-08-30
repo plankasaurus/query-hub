@@ -7,42 +7,42 @@ import { FileText, Calendar, Hash, Database, Eye, Trash2, Download, BarChart3 } 
 import { formatBytes, formatDate } from '@/lib/utils'
 import Link from 'next/link'
 
-// Mock data for demonstration - in real app this would come from API
+// Realistic ABS datasets for demonstration
 const mockFiles = [
     {
         id: 'file_1',
-        name: 'employee_data.csv',
+        name: 'abs_population_2023.csv',
         size: 245760,
         uploadTime: new Date('2024-01-15T10:30:00'),
         rowCount: 1250,
-        columns: ['id', 'name', 'email', 'department', 'salary', 'hire_date'],
+        columns: ['state', 'population', 'median_age', 'growth_rate', 'survey_date'],
         status: 'processed'
     },
     {
         id: 'file_2',
-        name: 'sales_data.csv',
+        name: 'abs_economic_indicators.csv',
         size: 512000,
         uploadTime: new Date('2024-01-14T14:20:00'),
         rowCount: 3200,
-        columns: ['order_id', 'customer_id', 'product_id', 'quantity', 'price', 'date'],
+        columns: ['state', 'gdp', 'unemployment_rate', 'median_income', 'inflation_rate', 'date'],
         status: 'processed'
     },
     {
         id: 'file_3',
-        name: 'customer_feedback.csv',
+        name: 'abs_demographics_2023.csv',
         size: 128000,
         uploadTime: new Date('2024-01-13T09:15:00'),
         rowCount: 850,
-        columns: ['customer_id', 'rating', 'comment', 'date', 'category'],
+        columns: ['age_group', 'gender', 'state', 'count', 'percentage', 'survey_date'],
         status: 'processing'
     },
     {
         id: 'file_4',
-        name: 'inventory_data.csv',
+        name: 'abs_employment_survey.csv',
         size: 89000,
         uploadTime: new Date('2024-01-12T16:45:00'),
         rowCount: 450,
-        columns: ['product_id', 'name', 'category', 'stock', 'price'],
+        columns: ['industry', 'state', 'employment_count', 'growth_rate', 'average_wage'],
         status: 'processed'
     }
 ]
@@ -61,11 +61,11 @@ export default function FilesPage() {
     const getStatusColor = (status: string) => {
         switch (status) {
             case 'processed':
-                return 'text-green-600 bg-green-100'
+                return 'text-abs-green bg-abs-green/10'
             case 'processing':
-                return 'text-yellow-600 bg-yellow-100'
+                return 'text-abs-orange bg-abs-orange/10'
             case 'error':
-                return 'text-red-600 bg-red-100'
+                return 'text-abs-red bg-abs-red/10'
             default:
                 return 'text-gray-600 bg-gray-100'
         }
@@ -76,7 +76,7 @@ export default function FilesPage() {
             case 'processed':
                 return <Database className="h-4 w-4" />
             case 'processing':
-                return <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-600"></div>
+                return <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-abs-orange"></div>
             case 'error':
                 return <Database className="h-4 w-4" />
             default:
@@ -87,9 +87,9 @@ export default function FilesPage() {
     return (
         <div className="space-y-6">
             <div className="text-center space-y-4">
-                <h1 className="text-3xl font-bold text-primary">File Management</h1>
+                <h1 className="text-3xl font-bold text-abs-red">Your Data Library</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Browse uploaded CSV files, view metadata, and manage your data sources.
+                    All your ABS datasets in one place. Upload new ones, explore what you have, and keep everything organized.
                 </p>
             </div>
 
@@ -99,11 +99,11 @@ export default function FilesPage() {
                     <Card>
                         <CardHeader>
                             <CardTitle className="flex items-center justify-between">
-                                <span>Uploaded Files</span>
+                                <span className="text-abs-blue">Your datasets</span>
                                 <Link href="/upload">
-                                    <Button size="sm">
+                                    <Button size="sm" className="bg-abs-blue hover:bg-abs-blue/90">
                                         <FileText className="h-4 w-4 mr-2" />
-                                        Upload New
+                                        Add dataset
                                     </Button>
                                 </Link>
                             </CardTitle>
@@ -112,9 +112,9 @@ export default function FilesPage() {
                             {files.length === 0 ? (
                                 <div className="text-center py-8 text-muted-foreground">
                                     <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                                    <p>No files uploaded yet.</p>
+                                    <p>No datasets yet. Time to add your first one.</p>
                                     <Link href="/upload">
-                                        <Button className="mt-4">Upload Your First File</Button>
+                                        <Button className="mt-4 bg-abs-blue hover:bg-abs-blue/90">Upload your first dataset</Button>
                                     </Link>
                                 </div>
                             ) : (
@@ -125,8 +125,8 @@ export default function FilesPage() {
                                             className={`
                         p-4 border rounded-lg cursor-pointer transition-colors
                         ${selectedFile === file.id
-                                                    ? 'border-primary bg-primary/5'
-                                                    : 'border-muted hover:border-primary/50'
+                                                    ? 'border-abs-blue bg-abs-blue/5'
+                                                    : 'border-muted hover:border-abs-blue/50'
                                                 }
                       `}
                                             onClick={() => setSelectedFile(file.id)}
@@ -134,7 +134,7 @@ export default function FilesPage() {
                                             <div className="flex items-start justify-between">
                                                 <div className="flex-1">
                                                     <div className="flex items-center space-x-3 mb-2">
-                                                        <FileText className="h-5 w-5 text-primary" />
+                                                        <FileText className="h-5 w-5 text-abs-blue" />
                                                         <h3 className="font-medium">{file.name}</h3>
                                                         <span className={`
                               px-2 py-1 rounded-full text-xs font-medium flex items-center space-x-1
@@ -196,7 +196,7 @@ export default function FilesPage() {
                     {selectedFile ? (
                         <Card>
                             <CardHeader>
-                                <CardTitle>File Details</CardTitle>
+                                <CardTitle className="text-abs-dark-blue">Dataset details</CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
                                 {(() => {
@@ -206,7 +206,7 @@ export default function FilesPage() {
                                     return (
                                         <>
                                             <div>
-                                                <h3 className="font-medium mb-2">Columns</h3>
+                                                <h3 className="font-medium mb-2">What's inside</h3>
                                                 <div className="space-y-1">
                                                     {file.columns.map((column, index) => (
                                                         <div key={index} className="text-sm bg-muted px-2 py-1 rounded">
@@ -218,30 +218,30 @@ export default function FilesPage() {
 
                                             <div className="space-y-3">
                                                 <div className="flex justify-between text-sm">
-                                                    <span>Total Rows:</span>
+                                                    <span>Total rows:</span>
                                                     <span className="font-medium">{file.rowCount.toLocaleString()}</span>
                                                 </div>
                                                 <div className="flex justify-between text-sm">
-                                                    <span>File Size:</span>
+                                                    <span>File size:</span>
                                                     <span className="font-medium">{formatBytes(file.size)}</span>
                                                 </div>
                                                 <div className="flex justify-between text-sm">
-                                                    <span>Upload Date:</span>
+                                                    <span>Added:</span>
                                                     <span className="font-medium">{formatDate(file.uploadTime)}</span>
                                                 </div>
                                             </div>
 
                                             <div className="flex space-x-2">
                                                 <Link href="/query-builder" className="flex-1">
-                                                    <Button className="w-full" size="sm">
+                                                    <Button className="w-full bg-abs-green hover:bg-abs-green/90" size="sm">
                                                         <Database className="h-4 w-4 mr-2" />
-                                                        Query Data
+                                                        Query it
                                                     </Button>
                                                 </Link>
                                                 <Link href="/charts" className="flex-1">
-                                                    <Button variant="outline" className="w-full" size="sm">
+                                                    <Button variant="outline" className="w-full border-abs-orange text-abs-orange hover:bg-abs-orange/10" size="sm">
                                                         <BarChart3 className="h-4 w-4 mr-2" />
-                                                        Visualize
+                                                        Chart it
                                                     </Button>
                                                 </Link>
                                             </div>
@@ -253,12 +253,12 @@ export default function FilesPage() {
                     ) : (
                         <Card>
                             <CardHeader>
-                                <CardTitle>File Details</CardTitle>
+                                <CardTitle className="text-abs-dark-blue">Dataset details</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <div className="text-center py-8 text-muted-foreground">
                                     <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                                    <p>Select a file to view details</p>
+                                    <p>Pick a dataset to see what's inside</p>
                                 </div>
                             </CardContent>
                         </Card>
@@ -267,27 +267,27 @@ export default function FilesPage() {
                     {/* Statistics */}
                     <Card>
                         <CardHeader>
-                            <CardTitle>Statistics</CardTitle>
+                            <CardTitle className="text-abs-green">Your collection</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-3">
                             <div className="flex justify-between text-sm">
-                                <span>Total Files:</span>
+                                <span>Total datasets:</span>
                                 <span className="font-medium">{files.length}</span>
                             </div>
                             <div className="flex justify-between text-sm">
-                                <span>Total Rows:</span>
+                                <span>Total records:</span>
                                 <span className="font-medium">
                                     {files.reduce((sum, f) => sum + f.rowCount, 0).toLocaleString()}
                                 </span>
                             </div>
                             <div className="flex justify-between text-sm">
-                                <span>Total Size:</span>
+                                <span>Storage used:</span>
                                 <span className="font-medium">
                                     {formatBytes(files.reduce((sum, f) => sum + f.size, 0))}
                                 </span>
                             </div>
                             <div className="flex justify-between text-sm">
-                                <span>Processed:</span>
+                                <span>Ready to use:</span>
                                 <span className="font-medium">
                                     {files.filter(f => f.status === 'processed').length}
                                 </span>
