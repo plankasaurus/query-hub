@@ -14,14 +14,19 @@ interface QueryBuilderProps {
     onVoiceInput: (transcript: string) => void
     isVoiceInput: boolean
     onTranscriptUpdate: (transcript: string) => void
+    onStopRecording?: () => void
 }
 
-export function QueryBuilder({ onQueryChange, onExecute, query, onVoiceInput, isVoiceInput, onTranscriptUpdate }: QueryBuilderProps) {
+export function QueryBuilder({ onQueryChange, onExecute, query, onVoiceInput, isVoiceInput, onTranscriptUpdate, onStopRecording }: QueryBuilderProps) {
     const [isRecording, setIsRecording] = useState(false)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         if (query.trim()) {
+            // Stop recording if it's active
+            if (isRecording && onStopRecording) {
+                onStopRecording()
+            }
             onExecute()
         }
     }

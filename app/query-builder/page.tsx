@@ -74,7 +74,7 @@ export default function QueryBuilderPage() {
     const loadQueryFromHistory = (historyItem: { query: string, results: DataJoinOut[], timestamp: Date }) => {
         setQuery(historyItem.query)
         setQueryResults(historyItem.results)
-        setExecutionTime(historyItem.timestamp.getTime())
+        setExecutionTime(null) // Reset execution time when loading from history
     }
 
     const exportResults = () => {
