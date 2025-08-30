@@ -61,21 +61,36 @@ async function query() {
         const awaiter = async () => {
             try {
                 const analysis = await generateWithParts(
-                    `You're an expert data analyst. Analyze the dataset and provide a comprehensive answer to the user's question. Include relevant insights, trends, and data points. Do not make up information, only based on answer on what is in the dataset. Format your response clearly with sections and bullet points where appropriate.
+                    `You are an expert data analyst. Your task is to analyze the provided dataset to answer the user's question.
                 
-                Output the data in a strctured JSON response that matches a relational database
-
-                {
-                    result: string the result of the user query,
-                    overview: string an overview of the analysis,    
-                    analysis: {details of your analysis here},
-                    data: [the raw data used to drive your analysis] 
-                }
-                `,
+                    **Instructions:**
+                    1.  Provide a comprehensive analysis based ONLY on the data provided. Do not invent or infer information that isn't present in the dataset.
+                    2.  Identify relevant insights, trends, and key data points to support your answer.
+                    3.  Your entire output must be a single, valid JSON object. Do not include any text before or after the JSON.
+                    4.  Within the JSON string values (like 'result' and 'overview'), you may use Markdown for clear formatting (e.g., bullet points with '*').
+                
+                    **JSON Output Structure:**
+                    {
+                        "result": "A concise, direct answer to the user's query.",
+                        "overview": "A high-level summary of the analysis performed and the main findings.",
+                        "analysis": {
+                            "key_findings": [
+                                "A bulleted list of the most important insights discovered.",
+                                "Finding 2.",
+                                "Finding 3."
+                            ],
+                            "trends": [
+                                "A bulleted list of any notable trends observed in the data."
+                            ]
+                        },
+                        "data_used": [
+                            // The specific subset of raw data points used to drive your analysis
+                        ]
+                    }
+                    `,
                     [
-                        { text: userQuery },
-                        createPartFromText(dataset)
-
+                        { text: `User Question: ${userQuery}` },
+                        { text: `Dataset: ${createPartFromText(dataset)}` }
                     ]
                 );
                 return analysis;
