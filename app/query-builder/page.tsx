@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { QueryBuilder } from '@/components/query-builder'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Database, BarChart3, Download, MessageSquare, FileText, BarChart, ChevronDown, History } from 'lucide-react'
+import { Database, BarChart3, Download, MessageSquare, FileText, BarChart, ChevronDown, History, Mic } from 'lucide-react'
 import Link from 'next/link'
 import { DataJoinOut } from '@/lib/types'
 import {
@@ -20,9 +20,17 @@ export default function QueryBuilderPage() {
     const [isExecuting, setIsExecuting] = useState(false)
     const [executionTime, setExecutionTime] = useState<number | null>(null)
     const [queryHistory, setQueryHistory] = useState<Array<{ query: string, results: DataJoinOut[], timestamp: Date }>>([])
+    const [isVoiceInput, setIsVoiceInput] = useState(false)
 
     const handleQueryChange = (newQuery: string) => {
         setQuery(newQuery)
+    }
+
+    const handleVoiceInput = (transcript: string) => {
+        setQuery(transcript)
+        setIsVoiceInput(true)
+        // Reset the flag after a short delay
+        setTimeout(() => setIsVoiceInput(false), 3000)
     }
 
     const executeQuery = async () => {
@@ -227,6 +235,9 @@ export default function QueryBuilderPage() {
                         onQueryChange={handleQueryChange}
                         onExecute={executeQuery}
                         query={query}
+                        onVoiceInput={handleVoiceInput}
+                        isVoiceInput={isVoiceInput}
+                        onTranscriptUpdate={handleQueryChange}
                     />
                 </div>
 
@@ -253,12 +264,14 @@ export default function QueryBuilderPage() {
                                     <Download className="h-4 w-4 mr-2" />
                                     Export Data
                                 </Button>
-                                <Link href="/charts">
-                                    <Button>
-                                        <BarChart3 className="h-4 w-4 mr-2" />
-                                        Visualize
-                                    </Button>
-                                </Link>
+                                <Button onClick={() => {
+                                    // Store query results in localStorage for charts page
+                                    localStorage.setItem('queryResults', JSON.stringify(queryResults))
+                                    window.location.href = '/charts'
+                                }}>
+                                    <BarChart3 className="h-4 w-4 mr-2" />
+                                    Visualize
+                                </Button>
                             </div>
                         </div>
 

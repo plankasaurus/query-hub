@@ -22,6 +22,36 @@ export function ChartViewer({ data, columns }: ChartViewerProps) {
     const [yAxis, setYAxis] = useState<string>('')
     const [pieField, setPieField] = useState<string>('')
 
+    // Validate data structure and provide helpful error messages
+    const validateDataStructure = () => {
+        if (!data || !Array.isArray(data) || data.length === 0) {
+            return { isValid: false, message: 'No data available' }
+        }
+
+        const firstItem = data[0]
+        if (!firstItem || typeof firstItem !== 'object') {
+            return { isValid: false, message: 'Data items must be objects' }
+        }
+
+        const keys = Object.keys(firstItem)
+        if (keys.length === 0) {
+            return { isValid: false, message: 'Data objects must have properties' }
+        }
+
+        // Check if all items have the same structure
+        const hasConsistentStructure = data.every(item =>
+            item && typeof item === 'object' &&
+            Object.keys(item).length === keys.length &&
+            keys.every(key => key in item)
+        )
+
+        if (!hasConsistentStructure) {
+            return { isValid: false, message: 'Data items have inconsistent structure' }
+        }
+
+        return { isValid: true, message: 'Data structure is valid' }
+    }
+
     // Auto-select first two columns if available
     React.useEffect(() => {
         if (columns.length >= 2 && !xAxis && !yAxis) {
@@ -34,10 +64,19 @@ export function ChartViewer({ data, columns }: ChartViewerProps) {
     }, [columns, xAxis, yAxis, pieField])
 
     const renderChart = () => {
-        if (!data || data.length === 0) {
+        const validation = validateDataStructure()
+
+        if (!validation.isValid) {
             return (
                 <div className="flex items-center justify-center h-64 text-muted-foreground">
-                    No data available for visualization
+                    <div className="text-center">
+                        <BarChart3 className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                        <p>Data Validation Failed</p>
+                        <p className="text-sm mt-2">{validation.message}</p>
+                        <p className="text-xs mt-2 text-muted-foreground">
+                            Expected: Array of objects with consistent properties
+                        </p>
+                    </div>
                 </div>
             )
         }

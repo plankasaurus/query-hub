@@ -39,14 +39,14 @@ export default function RootLayout({
                                                 Query Hub
                                             </h1>
                                             <p className="text-sm text-muted-foreground font-medium">
-                                                Next-Gen Data Intelligence Platform
+                                                Helping you navigate Australia's data
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex items-center space-x-4">
                                         <div className="hidden md:flex items-center space-x-2 text-sm text-muted-foreground">
                                             <StatusIndicator status="online" size="sm" />
-                                            <span>System Online</span>
+                                            <span>Backend Online</span>
                                         </div>
                                         <ThemeToggle />
                                     </div>
