@@ -53,16 +53,6 @@ export function QueryBuilder({ onQueryChange, onExecute, query, onVoiceInput, is
                         Ask questions about your data in plain English. You can type your query or use the microphone button for voice input. For example: "Show me all employees with salary above 80000" or "What is the average age by department?"
                     </p>
 
-                    {/* Voice Input Indicator */}
-                    {isVoiceInput && (
-                        <div className="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm text-blue-700 dark:text-blue-300">
-                                {/* Voice input detected! You can now execute your query or continue typing to modify it. */}
-                            </span>
-                        </div>
-                    )}
-
                     <form onSubmit={handleSubmit} className="flex space-x-3">
                         <div className="flex-1 flex space-x-2">
                             <Input

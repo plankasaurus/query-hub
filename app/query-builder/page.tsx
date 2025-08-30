@@ -33,6 +33,13 @@ export default function QueryBuilderPage() {
         setTimeout(() => setIsVoiceInput(false), 3000)
     }
 
+    const handleTranscriptUpdate = (transcript: string) => {
+        // This handles real-time transcript updates during voice recording
+        // Update the query field in real-time so user can see transcription happening
+        setQuery(transcript)
+        console.log('Real-time transcript update:', transcript)
+    }
+
     const executeQuery = async () => {
         if (!query.trim()) return
 
@@ -206,7 +213,7 @@ export default function QueryBuilderPage() {
                         query={query}
                         onVoiceInput={handleVoiceInput}
                         isVoiceInput={isVoiceInput}
-                        onTranscriptUpdate={handleQueryChange}
+                        onTranscriptUpdate={handleTranscriptUpdate}
                     />
 
                     {/* Error Display */}

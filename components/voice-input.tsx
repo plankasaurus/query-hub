@@ -39,12 +39,18 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
         recognitionRef.current.interimResults = true
         recognitionRef.current.lang = 'en-US'
 
+        recognitionRef.current.onstart = () => {
+            console.log('Speech recognition started successfully')
+        }
+
         recognitionRef.current.onresult = (event: any) => {
+            console.log('Speech recognition result event:', event)
             let finalTranscript = ''
             let interimTranscript = ''
 
             for (let i = event.resultIndex; i < event.results.length; i++) {
                 const transcript = event.results[i][0].transcript
+                console.log(`Result ${i}: transcript="${transcript}", isFinal=${event.results[i].isFinal}`)
                 if (event.results[i].isFinal) {
                     finalTranscript += transcript
                 } else {
@@ -52,11 +58,15 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
                 }
             }
 
+            console.log('Final transcript:', finalTranscript)
+            console.log('Interim transcript:', interimTranscript)
+
             // Accumulate the transcript and update the input field in real-time
             if (finalTranscript) {
                 const newTranscript = currentTranscriptRef.current + ' ' + finalTranscript
                 currentTranscriptRef.current = newTranscript
                 setCurrentTranscript(newTranscript)
+                console.log('Calling onTranscriptUpdate with:', newTranscript.trim())
                 onTranscriptUpdate(newTranscript.trim())
             }
         }
@@ -89,9 +99,11 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
         }
 
         recognitionRef.current.onend = () => {
+            console.log('Speech recognition ended')
             if (isRecording && !isPaused) {
                 // Restart if we're still supposed to be recording
                 try {
+                    console.log('Attempting to restart speech recognition...')
                     recognitionRef.current?.start()
                 } catch (error) {
                     console.error('Failed to restart speech recognition:', error)
@@ -104,19 +116,30 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
     }
 
     const startRecording = async () => {
+        console.log('=== START RECORDING ===')
+        console.log('isSupported:', isSupported)
+        console.log('recognitionRef.current:', !!recognitionRef.current)
+
         try {
             if (isSupported && recognitionRef.current) {
+                console.log('Speech recognition instance found')
+
                 // Reset transcript when starting new recording
                 setCurrentTranscript('')
                 currentTranscriptRef.current = ''
+                console.log('Transcript state reset')
 
-                // Ensure the recognition instance is ready
-                if (recognitionRef.current.state === 'inactive') {
-                    recognitionRef.current.start()
-                }
+                // Try to start speech recognition directly
+                console.log('Starting speech recognition...')
+                recognitionRef.current.start()
 
                 onRecordingChange(true)
                 setIsPaused(false)
+                console.log('Recording state updated')
+            } else {
+                console.log('Speech recognition not available')
+                console.log('isSupported:', isSupported)
+                console.log('recognitionRef.current:', !!recognitionRef.current)
             }
         } catch (error) {
             console.error('Failed to start recording:', error)
@@ -127,12 +150,19 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
     }
 
     const stopRecording = () => {
+        console.log('=== STOP RECORDING ===')
+        console.log('currentTranscriptRef.current:', currentTranscriptRef.current)
+
         if (recognitionRef.current) {
             try {
                 recognitionRef.current.stop()
+                console.log('Speech recognition stopped')
                 // Send the complete accumulated transcript
                 if (currentTranscriptRef.current.trim()) {
+                    console.log('Sending final transcript:', currentTranscriptRef.current.trim())
                     onTranscript(currentTranscriptRef.current.trim())
+                } else {
+                    console.log('No transcript to send')
                 }
             } catch (error) {
                 console.error('Error stopping recording:', error)
@@ -142,6 +172,7 @@ export function VoiceInput({ onTranscript, onTranscriptUpdate, isRecording, onRe
         setIsPaused(false)
         setCurrentTranscript('') // Reset transcript
         currentTranscriptRef.current = ''
+        console.log('Recording stopped')
     }
 
     const pauseRecording = () => {
