@@ -3,7 +3,7 @@ import path from 'path';
 import { generateWithParts } from '../model';
 import { createPartFromText } from '@google/genai';
 
-const testDataDir = path.join(__dirname, 'test-data');
+const testDataDir = path.join(process.cwd(), 'app/api/query/test-data');
 
 const testDataFiles = fs.readdirSync(testDataDir)
     .filter(file => file.endsWith('.json'))
@@ -17,6 +17,7 @@ console.log(`Found ${testDataFiles.length} test data files:`);
 const userQuery = "How has the total number of registered marriages and the crude marriage rate changed year-on-year? What impact did the COVID-19 pandemic (2020-2021) have, and how has recovery progressed?";
 
 export async function querySeedAndKV(userQuery: string) {
+    
     console.log("hi querySeedAndKV");
     console.log("Starting querySeedAndKV with query:", userQuery);
 

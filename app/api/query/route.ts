@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getRowsCollection } from '@/lib/mongodb'
 import { DataJoinOut } from '@/lib/types'
 import { querySeedAndKV } from './queryAction'
+import { generateWithParts } from '../model'
 
 const transformedResults_PLACEHOLDER: DataJoinOut[] = [
     {
@@ -101,11 +102,34 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             )
         }
+        const useableResponse = await generateWithParts(
+            `You're an expert data analyst helping answer questions based on datasets. 
+            `,
+            [
+                { text: "Tell me if the following user query makes sense, if it is non sensicale return { useable: False }, if it makes sense return {useable True} as a JSON. " },
+
+                { text: userQuery },
+
+
+            ]
+        );
+        console.log("useable response", useableResponse);
+        if (!useableResponse.useable) {
+            return NextResponse.json({
+                success: false,
+                message: "Unable to understand query, please try again."
+            })
+        }
 
         console.log("hi query route", userQuery);
         console.log(querySeedAndKV);
-        // const transformedResults = await querySeedAndKV(userQuery);
-        const transformedResults = ["A"];
+        let transformedResults;
+        try {
+            transformedResults = await querySeedAndKV(userQuery);
+        } catch (error) {
+            console.error('Error calling querySeedAndKV:', error);
+            transformedResults = transformedResults_PLACEHOLDER;
+        }
         console.log("transformedResults", transformedResults);
 
 
@@ -119,10 +143,10 @@ export async function POST(request: NextRequest) {
 
     } catch (error) {
         console.error('Query execution error:', error)
-        return NextResponse.json(
-            { error: 'Failed to execute query' },
-            { status: 500 }
-        )
+        return NextResponse.json({
+            success: false,
+            message: "Unable to process query, please try again."
+        })
     }
 }
 
