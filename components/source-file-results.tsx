@@ -160,6 +160,11 @@ export function SourceFileResults({ results, onExport, onVisualize }: SourceFile
                                             <p className="text-sm text-muted-foreground">
                                                 {sourceResults.length} result{sourceResults.length !== 1 ? 's' : ''} from this file
                                             </p>
+                                            {sourceResults[0]?.filename && (
+                                                <p className="text-xs text-blue-500 dark:text-blue-400 mt-1 font-medium">
+                                                    📁 {sourceResults[0].filename}
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="flex items-center space-x-2">
@@ -179,11 +184,18 @@ export function SourceFileResults({ results, onExport, onVisualize }: SourceFile
                                         <div key={resultIndex} className="space-y-6">
                                             {/* Analysis Section */}
                                             <div className="space-y-6">
-                                                <div className="flex items-center space-x-3 mb-4">
-                                                    <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                                                        <FileText className="h-5 w-5 text-green-600 dark:text-green-400" />
+                                                <div className="flex items-center justify-between mb-4">
+                                                    <div className="flex items-center space-x-3">
+                                                        <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                                            <FileText className="h-5 w-5 text-green-600 dark:text-green-400" />
+                                                        </div>
+                                                        <h4 className="text-lg font-semibold text-green-600 dark:text-green-400">Analysis</h4>
                                                     </div>
-                                                    <h4 className="text-lg font-semibold text-green-600 dark:text-green-400">Analysis</h4>
+                                                    {result.filename && (
+                                                        <div className="text-xs text-blue-500 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">
+                                                            📁 {result.filename}
+                                                        </div>
+                                                    )}
                                                 </div>
 
                                                 {/* Result */}

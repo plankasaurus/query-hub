@@ -22,7 +22,7 @@ export async function querySeedAndKV(userQuery: string) {
     console.log("Starting querySeedAndKV with query:", userQuery);
 
     // TODO: read from KV
-    const datasets: string[] = [];
+    const datasets: any[] = [];
     // Map.
     const mapper = testDataFiles.map(async ({ filename, filepath }) => {
         try {
@@ -46,12 +46,12 @@ export async function querySeedAndKV(userQuery: string) {
                     createPartFromText(dataString)
                 ]
             );
-            console.log("Is useful", result, dataString.slice(0, 200));
+            // console.log("Is useful", result, dataString.slice(0, 200));
             if (result.useful === true) {
                 datasets.push(data);
                 console.log(`Dataset ${filename} is useful, added to analysis list`);
             } else {
-                console.log(`Dataset ${filename} is not useful for this query`);
+                // console.log(`Dataset ${filename} is not useful for this query`);
             }
         } catch (error) {
             console.error(`Error processing ${filename}:`, error);
@@ -109,8 +109,8 @@ export async function querySeedAndKV(userQuery: string) {
                 );
                 console.log(`Analysis completed for dataset ${i + 1}`);
                 console.log(dataset.metadata, "metadata???");
-                analysis["source"] = dataset["metadata"]["source"] || "Unknown source";
-                analysis["filename"] = dataset["metadata"]["filename"] || "Unknown dataset_name";
+                analysis["source"] = dataset.metadata?.source || "Unknown source";
+                analysis["filename"] = dataset.metadata?.filename || "Unknown dataset_name";
                 if ((analysis["filename"] === "Unknown dataset_name") || (analysis["source"] === "Unknown source")) {
                     console.error(`Error analyzing dataset ${i + 1}:`, analysis);
                     return null;
