@@ -212,7 +212,7 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
                                         {file.status === 'uploading' && file.progress !== undefined && (
                                             <div className="w-20 bg-muted rounded-full h-2">
                                                 <div
-                                                    className="bg-primary h-2 rounded-full transition-all duration-300"
+                                                    className="bg-primary h-2 rounded-full transition-width duration-200"
                                                     style={{ width: `${file.progress}%` }}
                                                 />
                                             </div>

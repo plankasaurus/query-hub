@@ -77,7 +77,7 @@ export function DataStat({
 
   return (
     <div className={cn(
-      "p-6 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:scale-105",
+      "p-6 rounded-2xl border backdrop-blur-sm transition-transform duration-200 hover:scale-105",
       variantClasses[variant],
       className
     )}>

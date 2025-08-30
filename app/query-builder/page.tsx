@@ -73,7 +73,7 @@ export default function QueryBuilderPage() {
         if (queryResults.length === 0) return
 
         // Export the data arrays from all results
-        const allData = queryResults.flatMap(result => result.data)
+        const allData = queryResults.flatMap(result => result.data_used)
         if (allData.length === 0) return
 
         const csvContent = [
@@ -276,54 +276,77 @@ export default function QueryBuilderPage() {
                                                 <h3 className="text-2xl font-semibold text-foreground">Analysis</h3>
                                             </div>
 
+                                            {/* Result */}
+                                            {result.result && (
+                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-green-800 dark:text-green-200">Result</h4>
+                                                    <p className="text-base leading-relaxed text-green-700 dark:text-green-300">{result.result}</p>
+                                                </div>
+                                            )}
+
                                             {/* Overview */}
-                                            {result.analysis?.overview && (
+                                            {result.overview && (
                                                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
                                                     <h4 className="font-semibold text-lg mb-3 text-blue-800 dark:text-blue-200">Overview</h4>
-                                                    <p className="text-base leading-relaxed text-blue-700 dark:text-blue-300">{result.analysis.overview}</p>
+                                                    <p className="text-base leading-relaxed text-blue-700 dark:text-blue-300">{result.overview}</p>
                                                 </div>
                                             )}
 
-                                            {/* Answer */}
-                                            {result.analysis?.answer && (
-                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-green-800 dark:text-green-200">Answer</h4>
-                                                    <p className="text-base leading-relaxed text-green-700 dark:text-green-300">{result.analysis.answer}</p>
+                                            {/* Key Findings */}
+                                            {result.analysis?.key_findings && result.analysis.key_findings.length > 0 && (
+                                                <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl border border-amber-200 dark:border-amber-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-amber-800 dark:text-amber-200">Key Findings</h4>
+                                                    <ul className="space-y-2">
+                                                        {result.analysis.key_findings.map((finding, index) => (
+                                                            <li key={index} className="flex items-start space-x-2">
+                                                                <span className="text-amber-600 dark:text-amber-400 mt-1">•</span>
+                                                                <span className="text-base leading-relaxed text-amber-700 dark:text-amber-300">{finding}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
                                                 </div>
                                             )}
 
-                                            {/* Other analysis fields */}
-                                            {result.analysis && Object.entries(result.analysis).map(([key, value]) => {
-                                                if (key === 'overview' || key === 'answer') return null;
-                                                return (
-                                                    <div key={key} className="bg-muted/50 p-6 rounded-xl border">
-                                                        <h4 className="font-semibold text-lg mb-3 capitalize">
-                                                            {key.replace(/([A-Z])/g, ' $1').trim()}
-                                                        </h4>
-                                                        <div className="prose prose-sm max-w-none">
-                                                            {renderAnalysisContent(value)}
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
+                                            {/* Trends */}
+                                            {result.analysis?.trends && result.analysis.trends.length > 0 && (
+                                                <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-purple-800 dark:text-purple-200">Trends</h4>
+                                                    <ul className="space-y-2">
+                                                        {result.analysis.trends.map((trend, index) => (
+                                                            <li key={index} className="flex items-start space-x-2">
+                                                                <span className="text-purple-600 dark:text-purple-400 mt-1">•</span>
+                                                                <span className="text-base leading-relaxed text-purple-700 dark:text-purple-300">{trend}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            )}
+
+                                            {/* Source */}
+                                            {result.source && (
+                                                <div className="bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-900/20 dark:to-gray-900/20 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-slate-800 dark:text-slate-200">Source</h4>
+                                                    <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">{result.source}</p>
+                                                </div>
+                                            )}
                                         </div>
 
-                                        {/* Data Section */}
+                                        {/* Data Used Section */}
                                         <div className="space-y-6">
                                             <div className="flex items-center space-x-3 mb-4">
                                                 <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
                                                     <BarChart className="h-6 w-6 text-purple-600 dark:text-purple-400" />
                                                 </div>
-                                                <h3 className="text-2xl font-semibold text-foreground">Data</h3>
+                                                <h3 className="text-2xl font-semibold text-foreground">Data Used</h3>
                                             </div>
 
-                                            {result.data && result.data.length > 0 ? (
+                                            {result.data_used && result.data_used.length > 0 ? (
                                                 <div className="border rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm">
                                                     <div className="overflow-x-auto">
                                                         <table className="w-full text-sm">
                                                             <thead className="bg-muted/50">
                                                                 <tr>
-                                                                    {Object.keys(result.data[0]).map(column => (
+                                                                    {Object.keys(result.data_used[0]).map(column => (
                                                                         <th key={column} className="px-6 py-4 text-left font-semibold text-foreground">
                                                                             {column}
                                                                         </th>
@@ -331,7 +354,7 @@ export default function QueryBuilderPage() {
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                {result.data.slice(0, 10).map((row: any, index: number) => (
+                                                                {result.data_used.slice(0, 10).map((row: any, index: number) => (
                                                                     <tr key={index} className="border-t hover:bg-muted/30 transition-colors">
                                                                         {Object.values(row).map((value, colIndex) => (
                                                                             <td key={colIndex} className="px-6 py-4">
@@ -343,16 +366,16 @@ export default function QueryBuilderPage() {
                                                             </tbody>
                                                         </table>
                                                     </div>
-                                                    {result.data.length > 10 && (
+                                                    {result.data_used.length > 10 && (
                                                         <div className="px-6 py-4 text-sm text-muted-foreground border-t bg-muted/30">
-                                                            Showing first 10 of {result.data.length} data points
+                                                            Showing first 10 of {result.data_used.length} data points
                                                         </div>
                                                     )}
                                                 </div>
                                             ) : (
                                                 <div className="text-center py-12 text-muted-foreground">
                                                     <BarChart className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                                                    <p className="text-lg">No data available</p>
+                                                    <p className="text-lg">No data used in analysis</p>
                                                 </div>
                                             )}
                                         </div>

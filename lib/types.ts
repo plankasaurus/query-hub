@@ -1,13 +1,14 @@
 // Shared types for the application
 
 export interface DataJoinOut {
+    result: string;
+    overview: string;
+    source: string;
     analysis: {
-        overview: string;
-        answer: string;
-        source?: string;
-        [key: string]: any; // Allow arbitrary analysis fields
+        key_findings: string[];
+        trends: string[];
     };
-    data: Record<string, any>[]; // Allow arbitrary data structure
+    data_used: any[];
 }
 
 export interface QueryResult {

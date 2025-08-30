@@ -10,7 +10,7 @@ export interface ModernCardProps extends React.HTMLAttributes<HTMLDivElement> {
 const ModernCard = React.forwardRef<HTMLDivElement, ModernCardProps>(
   ({ className, variant = 'default', hoverEffect = true, glowColor = 'none', children, ...props }, ref) => {
     const baseClasses = cn(
-      "relative overflow-hidden rounded-2xl border transition-all duration-300",
+      "relative overflow-hidden rounded-2xl border transition-transform duration-200",
       "group",
       className
     )
@@ -44,7 +44,7 @@ const ModernCard = React.forwardRef<HTMLDivElement, ModernCardProps>(
         {...props}
       >
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-300">
+        <div className="absolute inset-0 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-200">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]" />
         </div>
 
@@ -55,7 +55,7 @@ const ModernCard = React.forwardRef<HTMLDivElement, ModernCardProps>(
 
         {/* Subtle border glow on hover */}
         {glowColor !== 'none' && (
-          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
             <div className={cn(
               "absolute inset-0 rounded-2xl",
               glowColor === 'blue' && "bg-gradient-to-r from-blue-500/20 to-transparent",

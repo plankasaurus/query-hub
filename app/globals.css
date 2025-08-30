@@ -65,12 +65,12 @@
     }
 
     body {
-        @apply bg-background text-foreground transition-all duration-300;
+        @apply bg-background text-foreground;
         font-feature-settings: "rlig" 1, "calt" 1;
     }
 
     html {
-        @apply transition-all duration-300;
+        /* Remove transition to prevent page wobbling */
     }
 
     /* Custom scrollbar */
@@ -122,17 +122,29 @@
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 .shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
 }
