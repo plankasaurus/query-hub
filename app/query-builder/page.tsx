@@ -95,7 +95,7 @@ export default function QueryBuilderPage() {
     // Helper function to render analysis content recursively
     const renderAnalysisContent = (content: any, depth: number = 0): React.ReactNode => {
         if (typeof content === 'string') {
-            return <p className="text-sm leading-relaxed">{content}</p>
+            return <p className="text-base leading-relaxed">{content}</p>
         }
 
         if (Array.isArray(content)) {
@@ -115,7 +115,7 @@ export default function QueryBuilderPage() {
                 <div className="space-y-3">
                     {Object.entries(content).map(([key, value]) => (
                         <div key={key} className="border-l-2 border-muted pl-4">
-                            <h4 className="font-medium text-sm capitalize mb-2">
+                            <h4 className="font-medium text-base capitalize mb-2 text-green-600 dark:text-green-400">
                                 {key.replace(/([A-Z])/g, ' $1').trim()}
                             </h4>
                             {renderAnalysisContent(value, depth + 1)}
@@ -125,17 +125,17 @@ export default function QueryBuilderPage() {
             )
         }
 
-        return <span className="text-sm">{String(content)}</span>
+        return <span className="text-base">{String(content)}</span>
     }
 
     // Helper function to render data content recursively
     const renderDataContent = (data: any, depth: number = 0): React.ReactNode => {
         if (typeof data === 'string' || typeof data === 'number' || typeof data === 'boolean') {
-            return <span className="text-sm">{String(data)}</span>
+            return <span className="text-base">{String(data)}</span>
         }
 
         if (data === null || data === undefined) {
-            return <span className="text-sm text-muted-foreground">-</span>
+            return <span className="text-base text-muted-foreground">-</span>
         }
 
         if (Array.isArray(data)) {
@@ -154,7 +154,7 @@ export default function QueryBuilderPage() {
             return (
                 <div className="space-y-1">
                     {Object.entries(data).map(([key, value]) => (
-                        <div key={key} className="text-xs">
+                        <div key={key} className="text-base">
                             <span className="font-medium text-muted-foreground">{key}: </span>
                             {renderDataContent(value, depth + 1)}
                         </div>
@@ -163,7 +163,7 @@ export default function QueryBuilderPage() {
             )
         }
 
-        return <span className="text-sm">{String(data)}</span>
+        return <span className="text-base">{String(data)}</span>
     }
 
     return (
@@ -171,7 +171,7 @@ export default function QueryBuilderPage() {
             <div className="container mx-auto px-4 py-8 max-w-7xl">
                 {/* Header Section */}
                 <div className="text-center space-y-6 mb-12">
-                    <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <h1 className="text-5xl font-bold">
                         Query Builder
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export default function QueryBuilderPage() {
                 {/* Query Input Section - Full Width */}
                 <div className="mb-12">
                     <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-2xl font-semibold text-foreground">Natural Language Query</h2>
+                        <h2 className="text-2xl font-semibold">Natural Language Query</h2>
 
                         {/* Recent Queries Dropdown */}
                         {queryHistory.length > 0 && (
@@ -196,7 +196,7 @@ export default function QueryBuilderPage() {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end" className="w-80">
                                     <div className="p-2">
-                                        <h3 className="font-medium text-sm mb-2 text-muted-foreground">Recent Queries</h3>
+                                        <h3 className="font-medium text-base mb-2 text-muted-foreground">Recent Queries</h3>
                                         <div className="space-y-2">
                                             {queryHistory.map((item, index) => (
                                                 <DropdownMenuItem
@@ -204,10 +204,10 @@ export default function QueryBuilderPage() {
                                                     onClick={() => loadQueryFromHistory(item)}
                                                     className="flex flex-col items-start p-3 cursor-pointer hover:bg-muted rounded-lg"
                                                 >
-                                                    <p className="text-sm font-medium text-left line-clamp-2 mb-1">
+                                                    <p className="text-base font-medium text-left line-clamp-2 mb-1">
                                                         {item.query}
                                                     </p>
-                                                    <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                                                    <div className="flex items-center space-x-2 text-base text-muted-foreground">
                                                         <span>{item.timestamp.toLocaleDateString()}</span>
                                                         <span>•</span>
                                                         <span>{item.timestamp.toLocaleTimeString()}</span>
@@ -236,8 +236,8 @@ export default function QueryBuilderPage() {
                         {/* Results Header */}
                         <div className="flex items-center justify-between">
                             <div className="space-y-2">
-                                <h2 className="text-2xl font-semibold text-foreground">Query Results</h2>
-                                <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                                <h2 className="text-2xl font-semibold text-green-600 dark:text-green-400">Query Results</h2>
+                                <div className="flex items-center space-x-4 text-base text-muted-foreground">
                                     <span>{queryResults.length} result{queryResults.length !== 1 ? 's' : ''}</span>
                                     {executionTime && (
                                         <>
@@ -270,37 +270,37 @@ export default function QueryBuilderPage() {
                                         {/* Analysis Section */}
                                         <div className="space-y-6 mb-8">
                                             <div className="flex items-center space-x-3 mb-4">
-                                                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                                                    <FileText className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                                                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                                    <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
                                                 </div>
-                                                <h3 className="text-2xl font-semibold text-foreground">Analysis</h3>
+                                                <h3 className="text-2xl font-semibold text-green-600 dark:text-green-400">Analysis</h3>
                                             </div>
 
                                             {/* Result */}
                                             {result.result && (
                                                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-green-800 dark:text-green-200">Result</h4>
-                                                    <p className="text-base leading-relaxed text-green-700 dark:text-green-300">{result.result}</p>
+                                                    <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Result</h4>
+                                                    <p className="text-base leading-relaxed">{result.result}</p>
                                                 </div>
                                             )}
 
                                             {/* Overview */}
                                             {result.overview && (
-                                                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-blue-800 dark:text-blue-200">Overview</h4>
-                                                    <p className="text-base leading-relaxed text-blue-700 dark:text-blue-300">{result.overview}</p>
+                                                <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-xl border border-yellow-200 dark:border-yellow-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-yellow-600 dark:text-yellow-400">Overview</h4>
+                                                    <p className="text-base leading-relaxed">{result.overview}</p>
                                                 </div>
                                             )}
 
                                             {/* Key Findings */}
                                             {result.analysis?.key_findings && result.analysis.key_findings.length > 0 && (
-                                                <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl border border-amber-200 dark:border-amber-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-amber-800 dark:text-amber-200">Key Findings</h4>
+                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Key Findings</h4>
                                                     <ul className="space-y-2">
                                                         {result.analysis.key_findings.map((finding, index) => (
                                                             <li key={index} className="flex items-start space-x-2">
-                                                                <span className="text-amber-600 dark:text-amber-400 mt-1">•</span>
-                                                                <span className="text-base leading-relaxed text-amber-700 dark:text-amber-300">{finding}</span>
+                                                                <span className="mt-1 text-green-600 dark:text-green-400">•</span>
+                                                                <span className="text-base leading-relaxed">{finding}</span>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -309,13 +309,13 @@ export default function QueryBuilderPage() {
 
                                             {/* Trends */}
                                             {result.analysis?.trends && result.analysis.trends.length > 0 && (
-                                                <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-purple-800 dark:text-purple-200">Trends</h4>
+                                                <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-xl border border-yellow-200 dark:border-yellow-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-yellow-600 dark:text-yellow-400">Trends</h4>
                                                     <ul className="space-y-2">
                                                         {result.analysis.trends.map((trend, index) => (
                                                             <li key={index} className="flex items-start space-x-2">
-                                                                <span className="text-purple-600 dark:text-purple-400 mt-1">•</span>
-                                                                <span className="text-base leading-relaxed text-purple-700 dark:text-purple-300">{trend}</span>
+                                                                <span className="text-yellow-600 dark:text-yellow-400 mt-1">•</span>
+                                                                <span className="text-base leading-relaxed">{trend}</span>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -324,9 +324,9 @@ export default function QueryBuilderPage() {
 
                                             {/* Source */}
                                             {result.source && (
-                                                <div className="bg-gradient-to-r from-slate-50 to-gray-50 dark:from-slate-900/20 dark:to-gray-900/20 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
-                                                    <h4 className="font-semibold text-lg mb-3 text-slate-800 dark:text-slate-200">Source</h4>
-                                                    <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300">{result.source}</p>
+                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+                                                    <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">Source</h4>
+                                                    <p className="text-base leading-relaxed">{result.source}</p>
                                                 </div>
                                             )}
                                         </div>
@@ -334,16 +334,16 @@ export default function QueryBuilderPage() {
                                         {/* Data Used Section */}
                                         <div className="space-y-6">
                                             <div className="flex items-center space-x-3 mb-4">
-                                                <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                                                    <BarChart className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                                                <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+                                                    <BarChart className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
                                                 </div>
-                                                <h3 className="text-2xl font-semibold text-foreground">Data Used</h3>
+                                                <h3 className="text-2xl font-semibold text-yellow-600 dark:text-yellow-400">Data Used</h3>
                                             </div>
 
                                             {result.data_used && result.data_used.length > 0 ? (
                                                 <div className="border rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm">
                                                     <div className="overflow-x-auto">
-                                                        <table className="w-full text-sm">
+                                                        <table className="w-full text-base">
                                                             <thead className="bg-muted/50">
                                                                 <tr>
                                                                     {Object.keys(result.data_used[0]).map(column => (
@@ -367,7 +367,7 @@ export default function QueryBuilderPage() {
                                                         </table>
                                                     </div>
                                                     {result.data_used.length > 10 && (
-                                                        <div className="px-6 py-4 text-sm text-muted-foreground border-t bg-muted/30">
+                                                        <div className="px-6 py-4 text-base text-muted-foreground border-t bg-muted/30">
                                                             Showing first 10 of {result.data_used.length} data points
                                                         </div>
                                                     )}
@@ -394,8 +394,8 @@ export default function QueryBuilderPage() {
                                 <Database className="h-12 w-12 text-muted-foreground" />
                             </div>
                             <div className="space-y-3">
-                                <h3 className="text-2xl font-semibold text-foreground">Ready to Query Your Data</h3>
-                                <p className="text-muted-foreground">
+                                <h3 className="text-2xl font-semibold">Ready to Query Your Data</h3>
+                                <p className="text-base text-muted-foreground">
                                     Type a natural language question above and click "Execute Query" to get started.
                                     Get instant insights, analysis, and data visualization.
                                 </p>
@@ -410,8 +410,8 @@ export default function QueryBuilderPage() {
                         <div className="max-w-md mx-auto space-y-6">
                             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto"></div>
                             <div className="space-y-3">
-                                <h3 className="text-2xl font-semibold text-foreground">Processing Your Query</h3>
-                                <p className="text-muted-foreground">
+                                <h3 className="text-2xl font-semibold text-yellow-600 dark:text-yellow-400">Processing Your Query</h3>
+                                <p className="text-base text-muted-foreground">
                                     Analyzing your data and generating insights...
                                 </p>
                             </div>
