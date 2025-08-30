@@ -8,8 +8,8 @@ import { StatusIndicator } from '@/components/ui/status-indicator'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Query Hub - CSV Data Analysis Platform',
-    description: 'Upload CSV files, build queries, and visualize data with interactive charts',
+    title: 'Query Hub - Data Analysis Platform',
+    description: 'Upload Data files, build queries, and visualize data with interactive charts',
 }
 
 export default function RootLayout({

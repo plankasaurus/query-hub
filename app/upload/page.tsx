@@ -17,9 +17,9 @@ export default function UploadPage() {
     return (
         <div className="space-y-6">
             <div className="text-center space-y-4">
-                <h1 className="text-3xl font-bold text-primary">Upload CSV Files</h1>
+                <h1 className="text-3xl font-bold text-primary">Upload Data Files</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Upload your CSV files to start analyzing data. Files are automatically parsed and stored in MongoDB for querying.
+                    Upload your data files to start analyzing data. Files are automatically parsed and stored in MongoDB for querying.
                 </p>
             </div>
 
@@ -35,7 +35,7 @@ export default function UploadPage() {
                     </CardHeader>
                     <CardContent>
                         <p className="text-green-700 mb-4">
-                            Your CSV file has been successfully uploaded and processed. You can now:
+                            Your data file has been successfully uploaded and processed. You can now:
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3">
                             <Link href="/query-builder">
@@ -67,7 +67,7 @@ export default function UploadPage() {
                             </div>
                             <h3 className="font-semibold">1. Upload</h3>
                             <p className="text-sm text-muted-foreground">
-                                Drag and drop your CSV files or click to browse
+                                Drag and drop your data files or click to browse
                             </p>
                         </div>
 

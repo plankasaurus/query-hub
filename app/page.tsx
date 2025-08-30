@@ -64,7 +64,7 @@ export default function HomePage() {
                             <h3 className="text-2xl font-bold text-primary">Smart Upload</h3>
                         </div>
                         <p className="text-muted-foreground text-lg leading-relaxed">
-                            Drag & drop CSV files with intelligent parsing, automatic column detection, and instant data validation.
+                            Drag & drop data files with intelligent parsing, automatic column detection, and instant data validation.
                         </p>
                         <div className="mt-6 flex items-center text-blue-500 font-medium group-hover:translate-x-2 transition-transform duration-200">
                             Get Started

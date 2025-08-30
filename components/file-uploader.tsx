@@ -52,7 +52,6 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
         setIsUploading(true)
 
         for (const file of files) {
-            if (!file.name.toLowerCase().endsWith('.csv')) continue
 
             const fileId = `file_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
 
@@ -140,7 +139,7 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
         <div className="space-y-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>Upload CSV Files</CardTitle>
+                    <CardTitle>Upload Data Files</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div
@@ -157,7 +156,7 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
                     >
                         <Upload className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
                         <p className="text-lg font-medium mb-2">
-                            Drag and drop CSV files here
+                            Drag and drop data files here
                         </p>
                         <p className="text-muted-foreground mb-4">
                             or click the button below to select files
@@ -172,7 +171,6 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
                             id="file-input"
                             type="file"
                             multiple
-                            accept=".csv"
                             onChange={handleFileSelect}
                             className="hidden"
                         />

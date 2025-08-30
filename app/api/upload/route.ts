@@ -6,31 +6,31 @@ import path from 'path'
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
-    const file = formData.get('file') as File
+    const file = formData.get('file') as File | null
 
     if (!file) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 })
-    }
-
-    if (!file.name.toLowerCase().endsWith('.csv')) {
-      return NextResponse.json({ error: 'Only CSV files are supported' }, { status: 400 })
     }
 
     // Convert file to buffer
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
-    // Ensure uploads folder exists (in project root)
+    // Ensure uploads folder exists
     const uploadDir = path.join(process.cwd(), 'public', 'uploads')
     await mkdir(uploadDir, { recursive: true })
 
-    // Save file
-    const filePath = path.join(uploadDir, file.name)
+    // Sanitize filename (optional)
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 255)
+
+    const filePath = path.join(uploadDir, safeName)
     await writeFile(filePath, buffer)
 
     return NextResponse.json({
       success: true,
-      path: `/uploads/${file.name}`, // can be accessed in browser
+      path: `/uploads/${safeName}`,
+      name: file.name,
+      size: file.size
     })
   } catch (error) {
     console.error('Upload error:', error)
