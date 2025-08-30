@@ -195,7 +195,7 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
                                         <div>
                                             <p className="font-medium">{file.name}</p>
                                             <p className="text-sm text-muted-foreground">
-                                                {formatBytes(file.size)} • {formatDate(file.uploadTime)}
+                                                {formatBytes(file.size)} 
                                             </p>
                                         </div>
                                     </div>

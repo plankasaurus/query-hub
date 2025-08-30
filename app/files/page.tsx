@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { FileText, Calendar, Hash, Database, Eye, Trash2, Download, BarChart3 } from 'lucide-react'
@@ -8,55 +8,74 @@ import { formatBytes, formatDate } from '@/lib/utils'
 import Link from 'next/link'
 
 // Mock data for demonstration - in real app this would come from API
-const mockFiles = [
-    {
-        id: 'file_1',
-        name: 'employee_data.csv',
-        size: 245760,
-        uploadTime: new Date('2024-01-15T10:30:00'),
-        rowCount: 1250,
-        columns: ['id', 'name', 'email', 'department', 'salary', 'hire_date'],
-        status: 'processed'
-    },
-    {
-        id: 'file_2',
-        name: 'sales_data.csv',
-        size: 512000,
-        uploadTime: new Date('2024-01-14T14:20:00'),
-        rowCount: 3200,
-        columns: ['order_id', 'customer_id', 'product_id', 'quantity', 'price', 'date'],
-        status: 'processed'
-    },
-    {
-        id: 'file_3',
-        name: 'customer_feedback.csv',
-        size: 128000,
-        uploadTime: new Date('2024-01-13T09:15:00'),
-        rowCount: 850,
-        columns: ['customer_id', 'rating', 'comment', 'date', 'category'],
-        status: 'processing'
-    },
-    {
-        id: 'file_4',
-        name: 'inventory_data.csv',
-        size: 89000,
-        uploadTime: new Date('2024-01-12T16:45:00'),
-        rowCount: 450,
-        columns: ['product_id', 'name', 'category', 'stock', 'price'],
-        status: 'processed'
-    }
-]
+// const mockFiles = [
+//     {
+//         id: 'file_1',
+//         name: 'employee_data.csv',
+//         size: 245760,
+//         uploadTime: new Date('2024-01-15T10:30:00'),
+//         rowCount: 1250,
+//         columns: ['id', 'name', 'email', 'department', 'salary', 'hire_date'],
+//         status: 'processed'
+//     },
+//     {
+//         id: 'file_2',
+//         name: 'sales_data.csv',
+//         size: 512000,
+//         uploadTime: new Date('2024-01-14T14:20:00'),
+//         rowCount: 3200,
+//         columns: ['order_id', 'customer_id', 'product_id', 'quantity', 'price', 'date'],
+//         status: 'processed'
+//     },
+//     {
+//         id: 'file_3',
+//         name: 'customer_feedback.csv',
+//         size: 128000,
+//         uploadTime: new Date('2024-01-13T09:15:00'),
+//         rowCount: 850,
+//         columns: ['customer_id', 'rating', 'comment', 'date', 'category'],
+//         status: 'processing'
+//     },
+//     {
+//         id: 'file_4',
+//         name: 'inventory_data.csv',
+//         size: 89000,
+//         uploadTime: new Date('2024-01-12T16:45:00'),
+//         rowCount: 450,
+//         columns: ['product_id', 'name', 'category', 'stock', 'price'],
+//         status: 'processed'
+//     }
+// ]
+
 
 export default function FilesPage() {
-    const [files, setFiles] = useState(mockFiles)
-    const [selectedFile, setSelectedFile] = useState<string | null>(null)
+  const [files, setFiles] = useState<any[]>([])
+  const [selectedFile, setSelectedFile] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
 
-    const deleteFile = (fileId: string) => {
-        setFiles(prev => prev.filter(f => f.id !== fileId))
-        if (selectedFile === fileId) {
-            setSelectedFile(null)
+  useEffect(() => {
+    const fetchFiles = async () => {
+      try {
+        const res = await fetch('/api/files')
+        const data = await res.json()
+        if (res.ok) {
+          setFiles(data.files)
         }
+      } catch (error) {
+        console.error('Failed to fetch files:', error)
+      } finally {
+        setLoading(false)
+      }
     }
+
+    fetchFiles()
+  }, [])
+
+  // TODO: create a DELETE /api/files/[filename] to properly delete a file
+  const deleteFile = (fileId: string) => {
+    setFiles(prev => prev.filter(f => f.id !== fileId))
+    if (selectedFile === fileId) setSelectedFile(null)
+  }
 
     const getStatusColor = (status: string) => {
         switch (status) {
@@ -146,10 +165,10 @@ export default function FilesPage() {
                                                     </div>
 
                                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
-                                                        <div className="flex items-center space-x-1">
+                                                        {/* <div className="flex items-center space-x-1">
                                                             <Calendar className="h-3 w-3" />
                                                             <span>{formatDate(file.uploadTime)}</span>
-                                                        </div>
+                                                        </div> */}
                                                         <div className="flex items-center space-x-1">
                                                             <Hash className="h-3 w-3" />
                                                             <span>{file.rowCount.toLocaleString()} rows</span>
@@ -225,10 +244,10 @@ export default function FilesPage() {
                                                     <span>File Size:</span>
                                                     <span className="font-medium">{formatBytes(file.size)}</span>
                                                 </div>
-                                                <div className="flex justify-between text-sm">
+                                                {/* <div className="flex justify-between text-sm">
                                                     <span>Upload Date:</span>
                                                     <span className="font-medium">{formatDate(file.uploadTime)}</span>
-                                                </div>
+                                                </div> */}
                                             </div>
 
                                             <div className="flex space-x-2">

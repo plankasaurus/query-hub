@@ -1,6 +1,7 @@
 // app/api/upload/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { writeFile, mkdir } from 'fs/promises'
+import fs from 'fs/promises'
 import path from 'path'
 
 export async function POST(request: NextRequest) {
@@ -38,33 +39,32 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// optional: GET for latest files
 export async function GET() {
   try {
-    const filesCollection = await getFilesCollection()
-    const files = await filesCollection
-      .find({})
-      .sort({ uploadTime: -1 })
-      .limit(100)
-      .toArray()
+    const uploadDir = path.join(process.cwd(), 'public', 'uploads')
+    const files = await fs.readdir(uploadDir)
 
-    return NextResponse.json({
-      success: true,
-      files: files.map((file) => ({
-        id: file._id.toString(),
-        name: file.name,
-        size: file.size,
-        uploadTime: file.uploadTime,
-        rowCount: file.rowCount,
-        columns: file.columns,
-        status: file.status,
-      })),
-    })
-  } catch (err) {
-    console.error('Get files error:', err)
-    return NextResponse.json(
-      { error: 'Failed to retrieve files' },
-      { status: 500 }
+    const fileData = await Promise.all(
+      files.map(async (filename) => {
+        const filePath = path.join(uploadDir, filename)
+        const stats = await fs.stat(filePath)
+
+        return {
+          id: filename, // use filename as ID
+          name: filename,
+          size: stats.size,
+          uploadTime: stats.mtime, // last modified time
+          rowCount: 0, // optional: could parse CSV to get row count
+          columns: [], // optional: could parse CSV to get columns
+          status: 'processed',
+          path: `/uploads/${filename}`
+        }
+      })
     )
+
+    return NextResponse.json({ success: true, files: fileData })
+  } catch (error) {
+    console.error('Error reading uploads folder:', error)
+    return NextResponse.json({ success: false, error: 'Failed to list files' }, { status: 500 })
   }
 }
