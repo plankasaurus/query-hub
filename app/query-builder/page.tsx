@@ -410,7 +410,7 @@ export default function QueryBuilderPage() {
                         <div className="max-w-md mx-auto space-y-6">
                             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto"></div>
                             <div className="space-y-3">
-                                <h3 className="text-2xl font-semibold text-yellow-600 dark:text-yellow-400">Processing Your Query</h3>
+                                <h3 className="text-2xl font-semibold">Processing Your Query</h3>
                                 <p className="text-base text-muted-foreground">
                                     Analyzing your data and generating insights...
                                 </p>
