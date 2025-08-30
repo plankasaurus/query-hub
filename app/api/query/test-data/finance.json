@@ -1,0 +1,172 @@
+{
+    "schema": [
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_original_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_original_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_original_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_seasonally_adjusted_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_seasonally_adjusted_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_seasonally_adjusted_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_trend_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_trend_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_trend_index_numbers",
+        "data_type": "float",
+        "description": "Quarterly Index of total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_original_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_original_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_original_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_seasonally_adjusted_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_seasonally_adjusted_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_seasonally_adjusted_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_trend_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_trend_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_trend_percent",
+        "data_type": "float",
+        "description": "Percentage change from the previous quarter in total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_original_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_original_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_original_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, original series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_seasonally_adjusted_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_seasonally_adjusted_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_seasonally_adjusted_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, seasonally adjusted series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries_trend_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for private industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries_trend_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for public industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries_trend_percent",
+        "data_type": "float",
+        "description": "Percentage change from the corresponding quarter of the previous year in total hourly rates of pay, excluding bonuses, for private and public industries across all industries in Australia, trend series.",
+        "potential_keys": []
+      },
+      {
+        "column_name": "date",
+        "data_type": "date",
+        "description": "The quarter and year for which the data is reported, e.g., 'Sep-1997' representing September 1997.",
+        "potential_keys": ["date"]
+      }
+    ]
+  }
