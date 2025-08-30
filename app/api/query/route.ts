@@ -4,6 +4,8 @@ import { DataJoinOut } from '@/lib/types'
 import { querySeedAndKV } from './queryAction'
 import { generateWithParts } from '../model'
 
+console.log("logging for err", process.env.GEMINI_API_KEY, process.env);
+
 const transformedResults_PLACEHOLDER: DataJoinOut[] = [
     {
         "filename": "my file.csv",
@@ -135,7 +137,7 @@ export async function POST(request: NextRequest) {
         console.log("transformedResults", transformedResults);
         if (transformedResults.length > 1) {
             // Do an aggrate?
-          
+
         }
 
         return NextResponse.json({
