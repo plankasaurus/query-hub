@@ -48,34 +48,44 @@ import Link from 'next/link'
 // ]
 
 
+interface FileData {
+    id: string
+    name: string
+    size: number
+    uploadTime: Date
+    rowCount: number
+    columns: string[]
+    status: string
+}
+
 export default function FilesPage() {
-  const [files, setFiles] = useState<any[]>([])
-  const [selectedFile, setSelectedFile] = useState<string | null>(null)
-  const [loading, setLoading] = useState(true)
+    const [files, setFiles] = useState<FileData[]>([])
+    const [selectedFile, setSelectedFile] = useState<string | null>(null)
+    const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchFiles = async () => {
-      try {
-        const res = await fetch('/api/files')
-        const data = await res.json()
-        if (res.ok) {
-          setFiles(data.files)
+    useEffect(() => {
+        const fetchFiles = async () => {
+            try {
+                const res = await fetch('/api/files')
+                const data = await res.json()
+                if (res.ok) {
+                    setFiles(data.files)
+                }
+            } catch (error) {
+                console.error('Failed to fetch files:', error)
+            } finally {
+                setLoading(false)
+            }
         }
-      } catch (error) {
-        console.error('Failed to fetch files:', error)
-      } finally {
-        setLoading(false)
-      }
+
+        fetchFiles()
+    }, [])
+
+    // TODO: create a DELETE /api/files/[filename] to properly delete a file
+    const deleteFile = (fileId: string) => {
+        setFiles(prev => prev.filter(f => f.id !== fileId))
+        if (selectedFile === fileId) setSelectedFile(null)
     }
-
-    fetchFiles()
-  }, [])
-
-  // TODO: create a DELETE /api/files/[filename] to properly delete a file
-  const deleteFile = (fileId: string) => {
-    setFiles(prev => prev.filter(f => f.id !== fileId))
-    if (selectedFile === fileId) setSelectedFile(null)
-  }
 
     const getStatusColor = (status: string) => {
         switch (status) {

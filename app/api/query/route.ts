@@ -6,6 +6,7 @@ import { generateWithParts } from '../model'
 
 const transformedResults_PLACEHOLDER: DataJoinOut[] = [
     {
+        "filename": "my file.csv",
         "result": "The total number of registered marriages and the crude marriage rate both experienced a decrease from 2019 to 2020, coinciding with the COVID-19 pandemic. There was a rebound in 2021, followed by a further increase in 2022. The pandemic years (2020-2021) show a dip in both metrics, with 2022 showing signs of recovery beyond pre-pandemic levels.",
         "overview": "The analysis focuses on the year-on-year changes in the total number of registered marriages and the crude marriage rate, particularly examining the impact of the COVID-19 pandemic (2020-2021) and subsequent recovery. The analysis calculates the percentage change for both metrics to quantify the impact and recovery.",
         "source": "my file.csv",
@@ -48,6 +49,7 @@ const transformedResults_PLACEHOLDER: DataJoinOut[] = [
         ]
     },
     {
+        "filename": "your file.csv",
         "result": "The total number of registered marriages and the crude marriage rate both experienced a decrease from 2019 to 2020, coinciding with the COVID-19 pandemic. There was a rebound in 2021, followed by a further increase in 2022. The pandemic years (2020-2021) show a dip in both metrics, with 2022 showing signs of recovery beyond pre-pandemic levels.",
         "overview": "The analysis focuses on the year-on-year changes in the total number of registered marriages and the crude marriage rate, particularly examining the impact of the COVID-19 pandemic (2020-2021) and subsequent recovery. The analysis calculates the percentage change for both metrics to quantify the impact and recovery.",
         "source": "your file.csv",
@@ -131,7 +133,10 @@ export async function POST(request: NextRequest) {
             transformedResults = transformedResults_PLACEHOLDER;
         }
         console.log("transformedResults", transformedResults);
-
+        if (transformedResults.length > 1) {
+            // Do an aggrate?
+          
+        }
 
         return NextResponse.json({
             success: true,

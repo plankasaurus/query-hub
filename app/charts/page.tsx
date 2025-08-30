@@ -68,7 +68,7 @@ export default function ChartsPage() {
         description: string
         data: any[]
         columns: string[]
-        source: string
+        source?: string
     }> => {
         if (!queryResults || queryResults.length === 0) {
             return []
@@ -111,42 +111,50 @@ export default function ChartsPage() {
 
     // Combine query datasets with fallback datasets
     const queryDatasets = generateDatasetsFromQuery()
-    const allDatasets = [
-        ...queryDatasets,
-        // {
-        //     id: 'department-stats',
-        //     name: 'Department Statistics (Sample)',
-        //     description: 'Employee count, average salary, and total budget by department',
-        //     data: fallbackData,
-        //     columns: fallbackColumns
-        // },
-        {
-            id: 'salary-distribution',
-            name: 'Salary Distribution (Sample)',
-            description: 'Salary ranges and employee distribution',
-            data: [
-                { range: '50k-60k', count: 12, percentage: 15 },
-                { range: '60k-70k', count: 25, percentage: 31 },
-                { range: '70k-80k', count: 28, percentage: 35 },
-                { range: '80k-90k', count: 15, percentage: 19 }
-            ],
-            columns: ['range', 'count', 'percentage']
-        },
-        // {
-        //     id: 'city-breakdown',
-        //     name: 'City Breakdown (Sample)',
-        //     description: 'Employee distribution across different cities',
-        //     data: [
-        //         { city: 'New York', count: 35, percentage: 25 },
-        //         { city: 'San Francisco', count: 28, percentage: 20 },
-        //         { city: 'Chicago', count: 22, percentage: 16 },
-        //         { city: 'Boston', count: 18, percentage: 13 },
-        //         { city: 'Seattle', count: 15, percentage: 11 },
-        //         { city: 'Other', count: 20, percentage: 15 }
-        //     ],
-        //     columns: ['city', 'count', 'percentage']
-        // }
-    ]
+    const allDatasets: Array<{
+        id: string
+        name: string
+        description: string
+        data: any[]
+        columns: string[]
+        source?: string
+    }> = [
+            ...queryDatasets,
+            // {
+            //     id: 'department-stats',
+            //     name: 'Department Statistics (Sample)',
+            //     description: 'Employee count, average salary, and total budget by department',
+            //     data: fallbackData,
+            //     columns: fallbackColumns
+            // },
+            {
+                id: 'salary-distribution',
+                name: 'Salary Distribution (Sample)',
+                description: 'Salary ranges and employee distribution',
+                data: [
+                    { range: '50k-60k', count: 12, percentage: 15 },
+                    { range: '60k-70k', count: 25, percentage: 31 },
+                    { range: '70k-80k', count: 28, percentage: 35 },
+                    { range: '80k-90k', count: 15, percentage: 19 }
+                ],
+                columns: ['range', 'count', 'percentage'],
+                source: 'Sample Data'
+            },
+            // {
+            //     id: 'city-breakdown',
+            //     name: 'City Breakdown (Sample)',
+            //     description: 'Employee distribution across different cities',
+            //     data: [
+            //         { city: 'New York', count: 35, percentage: 25 },
+            //         { city: 'San Francisco', count: 28, percentage: 20 },
+            //         { city: 'Chicago', count: 22, percentage: 16 },
+            //         { city: 'Boston', count: 18, percentage: 13 },
+            //         { city: 'Seattle', count: 15, percentage: 11 },
+            //         { city: 'Other', count: 20, percentage: 15 }
+            //     ],
+            //     columns: ['city', 'count', 'percentage']
+            // }
+        ]
 
     // Auto-select first query result if available, otherwise fallback to sample data
     useEffect(() => {
@@ -340,9 +348,11 @@ export default function ChartsPage() {
                                             <span className="font-medium">Columns:</span> {currentDataset.columns.join(', ')}
                                         </div>
                                     </div>
-                                    <div className="text-sm text-muted-foreground">
-                                        <span className="font-medium">Source:</span> {currentDataset.source}
-                                    </div>
+                                    {currentDataset.source && (
+                                        <div className="text-sm text-muted-foreground">
+                                            <span className="font-medium">Source:</span> {currentDataset.source}
+                                        </div>
+                                    )}
                                     {currentDataset.description && (
                                         <div className="text-sm text-muted-foreground">
                                             <span className="font-medium">Description:</span> {currentDataset.description}
