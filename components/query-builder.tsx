@@ -132,11 +132,11 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                 <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                         <Database className="h-5 w-5" />
-                        <span>Query Builder</span>
+                        <span>Build Your Query</span>
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                    {/* Filters Section */}
+                    {/* Filters Section - find the stuff you want */}
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-medium flex items-center space-x-2">
@@ -150,7 +150,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         </div>
 
                         {query.filters.length === 0 ? (
-                            <p className="text-muted-foreground text-sm">No filters applied</p>
+                            <p className="text-muted-foreground text-sm">No filters yet - add one to narrow things down</p>
                         ) : (
                             <div className="space-y-3">
                                 {query.filters.map((filter, index) => (
@@ -160,7 +160,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                                             onValueChange={(value) => updateFilter(index, 'field', value)}
                                         >
                                             <SelectTrigger className="w-40">
-                                                <SelectValue placeholder="Select field" />
+                                                <SelectValue placeholder="Pick a field" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {availableColumns.map(column => (
@@ -193,7 +193,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                                         </Select>
 
                                         <Input
-                                            placeholder="Value"
+                                            placeholder="What value?"
                                             value={filter.value}
                                             onChange={(e) => updateFilter(index, 'value', e.target.value)}
                                             className="flex-1"
@@ -212,7 +212,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         )}
                     </div>
 
-                    {/* Group By Section */}
+                    {/* Group By Section - organize your results */}
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-medium flex items-center space-x-2">
@@ -226,7 +226,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         </div>
 
                         {query.groupBy.length === 0 ? (
-                            <p className="text-muted-foreground text-sm">No grouping applied</p>
+                            <p className="text-muted-foreground text-sm">No grouping - results will be flat</p>
                         ) : (
                             <div className="space-y-3">
                                 {query.groupBy.map((group, index) => (
@@ -236,7 +236,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                                             onValueChange={(value) => updateGroupBy(index, 'field', value)}
                                         >
                                             <SelectTrigger className="w-40">
-                                                <SelectValue placeholder="Select field" />
+                                                <SelectValue placeholder="Pick a field" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {availableColumns.map(column => (
@@ -267,7 +267,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         )}
                     </div>
 
-                    {/* Aggregations Section */}
+                    {/* Aggregations Section - do math on your data */}
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-medium flex items-center space-x-2">
@@ -281,7 +281,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         </div>
 
                         {query.aggregations.length === 0 ? (
-                            <p className="text-muted-foreground text-sm">No aggregations applied</p>
+                            <p className="text-muted-foreground text-sm">No aggregations - just raw data</p>
                         ) : (
                             <div className="space-y-3">
                                 {query.aggregations.map((agg, index) => (
@@ -291,7 +291,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                                             onValueChange={(value) => updateAggregation(index, 'field', value)}
                                         >
                                             <SelectTrigger className="w-40">
-                                                <SelectValue placeholder="Select field" />
+                                                <SelectValue placeholder="Pick a field" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {availableColumns.map(column => (
@@ -339,7 +339,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         )}
                     </div>
 
-                    {/* Sort Section */}
+                    {/* Sort Section - put things in order */}
                     <div>
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-medium flex items-center space-x-2">
@@ -353,7 +353,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         </div>
 
                         {query.sort.length === 0 ? (
-                            <p className="text-muted-foreground text-sm">No sorting applied</p>
+                            <p className="text-muted-foreground text-sm">No sorting - results in whatever order they come</p>
                         ) : (
                             <div className="space-y-3">
                                 {query.sort.map((sort, index) => (
@@ -363,7 +363,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                                             onValueChange={(value) => updateSort(index, 'field', value)}
                                         >
                                             <SelectTrigger className="w-40">
-                                                <SelectValue placeholder="Select field" />
+                                                <SelectValue placeholder="Pick a field" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {availableColumns.map(column => (
@@ -400,7 +400,7 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         )}
                     </div>
 
-                    {/* Limit */}
+                    {/* Limit - don't overwhelm yourself */}
                     <div>
                         <label className="block text-sm font-medium mb-2">Result Limit</label>
                         <Input
@@ -412,9 +412,9 @@ export function QueryBuilder({ availableColumns, onQueryChange, onExecute }: Que
                         />
                     </div>
 
-                    {/* Execute Button */}
+                    {/* Execute Button - let's see what we get */}
                     <Button onClick={onExecute} className="w-full">
-                        Execute Query
+                        Run This Query
                     </Button>
                 </CardContent>
             </Card>

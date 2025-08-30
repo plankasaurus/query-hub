@@ -8,27 +8,24 @@ import { Database, Play, BarChart3, Download } from 'lucide-react'
 import { QueryConfig } from '@/lib/query-builder'
 import Link from 'next/link'
 
-// Define the type for our data rows
+// Define the type for our row data
 type DataRow = {
-    state: string
-    population: number
-    median_age: number
-    median_income: number
-    unemployment_rate: number
-    survey_date: string
+    name: string
+    age: number
+    city: string
+    salary: number
+    department: string
+    hire_date: string
 }
 
-// Realistic ABS data for demonstration
-const mockColumns = ['state', 'population', 'median_age', 'median_income', 'unemployment_rate', 'survey_date'] as const
+// Mock data for demonstration - in real app this would come from API
+const mockColumns = ['name', 'age', 'city', 'salary', 'department', 'hire_date'] as const
 const mockData: DataRow[] = [
-    { state: 'New South Wales', population: 8166000, median_age: 38.4, median_income: 85000, unemployment_rate: 4.2, survey_date: '2023-06-30' },
-    { state: 'Victoria', population: 6681000, median_age: 37.8, median_income: 82000, unemployment_rate: 4.1, survey_date: '2023-06-30' },
-    { state: 'Queensland', population: 5265000, median_age: 37.2, median_income: 78000, unemployment_rate: 4.5, survey_date: '2023-06-30' },
-    { state: 'Western Australia', population: 2752000, median_age: 36.9, median_income: 88000, unemployment_rate: 3.8, survey_date: '2023-06-30' },
-    { state: 'South Australia', population: 1771000, median_age: 40.1, median_income: 75000, unemployment_rate: 4.3, survey_date: '2023-06-30' },
-    { state: 'Tasmania', population: 541000, median_age: 42.3, median_income: 68000, unemployment_rate: 4.7, survey_date: '2023-06-30' },
-    { state: 'Australian Capital Territory', population: 456000, median_age: 35.7, median_income: 95000, unemployment_rate: 3.2, survey_date: '2023-06-30' },
-    { state: 'Northern Territory', population: 249000, median_age: 32.8, median_income: 72000, unemployment_rate: 4.9, survey_date: '2023-06-30' },
+    { name: 'John Doe', age: 30, city: 'New York', salary: 75000, department: 'Engineering', hire_date: '2020-01-15' },
+    { name: 'Jane Smith', age: 28, city: 'San Francisco', salary: 80000, department: 'Marketing', hire_date: '2019-06-20' },
+    { name: 'Bob Johnson', age: 35, city: 'Chicago', salary: 90000, department: 'Sales', hire_date: '2018-03-10' },
+    { name: 'Alice Brown', age: 32, city: 'Boston', salary: 85000, department: 'Engineering', hire_date: '2021-02-28' },
+    { name: 'Charlie Wilson', age: 29, city: 'Seattle', salary: 78000, department: 'Engineering', hire_date: '2020-08-15' },
 ]
 
 export default function QueryBuilderPage() {
@@ -40,6 +37,7 @@ export default function QueryBuilderPage() {
         limit: 100
     })
 
+    const [queryResults, setQueryResults] = useState<DataRow[]>([])
     const [queryResults, setQueryResults] = useState<DataRow[]>([])
     const [isExecuting, setIsExecuting] = useState(false)
     const [executionTime, setExecutionTime] = useState<number | null>(null)
@@ -63,6 +61,7 @@ export default function QueryBuilderPage() {
             currentQuery.filters.forEach(filter => {
                 if (filter.field && filter.value) {
                     results = results.filter(row => {
+                        // Type-safe access to row properties
                         const fieldValue = row[filter.field as keyof DataRow]
                         switch (filter.operator) {
                             case 'eq':
@@ -91,6 +90,8 @@ export default function QueryBuilderPage() {
                 results.sort((a, b) => {
                     for (const sort of currentQuery.sort) {
                         if (sort.field) {
+                            const aVal = a[sort.field as keyof DataRow]
+                            const bVal = b[sort.field as keyof DataRow]
                             const aVal = a[sort.field as keyof DataRow]
                             const bVal = b[sort.field as keyof DataRow]
                             if (aVal < bVal) return sort.direction === 1 ? -1 : 1
