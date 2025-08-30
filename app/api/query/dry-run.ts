@@ -91,3 +91,30 @@ async function query() {
 
 }
 query().catch(console.error);
+
+/**
+ [ Promise { { analysis: [Object], data: [Array] } } ]
+
+ Analysis Result:
+{
+  analysis: {
+    overview: 'The analysis focuses on the trends in registered marriages and crude marriage rates in Australia from 2020 to 2024, with a particular emphasis on the impact and recovery from the COVID-19 pandemic (2020-2021).',
+    totalRegisteredMarriages: [ [Object], [Object], [Object], [Object], [Object] ],
+    crudeMarriageRate: [ [Object], [Object], [Object], [Object], [Object] ],
+    covid19ImpactAndRecovery: {
+      impact: 'The COVID-19 pandemic in 2020 and 2021 significantly impacted marriage trends. 2020 saw the lowest number of registered marriages (78,987) and a crude marriage rate of 3.8.  Restrictions and uncertainty likely contributed to a decrease in marriages.',
+      initialRecovery: 'In 2021, there was an increase in both total registered marriages (89,167) and the crude marriage rate (4.3), indicating an initial recovery phase as restrictions eased.',
+      postPandemicPeak: '2022 experienced a significant surge in marriages, with 127,161 registered marriages and a crude marriage rate of 6.1. This could be attributed to couples who had postponed their weddings during the pandemic.',
+      stabilization: 'In 2023, the number of marriages decreased to 118,439, and the crude marriage rate dropped to 5.5, suggesting a stabilization after the post-pandemic peak.  In 2024, the number of marriages increased slightly to 120,844, while the crude marriage rate remained at 5.5.'
+    },
+    summary: 'The number of registered marriages and the crude marriage rate were affected by the COVID-19 pandemic. There was an initial drop in 2020, followed by a recovery and a peak in 2022, and a stabilization in 2023 and 2024. The data suggests that the marriage trends are returning to a more stable pattern after the disruptions caused by the pandemic.'
+  },
+  data: [
+    { year: 2020, allMarriages: [Object] },
+    { year: 2021, allMarriages: [Object] },
+    { year: 2022, allMarriages: [Object] },
+    { year: 2023, allMarriages: [Object] },
+    { year: 2024, allMarriages: [Object] }
+  ]
+}
+ */
