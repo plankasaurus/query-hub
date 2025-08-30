@@ -1,8 +1,9 @@
 // app/api/upload/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { writeFile, mkdir } from 'fs/promises'
-import fs from 'fs/promises'
 import path from 'path'
+import { generateWithParts } from '../model';
+import { createPartFromText } from '@google/genai';
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,6 +18,29 @@ export async function POST(request: NextRequest) {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
+    // Convert to text for LLM
+    const originalContent = buffer.toString('utf-8')
+
+    // Call LLM to clean/standardize
+    const promptContents = [
+      {text: "Parse this file, return the output as a JSON"},
+        createPartFromText(originalContent),
+    ]
+
+    const SI = `You are a data ingestion assistant. 
+        Your job is to analyze a sample dataset (CSV, JSON, Excel workbooks, or other structured text), clean, and standardize it and produce:
+        1. A cleaned and standardized the data.
+        2. Add a metadata field that includes the source of this dataset and a description of the dataset contents
+        3. Column/field names normalized to snake_case.
+        4. Datatypes for each field (string, integer, float, boolean, date, datetime, categorical, etc.).
+        5. A short description of each field, based on the data if possible.
+
+        Rules:
+        - Never hallucinate fields that don’t exist in the data.
+        - Output must be in strict JSON format.`;
+
+    const standardizedData = await generateWithParts(SI, promptContents);
+
     // Ensure uploads folder exists
     const uploadDir = path.join(process.cwd(), 'public', 'uploads')
     await mkdir(uploadDir, { recursive: true })
@@ -25,7 +49,7 @@ export async function POST(request: NextRequest) {
     const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 255)
 
     const filePath = path.join(uploadDir, safeName)
-    await writeFile(filePath, buffer)
+    await writeFile(filePath, JSON.stringify(standardizedData, null, 2), 'utf-8')
 
     return NextResponse.json({
       success: true,
@@ -36,35 +60,5 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Upload error:', error)
     return NextResponse.json({ error: 'Failed to save file' }, { status: 500 })
-  }
-}
-
-export async function GET() {
-  try {
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads')
-    const files = await fs.readdir(uploadDir)
-
-    const fileData = await Promise.all(
-      files.map(async (filename) => {
-        const filePath = path.join(uploadDir, filename)
-        const stats = await fs.stat(filePath)
-
-        return {
-          id: filename, // use filename as ID
-          name: filename,
-          size: stats.size,
-          uploadTime: stats.mtime, // last modified time
-          rowCount: 0, // optional: could parse CSV to get row count
-          columns: [], // optional: could parse CSV to get columns
-          status: 'processed',
-          path: `/uploads/${filename}`
-        }
-      })
-    )
-
-    return NextResponse.json({ success: true, files: fileData })
-  } catch (error) {
-    console.error('Error reading uploads folder:', error)
-    return NextResponse.json({ success: false, error: 'Failed to list files' }, { status: 500 })
   }
 }
