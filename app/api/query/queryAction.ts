@@ -48,7 +48,7 @@ export async function querySeedAndKV(userQuery: string) {
             );
             console.log("Is useful", result, dataString.slice(0, 200));
             if (result.useful === true) {
-                datasets.push(dataString);
+                datasets.push(data);
                 console.log(`Dataset ${filename} is useful, added to analysis list`);
             } else {
                 console.log(`Dataset ${filename} is not useful for this query`);
@@ -72,6 +72,7 @@ export async function querySeedAndKV(userQuery: string) {
         const awaiter = async () => {
             try {
                 console.log(`Analyzing dataset ${i + 1}/${datasets.length}...`);
+
                 const analysis = await generateWithParts(
                     `You are an expert data analyst. Your task is to analyze the provided dataset to answer the user's question.
                 
@@ -102,12 +103,19 @@ export async function querySeedAndKV(userQuery: string) {
                     `,
                     [
                         { text: `User Question: ${userQuery}` },
-                        { text: `Dataset: ${createPartFromText(dataset)}` }
+                        createPartFromText(JSON.stringify(dataset))
+
                     ]
                 );
                 console.log(`Analysis completed for dataset ${i + 1}`);
-                analysis["source"] = dataset["source"] || "Unknown source";
-                analysis["dataset_name"] = dataset["dataset_name"] || "Unknown dataset_name";
+                console.log(dataset.metadata, "metadata???");
+                analysis["source"] = dataset["metadata"]["source"] || "Unknown source";
+                analysis["filename"] = dataset["metadata"]["filename"] || "Unknown dataset_name";
+                if ((analysis["filename"] === "Unknown dataset_name") || (analysis["source"] === "Unknown source")) {
+                    console.error(`Error analyzing dataset ${i + 1}:`, analysis);
+                    return null;
+                }
+                console.log("Analysis", analysis);
                 return analysis;
             } catch (error) {
                 console.error(`Error analyzing dataset ${i + 1}:`, error);
@@ -120,6 +128,6 @@ export async function querySeedAndKV(userQuery: string) {
     console.log(`Completed analysis of ${results.length} datasets`);
     // console.log(results);
     // console.log(JSON.stringify(results, null, 2));
-    return results;
+    return results.filter(result => result !== null);
 }
 // query().catch(console.error);
