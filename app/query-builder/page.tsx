@@ -1,11 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { QueryBuilder } from '@/components/query-builder'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Database, Play, BarChart3, Download } from 'lucide-react'
-import { QueryConfig } from '@/lib/query-builder'
+import { Database, Play, BarChart3, Download, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 
 // Define the type for our mock data
@@ -19,7 +18,6 @@ type MockDataRow = {
 }
 
 // Mock data for demonstration - in real app this would come from API
-const mockColumns = ['name', 'age', 'city', 'salary', 'department', 'hire_date']
 const mockData: MockDataRow[] = [
     { name: 'John Doe', age: 30, city: 'New York', salary: 75000, department: 'Engineering', hire_date: '2020-01-15' },
     { name: 'Jane Smith', age: 28, city: 'San Francisco', salary: 80000, department: 'Marketing', hire_date: '2019-06-20' },
@@ -29,23 +27,19 @@ const mockData: MockDataRow[] = [
 ]
 
 export default function QueryBuilderPage() {
-    const [currentQuery, setCurrentQuery] = useState<QueryConfig>({
-        filters: [],
-        groupBy: [],
-        aggregations: [],
-        sort: [],
-        limit: 100
-    })
-
+    const [query, setQuery] = useState<string>('')
     const [queryResults, setQueryResults] = useState<MockDataRow[]>([])
     const [isExecuting, setIsExecuting] = useState(false)
     const [executionTime, setExecutionTime] = useState<number | null>(null)
+    const [queryHistory, setQueryHistory] = useState<Array<{ query: string, results: MockDataRow[], timestamp: Date }>>([])
 
-    const handleQueryChange = (query: QueryConfig) => {
-        setCurrentQuery(query)
+    const handleQueryChange = (newQuery: string) => {
+        setQuery(newQuery)
     }
 
     const executeQuery = async () => {
+        if (!query.trim()) return
+
         setIsExecuting(true)
         const startTime = Date.now()
 
@@ -56,55 +50,35 @@ export default function QueryBuilderPage() {
             // Mock query execution - in real app this would call the API
             let results = [...mockData]
 
-            // Apply filters
-            currentQuery.filters.forEach(filter => {
-                if (filter.field && filter.value) {
-                    results = results.filter(row => {
-                        const fieldValue = row[filter.field as keyof MockDataRow]
-                        switch (filter.operator) {
-                            case 'eq':
-                                return fieldValue == filter.value
-                            case 'ne':
-                                return fieldValue != filter.value
-                            case 'gt':
-                                return fieldValue > filter.value
-                            case 'gte':
-                                return fieldValue >= filter.value
-                            case 'lt':
-                                return fieldValue < filter.value
-                            case 'lte':
-                                return fieldValue <= filter.value
-                            case 'regex':
-                                return String(fieldValue).toLowerCase().includes(String(filter.value).toLowerCase())
-                            default:
-                                return true
-                        }
-                    })
+            // Simple mock logic based on query content
+            if (query.toLowerCase().includes('salary') && query.toLowerCase().includes('above')) {
+                const salaryMatch = query.match(/\d+/)
+                if (salaryMatch) {
+                    const threshold = parseInt(salaryMatch[0])
+                    results = results.filter(row => row.salary > threshold)
                 }
-            })
-
-            // Apply sorting
-            if (currentQuery.sort.length > 0) {
-                results.sort((a, b) => {
-                    for (const sort of currentQuery.sort) {
-                        if (sort.field) {
-                            const aVal = a[sort.field as keyof MockDataRow]
-                            const bVal = b[sort.field as keyof MockDataRow]
-                            if (aVal < bVal) return sort.direction === 1 ? -1 : 1
-                            if (aVal > bVal) return sort.direction === 1 ? 1 : -1
-                        }
-                    }
-                    return 0
-                })
-            }
-
-            // Apply limit
-            if (currentQuery.limit) {
-                results = results.slice(0, currentQuery.limit)
+            } else if (query.toLowerCase().includes('department')) {
+                const deptMatch = query.match(/engineering|marketing|sales/i)
+                if (deptMatch) {
+                    const dept = deptMatch[0].toLowerCase()
+                    results = results.filter(row => row.department.toLowerCase() === dept)
+                }
+            } else if (query.toLowerCase().includes('age')) {
+                if (query.toLowerCase().includes('average')) {
+                    const avgAge = results.reduce((sum, row) => sum + row.age, 0) / results.length
+                    results = [{ name: 'Average Age', age: Math.round(avgAge), city: '', salary: 0, department: '', hire_date: '' }]
+                }
             }
 
             setQueryResults(results)
             setExecutionTime(Date.now() - startTime)
+
+            // Add to query history
+            setQueryHistory(prev => [{
+                query: query,
+                results: results,
+                timestamp: new Date()
+            }, ...prev.slice(0, 4)]) // Keep last 5 queries
 
         } catch (error) {
             console.error('Query execution failed:', error)
@@ -136,18 +110,40 @@ export default function QueryBuilderPage() {
             <div className="text-center space-y-4">
                 <h1 className="text-3xl font-bold text-primary">Query Builder</h1>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Build powerful queries with filters, grouping, and aggregations. Convert your logic into MongoDB aggregation pipelines.
+                    Ask questions about your data in natural language and get instant answers.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Query Builder Panel */}
-                <div>
+                {/* Query Input Panel */}
+                <div className="space-y-6">
                     <QueryBuilder
-                        availableColumns={mockColumns}
                         onQueryChange={handleQueryChange}
                         onExecute={executeQuery}
+                        query={query}
                     />
+
+                    {/* Query History */}
+                    {queryHistory.length > 0 && (
+                        <Card>
+                            <CardHeader>
+                                <CardTitle className="flex items-center space-x-2">
+                                    <MessageSquare className="h-5 w-5" />
+                                    <span>Recent Queries</span>
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-3">
+                                {queryHistory.map((item, index) => (
+                                    <div key={index} className="p-3 bg-muted rounded-lg">
+                                        <p className="text-sm font-medium mb-1">{item.query}</p>
+                                        <p className="text-xs text-muted-foreground">
+                                            {item.timestamp.toLocaleTimeString()} • {item.results.length} results
+                                        </p>
+                                    </div>
+                                ))}
+                            </CardContent>
+                        </Card>
+                    )}
                 </div>
 
                 {/* Results Panel */}
@@ -226,38 +222,9 @@ export default function QueryBuilderPage() {
                             ) : (
                                 <div className="text-center py-8 text-muted-foreground">
                                     <Database className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                                    <p>No results yet. Build a query and click Execute to see results.</p>
+                                    <p>No results yet. Type a query and click Ask to see results.</p>
                                 </div>
                             )}
-                        </CardContent>
-                    </Card>
-
-                    {/* Query Summary */}
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Query Summary</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-3 text-sm">
-                            <div className="flex justify-between">
-                                <span>Filters:</span>
-                                <span className="font-medium">{currentQuery.filters.length}</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span>Group By:</span>
-                                <span className="font-medium">{currentQuery.groupBy.length}</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span>Aggregations:</span>
-                                <span className="font-medium">{currentQuery.aggregations.length}</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span>Sort:</span>
-                                <span className="font-medium">{currentQuery.sort.length}</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span>Limit:</span>
-                                <span className="font-medium">{currentQuery.limit || 'None'}</span>
-                            </div>
                         </CardContent>
                     </Card>
                 </div>
