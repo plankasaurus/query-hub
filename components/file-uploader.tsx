@@ -52,9 +52,7 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
         setIsUploading(true)
 
         for (const file of files) {
-            if (!file.name.toLowerCase().endsWith('.csv')) {
-                continue
-            }
+            if (!file.name.toLowerCase().endsWith('.csv')) continue
 
             const fileId = `file_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
 
@@ -70,37 +68,37 @@ export function FileUploader({ onUploadComplete }: FileUploaderProps) {
             setUploadedFiles(prev => [...prev, uploadedFile])
 
             try {
-                // Simulate upload progress
-                for (let i = 0; i <= 100; i += 10) {
-                    await new Promise(resolve => setTimeout(resolve, 100))
-                    setUploadedFiles(prev =>
-                        prev.map(f => f.id === fileId ? { ...f, progress: i } : f)
+                // Create form data
+                const formData = new FormData()
+                formData.append('file', file)
+
+                // Use fetch to POST to your /api/upload route
+                const res = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+
+                if (!res.ok) throw new Error('Upload failed')
+
+                const data = await res.json()
+
+                // Update progress to 100%
+                setUploadedFiles(prev =>
+                    prev.map(f => f.id === fileId
+                        ? { ...f, progress: 100, status: 'completed' }
+                        : f
                     )
-                }
-
-                // Update status to processing
-                setUploadedFiles(prev =>
-                    prev.map(f => f.id === fileId ? { ...f, status: 'processing' } : f)
                 )
 
-                // Simulate processing time
-                await new Promise(resolve => setTimeout(resolve, 1000))
-
-                // Update status to completed
-                setUploadedFiles(prev =>
-                    prev.map(f => f.id === fileId ? { ...f, status: 'completed' } : f)
-                )
-
-                // Call the callback
-                onUploadComplete(fileId)
+                // Optionally: pass the saved file path or fileId to callback
+                onUploadComplete(data.path || fileId)
 
             } catch (error) {
                 setUploadedFiles(prev =>
-                    prev.map(f => f.id === fileId ? {
-                        ...f,
-                        status: 'error',
-                        error: error instanceof Error ? error.message : 'Upload failed'
-                    } : f)
+                    prev.map(f => f.id === fileId
+                        ? { ...f, status: 'error', error: error instanceof Error ? error.message : 'Upload failed' }
+                        : f
+                    )
                 )
             }
         }
