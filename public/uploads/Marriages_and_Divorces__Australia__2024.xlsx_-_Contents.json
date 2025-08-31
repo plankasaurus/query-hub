@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Marriages and Divorces, Australia, 2024",
+    "filename": "Marriages and Divorces (Australia) 2024.xlsx - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "tab",
+      "data_type": "string",
+      "description": "Name of the table tab."
+    },
+    {
+      "name": "description",
+      "data_type": "string",
+      "description": "Description of the table."
+    }
+  ],
+  "data": [
+    {
+      "tab": "Table 1 << link to tab >>",
+      "description": "Selected marriage indicators, 2020-2024"
+    },
+    {
+      "tab": "Table 2 << link to tab >>",
+      "description": "Month of marriage occurring in 2020-2024, and 2024 by state/territory of registration"
+    },
+    {
+      "tab": "Table 3",
+      "description": "Selected divorce indicators, 2020-2024"
+    },
+    {
+      "tab": "Further information",
+      "description": "Relevant methodology information and links to more detail on the ABS website"
+    },
+    {
+      "tab": "Further information",
+      "description": "This data comes from Marriages and Divorces, Australia, 2024."
+    },
+    {
+      "tab": null,
+      "description": "Visit the Marriages and Divorces, Australia methodology to understand more about how this data was collected."
+    },
+    {
+      "tab": "Australian Bureau of Statistics website.",
+      "description": "Contact us if you have an enquiry about these statistics or to get assistance."
+    },
+    {
+      "tab": null,
+      "description": "The ABS privacy policy outlines how we handle any personal information that you have provided to us."
+    },
+    {
+      "tab": "© Commonwealth of Australia",
+      "description": null
+    }
+  ]
+}

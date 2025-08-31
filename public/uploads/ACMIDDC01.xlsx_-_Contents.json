@@ -1,0 +1,204 @@
+{
+  "schema": [
+    {
+      "name": "field_1",
+      "data_type": "string",
+      "description": "Unspecified field, possibly containing table of contents or metadata."
+    },
+    {
+      "name": "field_2",
+      "data_type": "string",
+      "description": "Unspecified field, often empty, possibly containing additional metadata."
+    }
+  ],
+  "cleaned_data": [
+    {
+      "field_1": "Australian Bureau of Statistics",
+      "field_2": null
+    },
+    {
+      "field_1": "34170DO001_2021, Permanent migrants in Australia, 2021",
+      "field_2": null
+    },
+    {
+      "field_1": "Released at 11.30am (Canberra time) Wed 29 Mar 2023",
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": "Contents"
+    },
+    {
+      "field_1": null,
+      "field_2": "Tables"
+    },
+    {
+      "field_1": null,
+      "field_2": "General characteristics"
+    },
+    {
+      "field_1": "'Table 1'!A1",
+      "field_2": "Selected characteristics by visa stream, permanent migrants"
+    },
+    {
+      "field_1": "'Table 2'!A1",
+      "field_2": "Greater Capital City Statistical Areas by visa stream, permanent migrants"
+    },
+    {
+      "field_1": "'Table 3'!A1",
+      "field_2": "Citizenship status by visa stream and year of arrival, permanent migrants"
+    },
+    {
+      "field_1": "'Table 4'!A1",
+      "field_2": "Citizenship status by country of birth, permanent migrants"
+    },
+    {
+      "field_1": "'Table 5'!A1",
+      "field_2": "Country of birth by visa stream, permanent migrants"
+    },
+    {
+      "field_1": "'Table 6'!A1",
+      "field_2": "Tenure and landlord type by visa stream and year of arrival, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 7'!A1",
+      "field_2": "Type of long-term health conditions by visa stream and sex, permanent migrants"
+    },
+    {
+      "field_1": "'Table 8'!A1",
+      "field_2": "First temporary visa by visa stream, permanent migrants"
+    },
+    {
+      "field_1": "'Table 9'!A1",
+      "field_2": "Time taken from first temporary visa to first permanent visa by first permanent visa, permanent migrants"
+    },
+    {
+      "field_1": null,
+      "field_2": "Proficiency in English"
+    },
+    {
+      "field_1": "'Table 10'!A1",
+      "field_2": "Proficiency in spoken English by country of birth, permanent migrants"
+    },
+    {
+      "field_1": "'Table 11'!A1",
+      "field_2": "Proficiency in spoken English by visa stream and sex, permanent migrants"
+    },
+    {
+      "field_1": "'Table 12'!A1",
+      "field_2": "Proficiency in spoken English by visa stream and year of arrival, permanent migrants"
+    },
+    {
+      "field_1": null,
+      "field_2": "Education"
+    },
+    {
+      "field_1": "'Table 13'!A1",
+      "field_2": "Level of highest educational attainment by visa stream and sex, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": null,
+      "field_2": "Employment and income"
+    },
+    {
+      "field_1": "'Table 14'!A1",
+      "field_2": "Labour force status by visa stream and country of birth, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 15'!A1",
+      "field_2": "Labour force status by visa stream, age and sex, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 16'!A1",
+      "field_2": "Labour force status by visa stream, applicant status and sex, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 17'!A1",
+      "field_2": "Labour force status by visa stream and proficiency in spoken English, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 18'!A1",
+      "field_2": "Occupation by visa stream and sex, employed permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 19'!A1",
+      "field_2": "Industry by visa stream and sex, employed permanent migrants 15 years and over"
+    },
+    {
+      "field_1": "'Table 20'!A1",
+      "field_2": "Individual (weekly) income by visa stream and year of arrival, permanent migrants 15 years and over"
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": "More information available from the ABS website"
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": "Permanent migrants in Australia, 2021",
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": "Key statistics"
+    },
+    {
+      "field_1": null,
+      "field_2": "Methodology"
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": "Inquiries"
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": "For further information about these and related statistics, visit www.abs.gov.au/about/contact-us",
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": null,
+      "field_2": null
+    },
+    {
+      "field_1": "© Commonwealth of Australia 2023",
+      "field_2": null
+    }
+  ],
+  "metadata": {
+    "source": "The source of the data",
+    "filename": "ACMIDDC01.xlsx - Contents.csv"
+  }
+}

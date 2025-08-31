@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Migrant settlement outcomes, 2025",
+    "filename": "MSODC01_2025.xlsx - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "tab",
+      "data_type": "string",
+      "description": "Tab identifier, likely a reference to a specific table or sheet within the original data source."
+    },
+    {
+      "name": "description",
+      "data_type": "string",
+      "description": "A description of the data contained within the corresponding tab."
+    }
+  ],
+  "data": [
+    {
+      "tab": "Table 1",
+      "description": "Australian citizenship by visa stream, 2016 and 2021"
+    },
+    {
+      "tab": "Table 2",
+      "description": "Education indicators for persons aged 15-64 years, by visa stream, 2019"
+    },
+    {
+      "tab": "Table_3a",
+      "description": "Economic participation indicators for persons aged 15-64 years, by visa stream, 2019-20"
+    },
+    {
+      "tab": "Table_3b",
+      "description": "Socio-economic indicator by visa stream, 2016 and 2021"
+    },
+    {
+      "tab": "Table 4",
+      "description": "English proficiency by visa stream, 2016 and 2021"
+    },
+    {
+      "tab": "Table_5",
+      "description": "Type of long-term health condition by visa stream, 2021"
+    },
+    {
+      "tab": "Table_6",
+      "description": "Housing indicators by visa stream, 2016 and 2021"
+    }
+  ]
+}

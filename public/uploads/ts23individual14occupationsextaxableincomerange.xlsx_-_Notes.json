@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "source": "Taxation statistics 2022–23, Table 14: Individuals, Selected items, by occupation1, sex4 and taxable income range, 2010–11 to 2022–23 income years2",
+    "filename": "ts23individual14occupationsextaxableincomerange.xlsx - Notes.csv"
+  },
+  "fields": [
+    {
+      "name": "notes",
+      "type": "string",
+      "description": "Explanatory notes about the data."
+    },
+    {
+      "name": "table_14a",
+      "type": "string",
+      "description": "Title of Table 14A: Selected items, by occupation, sex and taxable income range, 2022–23 income year"
+    },
+    {
+      "name": "table_14b",
+      "type": "string",
+      "description": "Title of Table 14B: Key items, by income year, occupation, sex and taxable income range, 2010–11 to 2022–23 income years"
+    }
+  ]
+}
