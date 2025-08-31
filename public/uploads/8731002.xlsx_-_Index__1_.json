@@ -1,0 +1,252 @@
+{
+  "metadata": {
+    "source": "8731.0 Building Approvals, Australia, Table 02. Number of dwelling units approved, by sector, all series - Victoria",
+    "filename": "8731002.xlsx - Index (1).csv"
+  },
+  "fields": [
+    {
+      "name": "data_item_description",
+      "type": "string",
+      "description": "Description of the data item, including type of dwelling, state (Victoria), sector, and other details."
+    },
+    {
+      "name": "series_type",
+      "type": "categorical",
+      "description": "Type of series: Original, Seasonally Adjusted, or Trend."
+    },
+    {
+      "name": "series_id",
+      "type": "string",
+      "description": "Unique identifier for the series."
+    },
+    {
+      "name": "series_start",
+      "type": "string",
+      "description": "Start date of the series (Month-Year)."
+    },
+    {
+      "name": "series_end",
+      "type": "string",
+      "description": "End date of the series (Month-Year)."
+    },
+    {
+      "name": "no_obs",
+      "type": "integer",
+      "description": "Number of observations in the series."
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "description": "Unit of measurement (Number)."
+    },
+    {
+      "name": "data_type",
+      "type": "string",
+      "description": "Type of data (FLOW)."
+    },
+    {
+      "name": "freq",
+      "type": "string",
+      "description": "Frequency of the data (Month)."
+    },
+    {
+      "name": "collection_month",
+      "type": "integer",
+      "description": "Month of data collection (1)."
+    }
+  ],
+  "data": [
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Houses ;  Private Sector ;",
+      "series_type": "Original",
+      "series_id": "A418540L",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Houses ;  Total Sectors ;",
+      "series_type": "Original",
+      "series_id": "A418596X",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Dwellings excluding houses ;  Private Sector ;",
+      "series_type": "Original",
+      "series_id": "A421386K",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Dwellings excluding houses ;  Total Sectors ;",
+      "series_type": "Original",
+      "series_id": "A421445X",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Total (Type of Building) ;  Private Sector ;",
+      "series_type": "Original",
+      "series_id": "A422202X",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Total (Type of Building) ;  Total Sectors ;",
+      "series_type": "Original",
+      "series_id": "A422266K",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Houses ;  Private Sector ;",
+      "series_type": "Seasonally Adjusted",
+      "series_id": "A418543V",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Houses ;  Total Sectors ;",
+      "series_type": "Seasonally Adjusted",
+      "series_id": "A418599F",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Total (Type of Building) ;  Private Sector ;",
+      "series_type": "Seasonally Adjusted",
+      "series_id": "A422208L",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Total (Type of Building) ;  Total Sectors ;",
+      "series_type": "Seasonally Adjusted",
+      "series_id": "A422272F",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Houses ;  Private Sector ;",
+      "series_type": "Trend",
+      "series_id": "A418544W",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Houses ;  Total Sectors ;",
+      "series_type": "Trend",
+      "series_id": "A418600C",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Dwellings excluding houses ;  Private Sector ;",
+      "series_type": "Trend",
+      "series_id": "A421392F",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Dwellings excluding houses ;  Total Sectors ;",
+      "series_type": "Trend",
+      "series_id": "A421451V",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Total (Type of Building) ;  Private Sector ;",
+      "series_type": "Trend",
+      "series_id": "A422209R",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    },
+    {
+      "data_item_description": "Total number of dwelling units ;  Victoria ;  Total (Type of Building) ;  Total Sectors ;",
+      "series_type": "Trend",
+      "series_id": "A422274K",
+      "series_start": "Jul-1983",
+      "series_end": "Jun-2025",
+      "no_obs": 504,
+      "unit": "Number",
+      "data_type": "FLOW",
+      "freq": "Month",
+      "collection_month": 1
+    }
+  ]
+}

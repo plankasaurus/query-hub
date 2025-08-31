@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics",
+    "filename": "49210do001_201718_tables 1 to 8.xls - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "id",
+      "data_type": "integer",
+      "description": "Row number"
+    },
+    {
+      "name": "contents",
+      "data_type": "string",
+      "description": "Description of the table or section in the report"
+    }
+  ],
+  "data": [
+    {
+      "id": 1,
+      "contents": "PERSONS AGED 15 YEARS AND OVER, States and territories, by age and sex"
+    },
+    {
+      "id": "1a",
+      "contents": "PERSONS AGED 15 YEARS AND OVER, States and territories, by age and sex: Relative Standard Error"
+    },
+    {
+      "id": 2,
+      "contents": "PERSONS AGED 15 YEARS AND OVER, Selected characteristics"
+    },
+    {
+      "id": "2a",
+      "contents": "PERSONS AGED 15 YEARS AND OVER, Selected characteristics: Relative Standard Error"
+    },
+    {
+      "id": 3,
+      "contents": "PERSONS AGED 15 YEARS AND OVER, States and territories, by sex and number of activities "
+    },
+    {
+      "id": "3a",
+      "contents": "PERSONS AGED 15 YEARS AND OVER, States and territories, by sex and number of activities: Relative Standard Error"
+    },
+    {
+      "id": 4,
+      "contents": "PERSONS AGED 15 YEARS AND OVER, Type of activity, by age and sex"
+    },
+    {
+      "id": "4a",
+      "contents": "PERSONS AGED 15 YEARS AND OVER, Type of activity, by age and sex: Relative Standard Error"
+    },
+    {
+      "id": 5,
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Whether received income, by type of activity"
+    },
+    {
+      "id": "5a",
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Whether received income, by type of activity: Relative Standard Error"
+    },
+    {
+      "id": 6,
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Whether received income, by state and territory and sex"
+    },
+    {
+      "id": "6a",
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Whether received income, by state and territory and sex: Relative Standard Error"
+    },
+    {
+      "id": 7,
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Frequency of involvement, by type of activity"
+    },
+    {
+      "id": "7a",
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Frequency of involvement, by type of activity: Relative Standard Error"
+    },
+    {
+      "id": 8,
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Whether received income or volunteered, by type of activity"
+    },
+    {
+      "id": "8a",
+      "contents": "PARTICIPANTS AGED 15 YEARS AND OVER IN SELECTED CULTURAL ACTIVITIES, Whether received income or volunteered, by type of activity: Relative Standard Error"
+    },
+    {
+      "id": null,
+      "contents": "More information available from the ABS website"
+    },
+    {
+      "id": null,
+      "contents": "Participation in Selected Cultural Activities, Australia, 2017–18"
+    },
+    {
+      "id": null,
+      "contents": "Summary"
+    },
+    {
+      "id": null,
+      "contents": "Explanatory Notes"
+    },
+    {
+      "id": null,
+      "contents": "Inquiries"
+    },
+    {
+      "id": null,
+      "contents": "For further information about these and related statistics, contact the National Information and Referral Service on 1300 135 070."
+    },
+    {
+      "id": null,
+      "contents": "© Commonwealth of Australia 2019"
+    }
+  ]
+}

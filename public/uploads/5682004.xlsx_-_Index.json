@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "source": "The source of the data",
+    "filename": "5682004.xlsx - Index.csv"
+  },
+  "fields": [
+    {
+      "name": "data_item_description",
+      "description": "Description of the household spending category and details, including type of spending, location, and price basis.",
+      "data_type": "string"
+    },
+    {
+      "name": "series_type",
+      "description": "The type of series, e.g., Original, Seasonally Adjusted, Trend.",
+      "data_type": "categorical"
+    },
+    {
+      "name": "series_id",
+      "description": "Unique identifier for the series.",
+      "data_type": "string"
+    },
+    {
+      "name": "series_start",
+      "description": "Start date of the series (Month-Year).",
+      "data_type": "string"
+    },
+    {
+      "name": "series_end",
+      "description": "End date of the series (Month-Year).",
+      "data_type": "string"
+    },
+    {
+      "name": "no_obs",
+      "description": "Number of observations in the series.",
+      "data_type": "integer"
+    },
+    {
+      "name": "unit",
+      "description": "Unit of measurement for the data (e.g., $ Millions, Percent).",
+      "data_type": "categorical"
+    },
+    {
+      "name": "data_type",
+      "description": "Type of data (e.g., FLOW, PERCENT).",
+      "data_type": "categorical"
+    },
+    {
+      "name": "freq",
+      "description": "Frequency of the data (Month).",
+      "data_type": "categorical"
+    },
+    {
+      "name": "collection_month",
+      "description": "Month of data collection.",
+      "data_type": "integer"
+    }
+  ]
+}

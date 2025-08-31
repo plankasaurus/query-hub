@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics",
+    "filename": "65300do001_201516.xls - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "title",
+      "data_type": "string",
+      "description": "Title of the document or section, including survey name and year."
+    },
+    {
+      "name": "empty_column_1",
+      "data_type": "string",
+      "description": "Empty column, likely for formatting."
+    },
+    {
+      "name": "release_information",
+      "data_type": "string",
+      "description": "Release time and date information."
+    },
+    {
+      "name": "empty_column_2",
+      "data_type": "string",
+      "description": "Empty column, likely for formatting."
+    },
+    {
+      "name": "section_heading",
+      "data_type": "string",
+      "description": "Section heading or table title."
+    },
+    {
+      "name": "contents",
+      "data_type": "string",
+      "description": "Table of contents or related information."
+    }
+  ],
+  "data": [
+    {
+      "title": "65300DO001_201516 Household Expenditure Survey, Australia: Summary of Results, 2015–16",
+      "empty_column_1": null,
+      "release_information": "Released at 11.30 am (CANBERRA TIME) 29 September 2017",
+      "empty_column_2": null,
+      "section_heading": "1  HOUSEHOLD EXPENDITURE, 1984 to 2015–16",
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "Contents"
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "Tables"
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "1.1,\"HOUSEHOLD EXPENDITURE, 1984 to 2015–16\""
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "1.2,\"HOUSEHOLD CHARACTERISTICS, 1984 to 2015–16\""
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "More information available from the ABS website"
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": "Household Expenditure Survey, Australia: Summary of Results, 2015–16",
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "Summary"
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "Explanatory Notes"
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": "Inquiries"
+    },
+    {
+      "title": "For further information about these and related statistics, contact the National Information and Referral Service on 1300 135 070 or via email <client.services@abs.gov.au>.",
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": null,
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    },
+    {
+      "title": "© Commonwealth of Australia 2017",
+      "empty_column_1": null,
+      "release_information": null,
+      "empty_column_2": null,
+      "section_heading": null,
+      "contents": null
+    }
+  ]
+}

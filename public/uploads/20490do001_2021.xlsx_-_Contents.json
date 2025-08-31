@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, 20490DO001_2021 Estimating homelessness: Census, 2021",
+    "filename": "20490do001_2021.xlsx - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "column_1",
+      "type": "string",
+      "description": "Row identifier or category (e.g., table number, content type, etc.)"
+    },
+    {
+      "name": "column_2",
+      "type": "string",
+      "description": "Content or description associated with the row identifier."
+    }
+  ],
+  "data": [
+    {
+      "column_1": "Contents",
+      "column_2": null
+    },
+    {
+      "column_1": "Tables",
+      "column_2": null
+    },
+    {
+      "column_1": "1",
+      "column_2": "HOMELESS PERSONS, Selected characteristics, 2006, 2011, 2016 and 2021"
+    },
+    {
+      "column_1": "2",
+      "column_2": "PERSONS IN OTHER MARGINAL HOUSING, Selected characteristics, 2006, 2011, 2016 and 2021"
+    },
+    {
+      "column_1": "3",
+      "column_2": "STATE AND TERRITORY OF USUAL RESIDENCE, Number of homeless persons, by selected characteristics, 2006, 2011, 2016 and 2021"
+    },
+    {
+      "column_1": "4",
+      "column_2": "STATE AND TERRITORY OF USUAL RESIDENCE, Proportion of homeless persons, by selected characteristics, 2006, 2011, 2016 and 2021"
+    },
+    {
+      "column_1": "5",
+      "column_2": "STATE AND TERRITORY OF USUAL RESIDENCE, Rate of homeless persons per 10,000 of the population, by selected characteristics, 2006, 2011, 2016 and 2021"
+    },
+    {
+      "column_1": "6",
+      "column_2": "STATE AND TERRITORY OF USUAL RESIDENCE, Number of homeless persons, Homeless operational groups by selected characteristics, 2021"
+    },
+    {
+      "column_1": "7",
+      "column_2": "STATE AND TERRITORY OF USUAL RESIDENCE, Rate of homeless persons per 10,000 of the population, Homeless operational groups by selected characteristics, 2021"
+    },
+    {
+      "column_1": "8",
+      "column_2": "HOMELESS OPERATIONAL GROUPS AND OTHER MARGINAL HOUSING, Number of persons, by selected characteristics, 2021"
+    },
+    {
+      "column_1": "9",
+      "column_2": "HOMELESS OPERATIONAL GROUPS AND OTHER MARGINAL HOUSING, Proportion of persons, by selected characteristics, 2021"
+    },
+    {
+      "column_1": "10",
+      "column_2": "HOMELESS OPERATIONAL GROUPS AND OTHER MARGINAL HOUSING, Number of persons aged 15 years and over, by selected characteristics, 2021"
+    },
+    {
+      "column_1": "11",
+      "column_2": "HOMELESS OPERATIONAL GROUPS AND OTHER MARGINAL HOUSING, Proportion of persons aged 15 years and over, by selected characteristics, 2021"
+    },
+    {
+      "column_1": "12",
+      "column_2": "HOMELESS OPERATIONAL GROUPS AND OTHER MARGINAL HOUSING, Sex by age of person, 2021"
+    },
+    {
+      "column_1": "13",
+      "column_2": "HOMELESS OPERATIONAL GROUPS AND OTHER MARGINAL HOUSING, Rate per 10,000 of the population, 2021"
+    },
+    {
+      "column_1": "14",
+      "column_2": "PEOPLE STAYING TEMPORARILY WITH OTHER HOUSEHOLDS, Visited dwelling characteristics, 2021"
+    },
+    {
+      "column_1": "15",
+      "column_2": "PEOPLE LIVING IN 'SEVERELY' CROWDED DWELLINGS, Selected dwelling characteristics, 2021"
+    },
+    {
+      "column_1": "More information available from the ABS website",
+      "column_2": null
+    },
+    {
+      "column_1": "Estimating homelessness: Census, 2021",
+      "column_2": null
+    },
+    {
+      "column_1": "Summary",
+      "column_2": null
+    },
+    {
+      "column_1": "Methodology",
+      "column_2": null
+    },
+    {
+      "column_1": "Enquiries",
+      "column_2": null
+    },
+    {
+      "column_1": "Further information about these and related statistics is available from the ABS website www.abs.gov.au, or contact the Customer Assistance Service on 1300 135 070.",
+      "column_2": null
+    },
+    {
+      "column_1": "© Commonwealth of Australia 2023",
+      "column_2": null
+    }
+  ]
+}

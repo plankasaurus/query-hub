@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "source": "The source of the data",
+    "filename": "640102.xlsx - Data1.csv"
+  },
+  "fields": [
+    {
+      "name": "date",
+      "type": "string",
+      "description": "Date of the observation (MMM-YYYY)"
+    },
+    {
+      "name": "food_and_non_alcoholic_beverages_index",
+      "type": "float",
+      "description": "Index number for Food and non-alcoholic beverages in Australia"
+    },
+    {
+      "name": "alcohol_and_tobacco_index",
+      "type": "float",
+      "description": "Index number for Alcohol and tobacco in Australia"
+    },
+    {
+      "name": "clothing_and_footwear_index",
+      "type": "float",
+      "description": "Index number for Clothing and footwear in Australia"
+    },
+    {
+      "name": "housing_index",
+      "type": "float",
+      "description": "Index number for Housing in Australia"
+    },
+    {
+      "name": "furnishings_household_equipment_and_services_index",
+      "type": "float",
+      "description": "Index number for Furnishings, household equipment and services in Australia"
+    },
+    {
+      "name": "health_index",
+      "type": "float",
+      "description": "Index number for Health in Australia"
+    },
+    {
+      "name": "transport_index",
+      "type": "float",
+      "description": "Index number for Transport in Australia"
+    },
+    {
+      "name": "communication_index",
+      "type": "float",
+      "description": "Index number for Communication in Australia"
+    },
+    {
+      "name": "recreation_and_culture_index",
+      "type": "float",
+      "description": "Index number for Recreation and culture in Australia"
+    },
+    {
+      "name": "education_index",
+      "type": "float",
+      "description": "Index number for Education in Australia"
+    },
+    {
+      "name": "insurance_and_financial_services_index",
+      "type": "float",
+      "description": "Index number for Insurance and financial services in Australia"
+    },
+    {
+      "name": "all_groups_cpi_index",
+      "type": "float",
+      "description": "Index number for All groups CPI in Australia"
+    },
+    {
+      "name": "food_and_non_alcoholic_beverages_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Food and non-alcoholic beverages in Australia"
+    },
+    {
+      "name": "alcohol_and_tobacco_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Alcohol and tobacco in Australia"
+    },
+    {
+      "name": "clothing_and_footwear_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Clothing and footwear in Australia"
+    },
+    {
+      "name": "housing_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Housing in Australia"
+    },
+    {
+      "name": "furnishings_household_equipment_and_services_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Furnishings, household equipment and services in Australia"
+    },
+    {
+      "name": "health_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Health in Australia"
+    },
+    {
+      "name": "transport_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Transport in Australia"
+    },
+    {
+      "name": "communication_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Communication in Australia"
+    },
+    {
+      "name": "recreation_and_culture_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Recreation and culture in Australia"
+    },
+    {
+      "name": "education_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Education in Australia"
+    },
+    {
+      "name": "insurance_and_financial_services_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for Insurance and financial services in Australia"
+    },
+    {
+      "name": "all_groups_cpi_percentage_change_from_corresponding_quarter_of_previous_year",
+      "type": "float",
+      "description": "Percentage change from corresponding quarter of previous year for All groups CPI in Australia"
+    },
+    {
+      "name": "food_and_non_alcoholic_beverages_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Food and non-alcoholic beverages in Australia"
+    },
+    {
+      "name": "alcohol_and_tobacco_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Alcohol and tobacco in Australia"
+    },
+    {
+      "name": "clothing_and_footwear_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Clothing and footwear in Australia"
+    },
+    {
+      "name": "housing_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Housing in Australia"
+    },
+    {
+      "name": "furnishings_household_equipment_and_services_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Furnishings, household equipment and services in Australia"
+    },
+    {
+      "name": "health_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Health in Australia"
+    },
+    {
+      "name": "transport_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Transport in Australia"
+    },
+    {
+      "name": "communication_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Communication in Australia"
+    },
+    {
+      "name": "recreation_and_culture_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Recreation and culture in Australia"
+    },
+    {
+      "name": "education_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Education in Australia"
+    },
+    {
+      "name": "insurance_and_financial_services_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for Insurance and financial services in Australia"
+    },
+    {
+      "name": "all_groups_cpi_percentage_change_from_previous_period",
+      "type": "float",
+      "description": "Percentage change from previous period for All groups CPI in Australia"
+    }
+  ]
+}

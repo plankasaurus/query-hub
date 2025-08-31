@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics",
+    "filename": "65300do002_201516.xls - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "topic",
+      "data_type": "string",
+      "description": "Topic of the row, e.g., table descriptions, release information, contact details."
+    },
+    {
+      "name": "content",
+      "data_type": "string",
+      "description": "Content or details related to the topic."
+    }
+  ],
+  "data": [
+    {
+      "topic": "65300DO002_201516 Household Expenditure Survey, Australia: Summary of Results, 2015–16",
+      "content": null
+    },
+    {
+      "topic": "Released at 11.30 am (CANBERRA TIME) 26 July 2018",
+      "content": null
+    },
+    {
+      "topic": "2  INCOME, EXPENDITURE AND LOW ECONOMIC RESOURCE HOUSEHOLDS",
+      "content": null
+    },
+    {
+      "topic": null,
+      "content": "Contents"
+    },
+    {
+      "topic": null,
+      "content": "Tables"
+    },
+    {
+      "topic": null,
+      "content": "2.1"
+    },
+    {
+      "topic": null,
+      "content": "HOUSEHOLD EXPENDITURE DECILES, by gross household income deciles"
+    },
+    {
+      "topic": null,
+      "content": "2.2"
+    },
+    {
+      "topic": null,
+      "content": "EQUIVALISED DISPOSABLE INCOME DECILES, by equivalised expenditure on goods and services deciles"
+    },
+    {
+      "topic": null,
+      "content": "2.3"
+    },
+    {
+      "topic": null,
+      "content": "HOUSEHOLD EXPENDITURE DECILES, by net worth deciles"
+    },
+    {
+      "topic": null,
+      "content": "2.4"
+    },
+    {
+      "topic": null,
+      "content": "HOUSEHOLD EXPENDITURE, Broad expenditure groups, Low economic resource households"
+    },
+    {
+      "topic": null,
+      "content": "2.5"
+    },
+    {
+      "topic": null,
+      "content": "PERSONS IN LOW ECONOMIC RESOURCE HOUSEHOLDS, Selected characteristics"
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": "More information available from the ABS website",
+      "content": null
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": "Household Expenditure Survey, Australia: Summary of Results, 2015–16",
+      "content": "Summary"
+    },
+    {
+      "topic": null,
+      "content": "Explanatory Notes"
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": "Inquiries",
+      "content": null
+    },
+    {
+      "topic": "For further information about these and related statistics, contact the National Information and Referral Service on 1300 135 070 or via email <client.services@abs.gov.au>.",
+      "content": null
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": null,
+      "content": null
+    },
+    {
+      "topic": "© Commonwealth of Australia 2018",
+      "content": null
+    }
+  ]
+}

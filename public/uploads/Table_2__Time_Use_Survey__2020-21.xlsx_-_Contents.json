@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, How Australians Use Their Time, 2020–21",
+    "filename": "Table 2, Time Use Survey, 2020-21.xlsx - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "table_description",
+      "data_type": "string",
+      "description": "Description of the table, including the population and activities covered, and whether it refers to primary or primary and secondary activities."
+    }
+  ],
+  "data": [
+    {
+      "table_description": "Persons aged 15 years and over, Primary activities, Average time spent per day and Proportion who participated, by weekday or weekend"
+    },
+    {
+      "table_description": "Persons aged 15 years and over, Primary activities, Average time spent per day and Proportion who participated, by weekday or weekend: Relative Standard Error of average time and Margin of Error of proportion"
+    },
+    {
+      "table_description": "Persons aged 15 years and over, Primary and secondary activities, Average time spent per day and Proportion who participated, by weekday or weekend"
+    },
+    {
+      "table_description": "Persons aged 15 years and over, Primary and secondary activities, Average time spent per day and Proportion who participated, by weekday or weekend: Relative Standard Error of average time and Margin of Error of proportion"
+    }
+  ]
+}

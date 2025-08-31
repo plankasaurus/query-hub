@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Cultural and creative activities, 2021–22, Released at 11:30 am (Canberra time) 21 April 2023",
+    "filename": "cultural_and_creative_activities_202122_tables_1_to_7.xlsx - Contents (1).csv"
+  },
+  "fields": [
+    {
+      "name": "table_number",
+      "data_type": "string",
+      "description": "Table identifier (e.g., 'Table 1'!A1)"
+    },
+    {
+      "name": "table_description",
+      "data_type": "string",
+      "description": "Description of the table content"
+    }
+  ],
+  "data": [
+    {
+      "table_number": "'Table 1'!A1",
+      "table_description": "PARTICIPATION IN CULTURAL ACTIVITIES, by state or territory"
+    },
+    {
+      "table_number": "'Table 2'!A1",
+      "table_description": "PARTICIPATION IN CULTURAL ACTIVITIES, by selected characteristics"
+    },
+    {
+      "table_number": "'Table 3'!A1",
+      "table_description": "PARTICIPATION IN CULTURAL ACTIVITIES, by state or territory, and number of activity types"
+    },
+    {
+      "table_number": "'Table 4'!A1",
+      "table_description": "PARTICIPATION IN CULTURAL ACTIVITIES, by type of activity"
+    },
+    {
+      "table_number": "'Table 5'!A1",
+      "table_description": "WHETHER RECEIVED INCOME OR VOLUNTEERED FOR CULTURAL ACTIVITIES, by type of activity"
+    },
+    {
+      "table_number": "'Table 6'!A1",
+      "table_description": "WHETHER RECEIVED INCOME OR VOLUNTEERED CULTURAL ACTIVITIES, by state or territory"
+    },
+    {
+      "table_number": "'Table 7'!A1",
+      "table_description": "FREQUENCY OF INVOLVEMENT IN CULTURAL ACTIVITIES, by type of activity"
+    }
+  ]
+}

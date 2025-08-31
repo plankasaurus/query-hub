@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Census of Population and Housing: Transport data summary, 2021",
+    "filename": "Transport data summary - first and second release.xlsx - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "table_1",
+      "data_type": "string",
+      "description": "Title of Table 1"
+    },
+    {
+      "name": "table_2",
+      "data_type": "string",
+      "description": "Title of Table 2"
+    },
+    {
+      "name": "table_3",
+      "data_type": "string",
+      "description": "Title of Table 3"
+    },
+    {
+      "name": "table_4",
+      "data_type": "string",
+      "description": "Title of Table 4"
+    },
+    {
+      "name": "table_5",
+      "data_type": "string",
+      "description": "Title of Table 5"
+    },
+    {
+      "name": "table_6",
+      "data_type": "string",
+      "description": "Title of Table 6"
+    }
+  ],
+  "data": [
+    {
+      "table_1": "Number of motor vehicles by dwelling structure",
+      "table_2": "Number of motor vehicles by household composition",
+      "table_3": "Method of travel to work by age by sex",
+      "table_4": "Method of travel to work by State and Territory",
+      "table_5": "Method of travel to work by number of motor vehicles",
+      "table_6": "Method of travel to work by total personal income (weekly)"
+    }
+  ]
+}

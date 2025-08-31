@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Household Income and Wealth, Australia: Summary of Results, 2019–20",
+    "filename": "1. Household income and income distribution, Australia.xlsx - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "table_1_1_a1",
+      "type": "string",
+      "description": "EQUIVALISED DISPOSABLE HOUSEHOLD INCOME, Australia, 2007–08 to 2019–20"
+    },
+    {
+      "name": "table_1_2_a1",
+      "type": "string",
+      "description": "GROSS HOUSEHOLD INCOME, Australia, 2007–08 to 2019–20"
+    },
+    {
+      "name": "table_1_3_a1",
+      "type": "string",
+      "description": "HOUSEHOLDS AND PERSONS BY INCOME RANGE, Australia, 2007–08 to 2019–20"
+    },
+    {
+      "name": "table_1_4_a1",
+      "type": "string",
+      "description": "HOUSEHOLD CHARACTERISTICS, Australia, 2007–08 to 2019–20"
+    }
+  ]
+}

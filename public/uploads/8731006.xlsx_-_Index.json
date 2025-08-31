@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "data_item_description",
+      "type": "string",
+      "description": "Description of the data item, including type of dwelling, sector, and other details."
+    },
+    {
+      "name": "series_type",
+      "type": "categorical",
+      "description": "Type of series: Original, Seasonally Adjusted, or Trend."
+    },
+    {
+      "name": "series_id",
+      "type": "string",
+      "description": "Unique identifier for the series."
+    },
+    {
+      "name": "series_start",
+      "type": "string",
+      "description": "Start date of the series (Month-Year)."
+    },
+    {
+      "name": "series_end",
+      "type": "string",
+      "description": "End date of the series (Month-Year)."
+    },
+    {
+      "name": "no_obs",
+      "type": "integer",
+      "description": "Number of observations in the series."
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "description": "Unit of measurement (Number)."
+    },
+    {
+      "name": "data_type",
+      "type": "string",
+      "description": "Type of data (FLOW)."
+    },
+    {
+      "name": "freq",
+      "type": "string",
+      "description": "Frequency of the data (Month)."
+    },
+    {
+      "name": "collection_month",
+      "type": "integer",
+      "description": "Month of data collection (1)."
+    }
+  ],
+  "metadata": {
+    "source": "8731.0 Building Approvals, Australia - Table 06. Number of dwelling units approved, by sector, all series - Australia",
+    "filename": "8731006.xlsx - Index.csv"
+  }
+}

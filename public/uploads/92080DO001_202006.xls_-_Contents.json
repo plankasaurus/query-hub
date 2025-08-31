@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "source": "Survey of Motor Vehicle Use, Australia, 12 months ended 30 June 2020",
+    "filename": "92080DO001_202006.xls - Contents.csv"
+  },
+  "fields": [
+    {
+      "name": "column_1",
+      "type": "string",
+      "description": "Empty or descriptive text, including table numbers and titles."
+    },
+    {
+      "name": "column_2",
+      "type": "string",
+      "description": "Empty column."
+    }
+  ],
+  "data": [
+    {
+      "column_1": "Contents",
+      "column_2": null
+    },
+    {
+      "column_1": "Tables",
+      "column_2": null
+    },
+    {
+      "column_1": "1",
+      "column_2": "Summary of motor vehicle use, by type of vehicle–2012, 2014, 2016, 2018 and 2020"
+    },
+    {
+      "column_1": "2",
+      "column_2": "Summary of freight use, by type of vehicle–2012, 2014, 2016, 2018 and 2020"
+    },
+    {
+      "column_1": "3",
+      "column_2": "Summary of motor vehicle use, by state/territory of registration–2012, 2014, 2016, 2018 and 2020"
+    },
+    {
+      "column_1": "4",
+      "column_2": "Motor vehicle use, by state/territory of registration by type of vehicle"
+    },
+    {
+      "column_1": "5",
+      "column_2": "Total fuel consumption, by state/territory of registration by type of vehicle by type of fuel"
+    },
+    {
+      "column_1": "6",
+      "column_2": "Average rate of fuel consumption, by state/territory of registration by type of vehicle by type of fuel"
+    },
+    {
+      "column_1": "7",
+      "column_2": "Total kilometres travelled, by state/territory of registration by type of vehicle by area of operation"
+    },
+    {
+      "column_1": "8",
+      "column_2": "Average kilometres travelled, by state/territory of registration by type of vehicle by area of operation"
+    },
+    {
+      "column_1": "9",
+      "column_2": "Total kilometres travelled, by state/territory of registration by type of vehicle by business and private use"
+    },
+    {
+      "column_1": "10",
+      "column_2": "Average kilometres travelled, by state/territory of registration by type of vehicle by business and private use"
+    },
+    {
+      "column_1": "11",
+      "column_2": "Total kilometres travelled, by area of operation by type of vehicle by type of fuel"
+    },
+    {
+      "column_1": "12",
+      "column_2": "Average kilometres travelled, by area of operation by type of vehicle by type of fuel"
+    },
+    {
+      "column_1": "13",
+      "column_2": "Total fuel consumption, by year of manufacture by type of vehicle by type of fuel"
+    },
+    {
+      "column_1": "14",
+      "column_2": "Average rate of fuel consumption, by year of manufacture by type of vehicle by type of fuel"
+    },
+    {
+      "column_1": "15",
+      "column_2": "Total kilometres travelled, by year of manufacture by type of vehicle by state/territory of registration"
+    },
+    {
+      "column_1": "16",
+      "column_2": "Average kilometres travelled, by year of manufacture by type of vehicle by state/territory of registration"
+    },
+    {
+      "column_1": "17",
+      "column_2": "Total and average kilometres travelled, by state of operation by type of vehicle"
+    },
+    {
+      "column_1": "18",
+      "column_2": "Total fuel consumption, by year of manufacture by type of vehicle by gross vehicle/combination mass by type of fuel"
+    },
+    {
+      "column_1": "19",
+      "column_2": "Average rate of fuel consumption, by year of manufacture by type of vehicle by gross vehicle/combination mass by type of fuel"
+    },
+    {
+      "column_1": "20",
+      "column_2": "Total and average tonne-kilometres, by type of vehicle by state/territory of registration"
+    },
+    {
+      "column_1": "21",
+      "column_2": "Total tonne-kilometres, by state/territory of registration by type of vehicle by area of operation"
+    },
+    {
+      "column_1": "22",
+      "column_2": "Average tonne-kilometres, by state/territory of registration by type of vehicle by area of operation"
+    },
+    {
+      "column_1": "23",
+      "column_2": "Total and average tonne-kilometres travelled, by type of vehicle by state/territory of operation"
+    },
+    {
+      "column_1": "24",
+      "column_2": "Total and average tonne-kilometres, by state/territory of registration by state/territory of operation"
+    },
+    {
+      "column_1": "25",
+      "column_2": "Total tonnes carried freight vehicles, by state/territory of registration by type of vehicle by commodity"
+    },
+    {
+      "column_1": "26",
+      "column_2": "Total load carried and average load per trip, by state/territory of registration by freight vehicles"
+    },
+    {
+      "column_1": "27",
+      "column_2": "Total kilometres travelled, by state/territory of registration by type of vehicle by main type of journey"
+    },
+    {
+      "column_1": "28",
+      "column_2": "Total and average tonne-kilometres rigid trucks, by number of axles by gross vehicle/combination mass by state/territory of registration"
+    },
+    {
+      "column_1": "29",
+      "column_2": "Total and average tonne-kilometres articulated trucks, by trailer configuration by gross combination mass by state/territory of registration"
+    },
+    {
+      "column_1": "30",
+      "column_2": "Total and average kilometres travelled, by type of bus by type of bus service"
+    },
+    {
+      "column_1": "31",
+      "column_2": "Total and average kilometres travelled, by state/territory of registration by type of bus service"
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": "More information available from the ABS website",
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": "Survey of Motor Vehicle Use, Australia, 12 months ended 30 June 2020",
+      "column_2": null
+    },
+    {
+      "column_1": "Summary",
+      "column_2": null
+    },
+    {
+      "column_1": "Methodology",
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": "Inquiries",
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": "For further information about these and related statistics, contact the National Information and Referral Service on 1300 135 070.",
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": null,
+      "column_2": null
+    },
+    {
+      "column_1": "© Commonwealth of Australia 2020",
+      "column_2": null
+    }
+  ]
+}
