@@ -94,6 +94,12 @@ export default function QueryBuilderPage() {
                 const errorData = await response.json().catch(() => ({}))
                 const errorMessage = errorData.message || errorData.error || `Query failed with status: ${response.status}`
                 setError(errorMessage)
+
+                // Check for API key missing error and show toast
+                if (errorMessage.includes('API_KEY_MISSING')) {
+                    showToast('API key is missing. Please check configuration in deployment environment.', 'error')
+                }
+
                 console.error('Query execution failed:', response.statusText, errorData)
                 setQueryResults([])
                 setAggregateAnswer('')
@@ -101,6 +107,12 @@ export default function QueryBuilderPage() {
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : 'Network error occurred'
             setError(errorMessage)
+            
+            // Check if this might be an API key related error
+            if (errorMessage.includes('API') || errorMessage.includes('key') || errorMessage.includes('authentication')) {
+                showToast('API key configuration issue detected. Please check deployment settings.', 'error')
+            }
+            
             console.error('Query execution failed:', error)
             setQueryResults([])
             setAggregateAnswer('')

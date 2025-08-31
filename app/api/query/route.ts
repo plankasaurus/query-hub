@@ -97,6 +97,14 @@ const transformedResults_PLACEHOLDER: DataJoinOut[] = [
 
 export async function POST(request: NextRequest) {
     try {
+        // Check if API key is defined
+        if (!process.env.GEMINI_API_KEY) {
+            return NextResponse.json({
+                success: false,
+                message: "API_KEY_MISSING: Please check API key configuration in deployment environment."
+            }, { status: 500 })
+        }
+
         const body = await request.json()
         const { userQuery } = body
         let aggregateAnswer: Record<string, string> | undefined = undefined;
