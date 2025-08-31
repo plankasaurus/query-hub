@@ -266,7 +266,12 @@ export default function QueryBuilderPage() {
                                     Error: {error}
                                 </span>
                             </div>
-                            {error.includes('GEMINI_API_KEY') && (
+                            {error.includes('API_KEY_MISSING') && (
+                                <p className="text-xs text-red-600 dark:text-red-400 mt-2">
+                                    The GEMINI_API_KEY environment variable is not set. Please check your deployment configuration.
+                                </p>
+                            )}
+                            {error.includes('GEMINI_API_KEY') && !error.includes('API_KEY_MISSING') && (
                                 <p className="text-xs text-red-600 dark:text-red-400 mt-2">
                                     Please set the GEMINI_API_KEY environment variable. See env.example for details.
                                 </p>

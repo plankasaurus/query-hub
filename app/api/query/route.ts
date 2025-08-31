@@ -97,8 +97,8 @@ const transformedResults_PLACEHOLDER: DataJoinOut[] = [
 
 export async function POST(request: NextRequest) {
     try {
-        // Check if API key is defined
-        if (!process.env.GEMINI_API_KEY) {
+        // Check if API key is defined and not empty
+        if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY.trim() === '') {
             return NextResponse.json({
                 success: false,
                 message: "API_KEY_MISSING: Please check API key configuration in deployment environment."
@@ -115,23 +115,34 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             )
         }
-        const useableResponse = await generateWithParts(
-            `You're an expert data analyst helping answer questions based on datasets. 
-            `,
-            [
-                { text: "Tell me if the following user query makes sense, if it is non sensicale return { useable: False }, if it makes sense return {useable True} as a JSON. " },
+        try {
+            const useableResponse = await generateWithParts(
+                `You're an expert data analyst helping answer questions based on datasets. 
+                `,
+                [
+                    { text: "Tell me if the following user query makes sense, if it is non sensicale return { useable: False }, if it makes sense return {useable True} as a JSON. " },
 
-                { text: userQuery },
+                    { text: userQuery },
 
 
-            ]
-        );
-        console.log("useable response", useableResponse);
-        if (!useableResponse.useable) {
-            return NextResponse.json({
-                success: false,
-                message: "Unable to understand query, please try again."
-            })
+                ]
+            );
+            console.log("useable response", useableResponse);
+            if (!useableResponse.useable) {
+                return NextResponse.json({
+                    success: false,
+                    message: "Unable to understand query, please try again."
+                })
+            }
+        } catch (modelError) {
+            console.error('Model error:', modelError);
+            if (modelError instanceof Error && modelError.message.includes('API_KEY_MISSING')) {
+                return NextResponse.json({
+                    success: false,
+                    message: "API_KEY_MISSING: Please check API key configuration in deployment environment."
+                }, { status: 500 })
+            }
+            throw modelError; // Re-throw other errors to be handled by the main catch block
         }
 
         console.log("hi query route", userQuery);

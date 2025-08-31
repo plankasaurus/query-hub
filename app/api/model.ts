@@ -23,6 +23,12 @@ export async function generateWithParts(
     contents: ContentListUnion,
     config: Partial<PromptConfig> = DEFAULT_CONFIG) {
     const callConfig = { ...DEFAULT_CONFIG, ...config };
+    
+    // Check if API key is provided
+    if (!callConfig.apiKey || callConfig.apiKey.trim() === '') {
+        throw new Error('API_KEY_MISSING: Gemini API key is not configured');
+    }
+    
     const ai = new GoogleGenAI({
         apiKey: callConfig.apiKey
     });
