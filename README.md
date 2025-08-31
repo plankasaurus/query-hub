@@ -4,3 +4,4 @@
 - Web Speech API for voice input
 - MongoDB for data storage
 - gemini!
+
