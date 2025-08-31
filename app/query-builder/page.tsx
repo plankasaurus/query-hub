@@ -8,6 +8,8 @@ import { LoadingSpinner } from '@/components/ui/loading-spinner'
 import { Database, BarChart3, Download, History, ChevronDown, Sparkles } from 'lucide-react'
 import { DataJoinOut } from '@/lib/types'
 import { Toast, useToast } from '@/components/ui/toast'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -177,7 +179,7 @@ export default function QueryBuilderPage() {
                     onClose={hideToast}
                 />
             )}
-            
+
             <div className="container mx-auto px-4 py-8 max-w-7xl">
                 {/* Header Section */}
                 <div className="text-center space-y-6 mb-12">
@@ -271,10 +273,10 @@ export default function QueryBuilderPage() {
                                     </div>
                                     <div>
                                         <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100">
-                                            AI Analysis Summary
+                                            Answer to Your Question
                                         </h3>
                                         <p className="text-sm text-blue-700 dark:text-blue-300">
-                                            Comprehensive insights from multiple data sources
+                                            AI-powered analysis based on your data
                                         </p>
                                     </div>
                                 </div>
@@ -295,10 +297,26 @@ export default function QueryBuilderPage() {
                                 </Button>
                             </div>
                             <div className="bg-white dark:bg-slate-800/50 rounded-lg p-4 border border-blue-100 dark:border-blue-800/30">
-                                <div
-                                    className="text-blue-800 dark:text-blue-200 leading-relaxed whitespace-pre-wrap font-mono text-sm"
-                                >
-                                    {aggregateAnswer}
+                                <div className="prose prose-blue dark:prose-invert max-w-none text-blue-800 dark:text-blue-200 leading-relaxed text-sm">
+                                    <ReactMarkdown
+                                        remarkPlugins={[remarkGfm]}
+                                        components={{
+                                            // Custom styling for different markdown elements
+                                            h1: ({ node, ...props }) => <h1 className="text-lg font-semibold mb-3 text-blue-900 dark:text-blue-100" {...props} />,
+                                            h2: ({ node, ...props }) => <h2 className="text-base font-semibold mb-2 text-blue-900 dark:text-blue-100" {...props} />,
+                                            h3: ({ node, ...props }) => <h3 className="text-sm font-semibold mb-2 text-blue-900 dark:text-blue-100" {...props} />,
+                                            p: ({ node, ...props }) => <p className="mb-3 leading-relaxed" {...props} />,
+                                            ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-3 space-y-1" {...props} />,
+                                            ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-3 space-y-1" {...props} />,
+                                            li: ({ node, ...props }) => <li className="text-blue-800 dark:text-blue-200" {...props} />,
+                                            strong: ({ node, ...props }) => <strong className="font-semibold text-blue-900 dark:text-blue-100" {...props} />,
+                                            em: ({ node, ...props }) => <em className="italic text-blue-700 dark:text-blue-300" {...props} />,
+                                            code: ({ node, ...props }) => <code className="bg-blue-50 dark:bg-blue-900/30 px-1 py-0.5 rounded text-xs font-mono text-blue-700 dark:text-blue-300" {...props} />,
+                                            blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-blue-200 dark:border-blue-700 pl-4 italic text-blue-700 dark:text-blue-300" {...props} />
+                                        }}
+                                    >
+                                        {aggregateAnswer}
+                                    </ReactMarkdown>
                                 </div>
                             </div>
                         </div>
@@ -330,7 +348,7 @@ export default function QueryBuilderPage() {
                                 <p className="text-base text-muted-foreground">
                                     Type a natural language question above and click "Execute Query" to get started.
                                     Get instant insights, analysis, and data visualization. When multiple data sources are found,
-                                    you'll also receive an AI-powered summary analysis.
+                                    you'll also receive an AI-powered answer to your question.
                                 </p>
                             </div>
                         </div>
