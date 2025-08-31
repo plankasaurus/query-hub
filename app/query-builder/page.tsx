@@ -107,12 +107,12 @@ export default function QueryBuilderPage() {
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : 'Network error occurred'
             setError(errorMessage)
-            
+
             // Check if this might be an API key related error
             if (errorMessage.includes('API') || errorMessage.includes('key') || errorMessage.includes('authentication')) {
                 showToast('API key configuration issue detected. Please check deployment settings.', 'error')
             }
-            
+
             console.error('Query execution failed:', error)
             setQueryResults([])
             setAggregateAnswer('')

@@ -55,9 +55,24 @@ export async function querySeedAndKV(userQuery: string) {
             }
         } catch (error) {
             console.error(`Error processing ${filename}:`, error);
+
+            // Check if this is an API key error and re-throw it
+            if (error instanceof Error && error.message.includes('API_KEY_MISSING')) {
+                throw error;
+            }
         }
     });
-    await Promise.all(mapper);
+
+    try {
+        await Promise.all(mapper);
+    } catch (error) {
+        // Re-throw API key errors
+        if (error instanceof Error && error.message.includes('API_KEY_MISSING')) {
+            throw error;
+        }
+        console.error('Error during dataset processing:', error);
+    }
+
     console.log("datasets matched", datasets.length);
 
     if (datasets.length === 0) {
@@ -119,15 +134,30 @@ export async function querySeedAndKV(userQuery: string) {
                 return analysis;
             } catch (error) {
                 console.error(`Error analyzing dataset ${i + 1}:`, error);
+
+                // Check if this is an API key error and re-throw it
+                if (error instanceof Error && error.message.includes('API_KEY_MISSING')) {
+                    throw error;
+                }
+
                 return null;
             }
         };
         joins.push(awaiter());
     }
-    const results = await Promise.all(joins);
-    console.log(`Completed analysis of ${results.length} datasets`);
-    // console.log(results);
-    // console.log(JSON.stringify(results, null, 2));
-    return results.filter(result => result !== null);
+    try {
+        const results = await Promise.all(joins);
+        console.log(`Completed analysis of ${results.length} datasets`);
+        // console.log(results);
+        // console.log(JSON.stringify(results, null, 2));
+        return results.filter(result => result !== null);
+    } catch (error) {
+        // Re-throw API key errors
+        if (error instanceof Error && error.message.includes('API_KEY_MISSING')) {
+            throw error;
+        }
+        console.error('Error during final analysis:', error);
+        return [];
+    }
 }
 // query().catch(console.error);

@@ -222,6 +222,15 @@ export async function POST(request: NextRequest) {
                 console.log("response", aggregateAnswer);
             } catch (aggregateError) {
                 console.error("Failed to generate aggregate answer:", aggregateError);
+
+                // Check if this is an API key error
+                if (aggregateError instanceof Error && aggregateError.message.includes('API_KEY_MISSING')) {
+                    return NextResponse.json({
+                        success: false,
+                        message: "API_KEY_MISSING: Please check API key configuration in deployment environment."
+                    }, { status: 500 })
+                }
+
                 // Continue without aggregate answer - the query results are still valid
                 aggregateAnswer = undefined;
             }
