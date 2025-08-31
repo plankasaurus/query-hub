@@ -5,6 +5,7 @@ import { QueryBuilder } from '@/components/query-builder'
 import { SourceFileResults } from '@/components/source-file-results'
 import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
+import { AnimatedLoading } from '@/components/ui/animated-loading'
 import { Database, BarChart3, Download, History, ChevronDown, Sparkles, SearchCheck } from 'lucide-react'
 import { DataJoinOut } from '@/lib/types'
 import { Toast, useToast } from '@/components/ui/toast'
@@ -279,26 +280,26 @@ export default function QueryBuilderPage() {
                                 </div>
 
                             </div>
-                            <div className="bg-white dark:bg-slate-800/50 rounded-lg p-4 border border-blue-100 dark:border-blue-800/30">
-                                <div className="prose prose-blue dark:prose-invert max-w-none text-blue-800 dark:text-blue-200 leading-relaxed text-base">
+                            <div className="bg-white dark:bg-slate-800/50 rounded-lg p-4 border">
+                                <div className="prose prose-blue dark:prose-invert max-w-none dleading-relaxed text-base">
                                     <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
                                         components={{
                                             // Custom styling for different markdown elements
-                                            h1: ({ node, ...props }) => <h1 className="text-lg font-semibold mb-3 text-blue-900 dark:text-blue-100" {...props} />,
-                                            h2: ({ node, ...props }) => <h2 className="text-base font-semibold mb-2 text-blue-900 dark:text-blue-100" {...props} />,
-                                            h3: ({ node, ...props }) => <h3 className="text-sm font-semibold mb-2 text-blue-900 dark:text-blue-100" {...props} />,
+                                            h1: ({ node, ...props }) => <h1 className="text-lg font-semibold mb-3 " {...props} />,
+                                            h2: ({ node, ...props }) => <h2 className="text-base font-semibold mb-2 " {...props} />,
+                                            h3: ({ node, ...props }) => <h3 className="text-sm font-semibold mb-2 " {...props} />,
                                             p: ({ node, ...props }) => <p className="mb-3 leading-relaxed" {...props} />,
-                                            ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-3 space-y-1" {...props} />,
-                                            ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-3 space-y-1" {...props} />,
-                                            li: ({ node, ...props }) => <li className="text-blue-800 dark:text-blue-200" {...props} />,
-                                            strong: ({ node, ...props }) => <strong className="font-semibold text-blue-900 dark:text-blue-100" {...props} />,
-                                            em: ({ node, ...props }) => <em className="italic text-blue-700 dark:text-blue-300" {...props} />,
-                                            code: ({ node, ...props }) => <code className="bg-blue-50 dark:bg-blue-900/30 px-1 py-0.5 rounded text-xs font-mono text-blue-700 dark:text-blue-300" {...props} />,
-                                            blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-blue-200 dark:border-blue-700 pl-4 italic text-blue-700 dark:text-blue-300" {...props} />
+                                            ul: ({ node, ...props }) => <ul className="list-disc list-outside mb-3 space-y-1 ml-4" {...props} />,
+                                            ol: ({ node, ...props }) => <ol className="list-decimal list-outside mb-3 space-y-1 ml-4" {...props} />,
+                                            li: ({ node, ...props }) => <li className="pl-1" {...props} />,
+                                            strong: ({ node, ...props }) => <strong className="font-semibold " {...props} />,
+                                            em: ({ node, ...props }) => <em className="italic" {...props} />,
+                                            code: ({ node, ...props }) => <code className="bg-blue-50 dark:bg-blue-900/30 px-1 py-0.5 rounded text-xs font-mono" {...props} />,
+                                            blockquote: ({ node, ...props }) => <blockquote className="border-l-4 pl-4 italic" {...props} />
                                         }}
                                     >
-                                        {aggregateAnswer}
+                                        {aggregateAnswer.replace(/\\n\\n/g, '\n\n')}
                                     </ReactMarkdown>
                                 </div>
                             </div>
@@ -330,8 +331,7 @@ export default function QueryBuilderPage() {
                                 <h3 className="text-2xl font-semibold">Ready to Query Your Data</h3>
                                 <p className="text-base text-muted-foreground">
                                     Type a natural language question above and click "Execute Query" to get started.
-                                    Get instant insights, analysis, and data visualization. When multiple data sources are found,
-                                    you'll also receive an AI-powered answer to your question.
+                                    Get insights, analysis, and data visualization.
                                 </p>
                             </div>
                         </div>
@@ -343,12 +343,8 @@ export default function QueryBuilderPage() {
                     <div className="text-center py-20">
                         <div className="max-w-md mx-auto space-y-6">
                             <LoadingSpinner size="xl" variant="spinner" className="mx-auto" />
-                            <div className="space-y-3">
-                                <h3 className="text-2xl font-semibold">Processing Your Query</h3>
-                                <p className="text-base text-muted-foreground">
-                                    Analyzing your data and generating insights...
-                                </p>
-                            </div>
+                            <h3 className="text-2xl font-semibold">Processing Your Query</h3>
+                            <AnimatedLoading />
                         </div>
                     </div>
                 )}

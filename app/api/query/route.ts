@@ -218,6 +218,12 @@ export async function POST(request: NextRequest) {
         if (aggregateAnswer && aggregateAnswer.answer) {
             response["aggregate"] = aggregateAnswer.answer;
         }
+        if (transformedResults.length === 0) {
+            return NextResponse.json({
+                success: false,
+                message: "No data found, please try another query."
+            })
+        }
         return NextResponse.json(response);
 
     } catch (error) {
