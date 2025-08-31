@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Household use of information technology 2016-17 financial year",
+    "filename": "Proportion of households with internet access, 2004-05 to 2016-17 (a)(b).xlsx - Sheet1.csv"
+  },
+  "fields": [
+    {
+      "name": "year",
+      "data_type": "string",
+      "description": "Year of the survey (e.g., 2004-05)"
+    },
+    {
+      "name": "total_households_percent",
+      "data_type": "float",
+      "description": "Percentage of total households with internet access"
+    },
+    {
+      "name": "households_with_children_under_15_percent",
+      "data_type": "float",
+      "description": "Percentage of households with children under 15 with internet access"
+    },
+    {
+      "name": "households_without_children_under_15_percent",
+      "data_type": "float",
+      "description": "Percentage of households without children under 15 with internet access"
+    }
+  ],
+  "data": [
+    {
+      "year": "2004-05",
+      "total_households_percent": 56,
+      "households_with_children_under_15_percent": 72,
+      "households_without_children_under_15_percent": 49
+    },
+    {
+      "year": "2005-06",
+      "total_households_percent": 60,
+      "households_with_children_under_15_percent": 76,
+      "households_without_children_under_15_percent": 53
+    },
+    {
+      "year": "2006-07",
+      "total_households_percent": 64,
+      "households_with_children_under_15_percent": 81,
+      "households_without_children_under_15_percent": 57
+    },
+    {
+      "year": "2007-08",
+      "total_households_percent": 67,
+      "households_with_children_under_15_percent": 82.3,
+      "households_without_children_under_15_percent": 60.8
+    },
+    {
+      "year": "2008-09",
+      "total_households_percent": 72,
+      "households_with_children_under_15_percent": 86,
+      "households_without_children_under_15_percent": 66.3
+    },
+    {
+      "year": "2010-11",
+      "total_households_percent": 79,
+      "households_with_children_under_15_percent": 92.6,
+      "households_without_children_under_15_percent": 73.8
+    },
+    {
+      "year": "2012-13",
+      "total_households_percent": 83,
+      "households_with_children_under_15_percent": 95.5,
+      "households_without_children_under_15_percent": 78
+    },
+    {
+      "year": "2014-15",
+      "total_households_percent": 86,
+      "households_with_children_under_15_percent": 97,
+      "households_without_children_under_15_percent": 81.6
+    },
+    {
+      "year": "2016-17",
+      "total_households_percent": 86,
+      "households_with_children_under_15_percent": 97.1,
+      "households_without_children_under_15_percent": 81.9
+    }
+  ]
+}

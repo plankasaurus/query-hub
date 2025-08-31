@@ -3,7 +3,7 @@ import path from 'path';
 import { generateWithParts } from '../model';
 import { createPartFromText } from '@google/genai';
 
-const dataDir = path.join(process.cwd(), 'app/api/query/datasource');
+const dataDir = path.join(process.cwd(), 'public/uploads');
 
 const dataSourceFiles = fs.readdirSync(dataDir)
     .filter(file => file.endsWith('.json'))
