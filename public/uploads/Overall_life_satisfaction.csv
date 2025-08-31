@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Overall life satisfaction",
+    "description": "Overall life satisfaction scores in Australia from 2014 to 2022, according to the GSS and HILDA surveys. HILDA results are custom analysis of the Household, Income and Labour Dynamics in Australia (HILDA) survey funded by the Australian Government Department of Social Services and managed by the Melbourne Institute."
+  },
+  "schema": {
+    "year": {
+      "type": "integer",
+      "description": "Year of the survey"
+    },
+    "gss_score": {
+      "type": "float",
+      "description": "Overall life satisfaction score from the General Social Survey (GSS), ranging from 0 to 10"
+    },
+    "hilda_score": {
+      "type": "float",
+      "description": "Overall life satisfaction score from the Household, Income and Labour Dynamics in Australia (HILDA) survey, ranging from 0 to 10"
+    }
+  },
+  "data": [
+    {
+      "year": 2014,
+      "gss_score": 7.6,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2015,
+      "gss_score": null,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2016,
+      "gss_score": null,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2017,
+      "gss_score": null,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2018,
+      "gss_score": null,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2019,
+      "gss_score": 7.5,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2020,
+      "gss_score": 7.2,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2021,
+      "gss_score": null,
+      "hilda_score": 7.9
+    },
+    {
+      "year": 2022,
+      "gss_score": null,
+      "hilda_score": 7.9
+    }
+  ]
+}

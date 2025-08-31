@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Temporary visa holders in Australia 2021",
+    "description": "Visa types of temporary visa holders in Australia in 2021, including the number of persons and their proportion."
+  },
+  "data": [
+    {
+      "visa_type": "Temporary skilled",
+      "persons": 95600,
+      "proportion_percent": 5.8
+    },
+    {
+      "visa_type": "Student",
+      "persons": 363900,
+      "proportion_percent": 22.2
+    },
+    {
+      "visa_type": "Special Category (New Zealand citizen)",
+      "persons": 654500,
+      "proportion_percent": 39.9
+    },
+    {
+      "visa_type": "Working Holiday Maker",
+      "persons": 31300,
+      "proportion_percent": 1.9
+    },
+    {
+      "visa_type": "Other temporary",
+      "persons": 468200,
+      "proportion_percent": 28.6
+    },
+    {
+      "visa_type": "Total temporary residents",
+      "persons": 1613500,
+      "proportion_percent": 98.5
+    },
+    {
+      "visa_type": "Overseas visitors",
+      "persons": 25300,
+      "proportion_percent": 1.5
+    },
+    {
+      "visa_type": "Total temporary visa holders",
+      "persons": 1638800,
+      "proportion_percent": 100
+    }
+  ],
+  "schema": {
+    "visa_type": {
+      "type": "categorical",
+      "description": "Type of temporary visa."
+    },
+    "persons": {
+      "type": "integer",
+      "description": "Number of persons holding the specified visa type."
+    },
+    "proportion_percent": {
+      "type": "float",
+      "description": "Proportion of persons holding the specified visa type, as a percentage."
+    }
+  }
+}
