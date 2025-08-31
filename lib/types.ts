@@ -17,5 +17,6 @@ export interface QueryResult {
     results: DataJoinOut[];
     count: number;
     userQuery: string;
+    aggregate?: string;
     executionTime: number;
 }

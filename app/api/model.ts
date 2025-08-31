@@ -38,13 +38,47 @@ export async function generateWithParts(
     });
     const modelOut = response.text || "";
     console.log("modelOut", modelOut);
+
+    // Try to extract JSON from the response
     const content = modelOut.match(/```json\s*([\s\S]*?)\s*```/);
-    if (!content || content.length < 1) throw new Error("No valid JSON in response");
+    if (!content || content.length < 1) {
+        // If no JSON code block found, try to find any JSON-like content
+        const jsonMatch = modelOut.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+            try {
+                const data = JSON.parse(jsonMatch[0]);
+                return data;
+            } catch (e) {
+                console.error("Failed to parse JSON-like content:", e);
+                throw new Error("Response contains JSON-like content but it's not valid JSON");
+            }
+        }
+        throw new Error("No valid JSON found in response. Expected response wrapped in ```json``` code blocks.");
+    }
+
     try {
         const data = JSON.parse(content[1]);
         return data;
     } catch (e) {
-        console.error(e);
-        throw e;
+        console.error("JSON parsing error:", e);
+        console.error("Raw content that failed to parse:", content[1]);
+
+        // Try to clean up common JSON issues
+        let cleanedContent = content[1];
+
+        // Replace unescaped newlines with escaped newlines
+        cleanedContent = cleanedContent.replace(/\n/g, '\\n');
+
+        // Replace unescaped quotes with escaped quotes (but be careful not to break the JSON structure)
+        cleanedContent = cleanedContent.replace(/(?<!\\)"/g, '\\"');
+
+        try {
+            const data = JSON.parse(cleanedContent);
+            console.log("Successfully parsed after cleaning");
+            return data;
+        } catch (cleanError) {
+            console.error("Still failed after cleaning:", cleanError);
+            throw new Error(`JSON parsing failed: ${e instanceof Error ? e.message : 'Unknown error'}. The AI model returned malformed JSON.`);
+        }
     }
 }

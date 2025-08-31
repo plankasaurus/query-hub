@@ -5,8 +5,9 @@ import { QueryBuilder } from '@/components/query-builder'
 import { SourceFileResults } from '@/components/source-file-results'
 import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import { Database, BarChart3, Download, History, ChevronDown } from 'lucide-react'
+import { Database, BarChart3, Download, History, ChevronDown, Sparkles } from 'lucide-react'
 import { DataJoinOut } from '@/lib/types'
+import { Toast, useToast } from '@/components/ui/toast'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -17,11 +18,13 @@ import {
 export default function QueryBuilderPage() {
     const [query, setQuery] = useState<string>('')
     const [queryResults, setQueryResults] = useState<DataJoinOut[]>([])
+    const [aggregateAnswer, setAggregateAnswer] = useState<string>('')
     const [isExecuting, setIsExecuting] = useState(false)
     const [executionTime, setExecutionTime] = useState<number | null>(null)
-    const [queryHistory, setQueryHistory] = useState<Array<{ query: string, results: DataJoinOut[], timestamp: Date }>>([])
+    const [queryHistory, setQueryHistory] = useState<Array<{ query: string, results: DataJoinOut[], timestamp: Date, aggregateAnswer?: string }>>([])
     const [isVoiceInput, setIsVoiceInput] = useState(false)
     const [error, setError] = useState<string | null>(null)
+    const { toast, showToast, hideToast } = useToast()
 
     const handleQueryChange = (newQuery: string) => {
         setQuery(newQuery)
@@ -32,6 +35,7 @@ export default function QueryBuilderPage() {
         setIsVoiceInput(true)
         // Clear previous results when starting a new voice input
         setQueryResults([])
+        setAggregateAnswer('')
         setError(null)
         // Reset the flag after a short delay
         setTimeout(() => setIsVoiceInput(false), 3000)
@@ -49,6 +53,7 @@ export default function QueryBuilderPage() {
 
         // Clear previous results and show loading state immediately
         setQueryResults([])
+        setAggregateAnswer('')
         setError(null)
         setIsExecuting(true)
         const startTime = Date.now()
@@ -67,17 +72,20 @@ export default function QueryBuilderPage() {
 
                 if (data.success) {
                     setQueryResults(data.results || [])
+                    setAggregateAnswer(data.aggregate || '')
                     setExecutionTime(Date.now() - startTime)
 
                     // Add to query history
                     setQueryHistory(prev => [{
                         query: query,
                         results: data.results || [],
-                        timestamp: new Date()
+                        timestamp: new Date(),
+                        aggregateAnswer: data.aggregate || ''
                     }, ...prev.slice(0, 4)]) // Keep last 5 queries
                 } else {
                     setError(data.message || 'Query failed - no relevant data found')
                     setQueryResults([])
+                    setAggregateAnswer('')
                 }
             } else {
                 const errorData = await response.json().catch(() => ({}))
@@ -85,20 +93,23 @@ export default function QueryBuilderPage() {
                 setError(errorMessage)
                 console.error('Query execution failed:', response.statusText, errorData)
                 setQueryResults([])
+                setAggregateAnswer('')
             }
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : 'Network error occurred'
             setError(errorMessage)
             console.error('Query execution failed:', error)
             setQueryResults([])
+            setAggregateAnswer('')
         } finally {
             setIsExecuting(false)
         }
     }
 
-    const loadQueryFromHistory = (historyItem: { query: string, results: DataJoinOut[], timestamp: Date }) => {
+    const loadQueryFromHistory = (historyItem: { query: string, results: DataJoinOut[], timestamp: Date, aggregateAnswer?: string }) => {
         setQuery(historyItem.query)
         setQueryResults(historyItem.results)
+        setAggregateAnswer(historyItem.aggregateAnswer || '')
         setExecutionTime(null) // Reset execution time when loading from history
     }
 
@@ -158,6 +169,15 @@ export default function QueryBuilderPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+            {/* Toast Notification */}
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={hideToast}
+                />
+            )}
+            
             <div className="container mx-auto px-4 py-8 max-w-7xl">
                 {/* Header Section */}
                 <div className="text-center space-y-6 mb-12">
@@ -240,6 +260,51 @@ export default function QueryBuilderPage() {
                     )}
                 </div>
 
+                {/* Aggregate Answer Section */}
+                {aggregateAnswer && (
+                    <div className="mb-8">
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 shadow-sm">
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center space-x-3">
+                                    <div className="p-2 bg-blue-100 dark:bg-blue-800/30 rounded-lg">
+                                        <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100">
+                                            AI Analysis Summary
+                                        </h3>
+                                        <p className="text-sm text-blue-700 dark:text-blue-300">
+                                            Comprehensive insights from multiple data sources
+                                        </p>
+                                    </div>
+                                </div>
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={async () => {
+                                        try {
+                                            await navigator.clipboard.writeText(aggregateAnswer);
+                                            showToast('Analysis copied to clipboard!', 'success');
+                                        } catch (err) {
+                                            showToast('Failed to copy to clipboard', 'error');
+                                        }
+                                    }}
+                                    className="text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                                >
+                                    Copy
+                                </Button>
+                            </div>
+                            <div className="bg-white dark:bg-slate-800/50 rounded-lg p-4 border border-blue-100 dark:border-blue-800/30">
+                                <div
+                                    className="text-blue-800 dark:text-blue-200 leading-relaxed whitespace-pre-wrap font-mono text-sm"
+                                >
+                                    {aggregateAnswer}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {/* Results Section - Full Width */}
                 {queryResults.length > 0 && (
                     <SourceFileResults
@@ -264,7 +329,8 @@ export default function QueryBuilderPage() {
                                 <h3 className="text-2xl font-semibold">Ready to Query Your Data</h3>
                                 <p className="text-base text-muted-foreground">
                                     Type a natural language question above and click "Execute Query" to get started.
-                                    Get instant insights, analysis, and data visualization.
+                                    Get instant insights, analysis, and data visualization. When multiple data sources are found,
+                                    you'll also receive an AI-powered summary analysis.
                                 </p>
                             </div>
                         </div>
