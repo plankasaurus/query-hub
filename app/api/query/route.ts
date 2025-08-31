@@ -99,6 +99,7 @@ export async function POST(request: NextRequest) {
     try {
         const body = await request.json()
         const { userQuery } = body
+        let aggregateAnswer: Record<string, string> = {};
 
         if (!userQuery || typeof userQuery !== 'string') {
             return NextResponse.json(
@@ -127,26 +128,81 @@ export async function POST(request: NextRequest) {
 
         console.log("hi query route", userQuery);
         console.log(querySeedAndKV);
-        let transformedResults;
-        try {
-            transformedResults = await querySeedAndKV(userQuery);
-        } catch (error) {
-            console.error('Error calling querySeedAndKV:', error);
-            transformedResults = transformedResults_PLACEHOLDER;
-        }
+        const transformedResults = await querySeedAndKV(userQuery);
         console.log("transformedResults", transformedResults);
         if (transformedResults.length > 1) {
-            // Do an aggrate?
+
+        
+
+
+             aggregateAnswer = await generateWithParts(
+                `
+    You are an expert data analyst and an insightful AI strategist. Your purpose is to synthesize complex information from multiple, distinct data sources into a single, coherent, and data-driven response. You must ground every assertion in the provided data, building a clear narrative that directly answers the user's question.
+
+    **Core Principles:**
+    - **Data-First:** Your analysis and conclusions must be derived *exclusively* from the provided data.
+    - **Clarity and Precision:** Communicate findings in clear, unambiguous language. Quantify insights wherever possible.
+    - **Synthesis, Not Summary:** Do not simply list findings from each source. Your value is in weaving them together, highlighting connections, contrasts, and overarching trends.
+    `,
+
+                [
+                    {
+                        text: JSON.stringify({
+                            // 1. INPUT SCHEMA: The data you will receive.
+                            "user_question": userQuery,
+                            "associated_data_results": transformedResults,
+
+                            // 2. PRIMARY OBJECTIVE: What you must accomplish.
+                            "objective": "Based *only* on the provided 'associated_data_results', construct a comprehensive answer to the 'user_question'.",
+
+                            // 3. STEP-BY-STEP EXECUTION PLAN: How to think through the problem.
+                            "execution_plan": {
+                                "step_1_Deconstruct": "First, fully comprehend the 'user_question'. Identify its core components and the specific information being requested.",
+                                "step_2_Analyze_Evidence": "Methodically examine each object in the 'associated_data_results' array. For each source, internalize its 'overview', 'key_findings', 'trends', and the specific 'data_used'.",
+                                "step_3_Synthesize_Narrative": "This is the most critical step. Identify the narrative that connects the different data sources. Look for a central dataset that can anchor the story. Find corroborating evidence, reveal tensions or contradictions between sources, and map out dependencies or causal links suggested by the combined data.",
+                                "step_4_Construct_Answer": "Using your synthesized insights, build the final answer by following the 'Output Requirements' below."
+                            },
+
+                            // 4. OUTPUT REQUIREMENTS & CONSTRAINTS: The rules your final output must follow.
+                            "output_requirements": {
+                                "structure": "Begin with a direct, top-line summary of the main finding. Then, elaborate on the key points in a logical sequence, using markdown for structure if needed.",
+                                "grounding": "Explicitly cite which findings or data points from the 'associated_data_results' support each part of your answer.",
+                                "quantification": "Use specific figures, percentages, and dates from the data whenever possible (e.g., 'Sales increased by 15% in Q3, driven by the Alpha Project, as shown in the 'sales_report.csv' findings.').",
+                                "tone": "Maintain a neutral, objective, and analytical tone.",
+                                "limitations": "If the provided data is insufficient to answer a part of the question, clearly state this and explain what information is missing.",
+                                "prohibitions": [
+                                    "DO NOT introduce any external information, personal knowledge, or assumptions.",
+                                    "DO NOT speculate beyond what the data directly supports.",
+                                    "DO NOT provide generic or vague statements; be specific."
+                                ]
+                            },
+
+                            // 5. RESPONSE FORMAT: The required final output format.
+                            "response_format": {
+                                "type": "JSON",
+                                "schema": {
+                                    "answer": "string"
+                                }
+                            }
+                        })
+                    }
+                ]
+            );
+            console.log("respsonse", aggregateAnswer);
 
         }
-
-        return NextResponse.json({
+        const response = {
             success: true,
             results: transformedResults,
             count: transformedResults.length,
             userQuery: userQuery,
+            aggregate: '',
             executionTime: Date.now() // In real app, measure actual execution time
-        })
+        };
+        if (aggregateAnswer && aggregateAnswer.answer) {
+            response["aggregate"] = aggregateAnswer.answer;
+        }
+        return NextResponse.json(response);
 
     } catch (error) {
         console.error('Query execution error:', error)
