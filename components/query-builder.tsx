@@ -50,7 +50,7 @@ export function QueryBuilder({ onQueryChange, onExecute, query, onVoiceInput, is
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                        Ask questions about your data in plain English. You can type your query or use the microphone button for voice input. For example: "Show me all employees with salary above 80000" or "What is the average age by department?"
+                        Ask questions about your data in plain English. You can type your query or use the microphone button for voice input"
                     </p>
 
                     <form onSubmit={handleSubmit} className="flex space-x-3">

@@ -130,12 +130,13 @@ export async function POST(request: NextRequest) {
         console.log(querySeedAndKV);
         const transformedResults = await querySeedAndKV(userQuery);
         console.log("transformedResults", transformedResults);
-        if (transformedResults.length > 1) {
+        if (transformedResults.length >= 1) {
             try {
                 aggregateAnswer = await generateWithParts(
                     `
     You are an expert data analyst and an insightful AI strategist. Your purpose is to synthesize complex information from multiple, distinct data sources into a single, coherent, and data-driven response. You must ground every assertion in the provided data, building a clear narrative that directly answers the user's question.
-
+    Keep it informative, but also concise, give the answer in bullet points.
+    
     **Core Principles:**
     - **Data-First:** Your analysis and conclusions must be derived *exclusively* from the provided data.
     - **Clarity and Precision:** Communicate findings in clear, unambiguous language. Quantify insights wherever possible.
@@ -195,7 +196,9 @@ export async function POST(request: NextRequest) {
                                 }
                             })
                         }
-                    ]
+                    ], {
+                    model: "gemini-2.5-pro",
+                }
                 );
                 console.log("response", aggregateAnswer);
             } catch (aggregateError) {
