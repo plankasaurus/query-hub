@@ -265,14 +265,14 @@ export default function QueryBuilderPage() {
                 {/* Aggregate Answer Section */}
                 {aggregateAnswer && (
                     <div className="mb-8">
-                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 shadow-sm">
+                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800 rounded-xl p-6 shadow-sm">
                             <div className="flex items-center justify-between mb-4">
                                 <div className="flex items-center space-x-3">
-                                    <div className="p-2 bg-blue-100 dark:bg-blue-800/30 rounded-lg">
-                                        <SearchCheck className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                                    <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                        <SearchCheck className="h-5 w-5 text-green-600 dark:text-green-400" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100">
+                                        <h3 className="text-lg font-semibold text-green-600 dark:text-green-400">
                                             Answer to Your Question
                                         </h3>
                                     </div>
@@ -280,7 +280,7 @@ export default function QueryBuilderPage() {
 
                             </div>
                             <div className="bg-white dark:bg-slate-800/50 rounded-lg p-4 border border-blue-100 dark:border-blue-800/30">
-                                <div className="prose prose-blue dark:prose-invert max-w-none text-blue-800 dark:text-blue-200 leading-relaxed text-sm">
+                                <div className="prose prose-blue dark:prose-invert max-w-none text-blue-800 dark:text-blue-200 leading-relaxed text-base">
                                     <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
                                         components={{

@@ -45,12 +45,12 @@ export function QueryBuilder({ onQueryChange, onExecute, query, onVoiceInput, is
                 <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                         <Database className="h-5 w-5" />
-                        <span>Natural Language Query</span>
+                        <span>Search Australia's Data</span>
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                        Ask questions about your data in plain English. You can type your query or use the microphone button for voice input"
+                        Ask questions about your data in plain English. You can type your query or use the microphone button for voice input.
                     </p>
 
                     <form onSubmit={handleSubmit} className="flex space-x-3">
