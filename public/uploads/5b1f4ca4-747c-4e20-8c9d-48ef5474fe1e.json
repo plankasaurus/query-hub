@@ -1,0 +1,130 @@
+{
+  "fields": [
+    {
+      "name": "year",
+      "data_type": "integer",
+      "description": "Year the data was recorded"
+    },
+    {
+      "name": "divorce_numbers",
+      "data_type": "integer",
+      "description": "Number of divorces granted in Australia during the year"
+    },
+    {
+      "name": "divorce_rate",
+      "data_type": "float",
+      "description": "Crude divorce rate, reflecting the number of divorces granted during the year per 1,000 of estimated resident population aged 16 and over"
+    }
+  ],
+  "data": [
+    {
+      "year": 2004,
+      "divorce_numbers": 52747,
+      "divorce_rate": 3.4
+    },
+    {
+      "year": 2005,
+      "divorce_numbers": 52399,
+      "divorce_rate": 3.3
+    },
+    {
+      "year": 2006,
+      "divorce_numbers": 51375,
+      "divorce_rate": 3.2
+    },
+    {
+      "year": 2007,
+      "divorce_numbers": 47963,
+      "divorce_rate": 2.9
+    },
+    {
+      "year": 2008,
+      "divorce_numbers": 47209,
+      "divorce_rate": 2.8
+    },
+    {
+      "year": 2009,
+      "divorce_numbers": 49448,
+      "divorce_rate": 2.9
+    },
+    {
+      "year": 2010,
+      "divorce_numbers": 50240,
+      "divorce_rate": 2.9
+    },
+    {
+      "year": 2011,
+      "divorce_numbers": 48935,
+      "divorce_rate": 2.7
+    },
+    {
+      "year": 2012,
+      "divorce_numbers": 49917,
+      "divorce_rate": 2.8
+    },
+    {
+      "year": 2013,
+      "divorce_numbers": 47638,
+      "divorce_rate": 2.6
+    },
+    {
+      "year": 2014,
+      "divorce_numbers": 46498,
+      "divorce_rate": 2.5
+    },
+    {
+      "year": 2015,
+      "divorce_numbers": 48517,
+      "divorce_rate": 2.5
+    },
+    {
+      "year": 2016,
+      "divorce_numbers": 46604,
+      "divorce_rate": 2.4
+    },
+    {
+      "year": 2017,
+      "divorce_numbers": 49032,
+      "divorce_rate": 2.5
+    },
+    {
+      "year": 2018,
+      "divorce_numbers": 49674,
+      "divorce_rate": 2.5
+    },
+    {
+      "year": 2019,
+      "divorce_numbers": 48582,
+      "divorce_rate": 2.4
+    },
+    {
+      "year": 2020,
+      "divorce_numbers": 49510,
+      "divorce_rate": 2.4
+    },
+    {
+      "year": 2021,
+      "divorce_numbers": 56244,
+      "divorce_rate": 2.7
+    },
+    {
+      "year": 2022,
+      "divorce_numbers": 49241,
+      "divorce_rate": 2.4
+    },
+    {
+      "year": 2023,
+      "divorce_numbers": 48700,
+      "divorce_rate": 2.3
+    },
+    {
+      "year": 2024,
+      "divorce_numbers": 47216,
+      "divorce_rate": 2.1
+    }
+  ],
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Marriages and Divorces, Australia 2024",
+    "filename": "5b1f4ca4-747c-4e20-8c9d-48ef5474fe1e.csv"
+  }
+}

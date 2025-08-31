@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Marriages and Divorces, Australia 2024",
+    "filename": "Selected marriage indicators, 2020-2024 (a)(b)(c)(d).csv"
+  },
+  "fields": [
+    {
+      "name": "indicator",
+      "data_type": "string",
+      "description": "Marriage indicator description"
+    },
+    {
+      "name": "year_2020",
+      "data_type": "float",
+      "description": "Value of the indicator in 2020"
+    },
+    {
+      "name": "year_2021",
+      "data_type": "float",
+      "description": "Value of the indicator in 2021"
+    },
+    {
+      "name": "year_2022",
+      "data_type": "float",
+      "description": "Value of the indicator in 2022"
+    },
+    {
+      "name": "year_2023",
+      "data_type": "float",
+      "description": "Value of the indicator in 2023"
+    },
+    {
+      "name": "year_2024",
+      "data_type": "float",
+      "description": "Value of the indicator in 2024"
+    }
+  ],
+  "data": [
+    {
+      "indicator": "total_marriages_registered",
+      "year_2020": 78987,
+      "year_2021": 89167,
+      "year_2022": 127161,
+      "year_2023": 118439,
+      "year_2024": 120844
+    },
+    {
+      "indicator": "crude_marriage_rate",
+      "year_2020": 3.8,
+      "year_2021": 4.3,
+      "year_2022": 6.1,
+      "year_2023": 5.5,
+      "year_2024": 5.5
+    },
+    {
+      "indicator": "median_age_at_marriage_male",
+      "year_2020": 32.2,
+      "year_2021": 32.1,
+      "year_2022": 32.5,
+      "year_2023": 32.9,
+      "year_2024": 32.8
+    },
+    {
+      "indicator": "median_age_at_marriage_female",
+      "year_2020": 30.6,
+      "year_2021": 30.5,
+      "year_2022": 30.9,
+      "year_2023": 31.2,
+      "year_2024": 31.2
+    },
+    {
+      "indicator": "male_marriages_of_the_same_gender",
+      "year_2020": 1116,
+      "year_2021": 1075,
+      "year_2022": 1767,
+      "year_2023": 1735,
+      "year_2024": 1893
+    },
+    {
+      "indicator": "female_marriages_of_the_same_gender",
+      "year_2020": 1785,
+      "year_2021": 1770,
+      "year_2022": 2667,
+      "year_2023": 2619,
+      "year_2024": 2622
+    }
+  ]
+}
