@@ -1,0 +1,723 @@
+{
+  "metadata": {
+    "source": "The source of the data",
+    "filename": "2022 Section 16 - Equity Performance Data_revised.xlsx - 6.csv"
+  },
+  "fields": [
+    {
+      "name": "institution",
+      "type": "string",
+      "description": "Name of the higher education institution or category (e.g., Australia, National Total, Table A Providers, Table B Providers, State and Territory, Higher Education Institution)"
+    },
+    {
+      "name": "domestic_national_total_2009",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2009"
+    },
+    {
+      "name": "domestic_national_total_2010",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2010"
+    },
+    {
+      "name": "domestic_national_total_2011",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2011"
+    },
+    {
+      "name": "domestic_national_total_2012",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2012"
+    },
+    {
+      "name": "domestic_national_total_2013",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2013"
+    },
+    {
+      "name": "domestic_national_total_2014",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2014"
+    },
+    {
+      "name": "domestic_national_total_2015",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2015"
+    },
+    {
+      "name": "domestic_national_total_2016",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2016"
+    },
+    {
+      "name": "domestic_national_total_2017",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2017"
+    },
+    {
+      "name": "domestic_national_total_2018",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2018"
+    },
+    {
+      "name": "domestic_national_total_2019",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2019"
+    },
+    {
+      "name": "domestic_national_total_2020",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2020"
+    },
+    {
+      "name": "domestic_national_total_2021",
+      "type": "float",
+      "description": "Retention rate for domestic national total students in 2021"
+    },
+    {
+      "name": "non_english_speaking_background_2009",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2009"
+    },
+    {
+      "name": "non_english_speaking_background_2010",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2010"
+    },
+    {
+      "name": "non_english_speaking_background_2011",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2011"
+    },
+    {
+      "name": "non_english_speaking_background_2012",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2012"
+    },
+    {
+      "name": "non_english_speaking_background_2013",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2013"
+    },
+    {
+      "name": "non_english_speaking_background_2014",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2014"
+    },
+    {
+      "name": "non_english_speaking_background_2015",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2015"
+    },
+    {
+      "name": "non_english_speaking_background_2016",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2016"
+    },
+    {
+      "name": "non_english_speaking_background_2017",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2017"
+    },
+    {
+      "name": "non_english_speaking_background_2018",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2018"
+    },
+    {
+      "name": "non_english_speaking_background_2019",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2019"
+    },
+    {
+      "name": "non_english_speaking_background_2020",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2020"
+    },
+    {
+      "name": "non_english_speaking_background_2021",
+      "type": "float",
+      "description": "Retention rate for non-English speaking background students in 2021"
+    },
+    {
+      "name": "disability_2009",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2009"
+    },
+    {
+      "name": "disability_2010",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2010"
+    },
+    {
+      "name": "disability_2011",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2011"
+    },
+    {
+      "name": "disability_2012",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2012"
+    },
+    {
+      "name": "disability_2013",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2013"
+    },
+    {
+      "name": "disability_2014",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2014"
+    },
+    {
+      "name": "disability_2015",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2015"
+    },
+    {
+      "name": "disability_2016",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2016"
+    },
+    {
+      "name": "disability_2017",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2017"
+    },
+    {
+      "name": "disability_2018",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2018"
+    },
+    {
+      "name": "disability_2019",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2019"
+    },
+    {
+      "name": "disability_2020",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2020"
+    },
+    {
+      "name": "disability_2021",
+      "type": "float",
+      "description": "Retention rate for students with disability in 2021"
+    },
+    {
+      "name": "first_nations_2009",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2009"
+    },
+    {
+      "name": "first_nations_2010",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2010"
+    },
+    {
+      "name": "first_nations_2011",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2011"
+    },
+    {
+      "name": "first_nations_2012",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2012"
+    },
+    {
+      "name": "first_nations_2013",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2013"
+    },
+    {
+      "name": "first_nations_2014",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2014"
+    },
+    {
+      "name": "first_nations_2015",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2015"
+    },
+    {
+      "name": "first_nations_2016",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2016"
+    },
+    {
+      "name": "first_nations_2017",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2017"
+    },
+    {
+      "name": "first_nations_2018",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2018"
+    },
+    {
+      "name": "first_nations_2019",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2019"
+    },
+    {
+      "name": "first_nations_2020",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2020"
+    },
+    {
+      "name": "first_nations_2021",
+      "type": "float",
+      "description": "Retention rate for First Nations students in 2021"
+    },
+    {
+      "name": "low_ses_by_pc_2009",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2009"
+    },
+    {
+      "name": "low_ses_by_pc_2010",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2010"
+    },
+    {
+      "name": "low_ses_by_pc_2011_2006_seifa",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2011 (2006 SEIFA)"
+    },
+    {
+      "name": "low_ses_by_pc_2011_2011_seifa",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2011 (2011 SEIFA)"
+    },
+    {
+      "name": "low_ses_by_pc_2012",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2012"
+    },
+    {
+      "name": "low_ses_by_pc_2013",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2013"
+    },
+    {
+      "name": "low_ses_by_pc_2014",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2014"
+    },
+    {
+      "name": "low_ses_by_pc_2015",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2015"
+    },
+    {
+      "name": "low_ses_by_pc_2016_2011_seifa",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2016 (2011 SEIFA)"
+    },
+    {
+      "name": "low_ses_by_pc_2016_2016_seifa",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2016 (2016 SEIFA)"
+    },
+    {
+      "name": "low_ses_by_pc_2017",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2017"
+    },
+    {
+      "name": "low_ses_by_pc_2018",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2018"
+    },
+    {
+      "name": "low_ses_by_pc_2019",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2019"
+    },
+    {
+      "name": "low_ses_by_pc_2020",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2020"
+    },
+    {
+      "name": "low_ses_by_pc_2021",
+      "type": "float",
+      "description": "Retention rate for low SES students by PC in 2021"
+    },
+    {
+      "name": "low_ses_by_sa1_2011",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2011"
+    },
+    {
+      "name": "low_ses_by_sa1_2012",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2012"
+    },
+    {
+      "name": "low_ses_by_sa1_2013",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2013"
+    },
+    {
+      "name": "low_ses_by_sa1_2014",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2014"
+    },
+    {
+      "name": "low_ses_by_sa1_2015",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2015"
+    },
+    {
+      "name": "low_ses_by_sa1_2016_2011_seifa",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2016 (2011 SEIFA)"
+    },
+    {
+      "name": "low_ses_by_sa1_2016_2016_seifa",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2016 (2016 SEIFA)"
+    },
+    {
+      "name": "low_ses_by_sa1_2017",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2017"
+    },
+    {
+      "name": "low_ses_by_sa1_2018",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2018"
+    },
+    {
+      "name": "low_ses_by_sa1_2019",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2019"
+    },
+    {
+      "name": "low_ses_by_sa1_2020",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2020"
+    },
+    {
+      "name": "low_ses_by_sa1_2021",
+      "type": "float",
+      "description": "Retention rate for low SES students by SA1 in 2021"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2016_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2016 (2011 ASGS)"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2016_2016_asgs",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2016 (2016 ASGS)"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2017",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2017"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2018",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2018"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2019",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2019"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2020",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2020"
+    },
+    {
+      "name": "first_address_low_ses_by_sa1_2021",
+      "type": "float",
+      "description": "Retention rate for First Address Low SES by SA1 in 2021"
+    },
+    {
+      "name": "regional_2009",
+      "type": "float",
+      "description": "Retention rate for regional students in 2009"
+    },
+    {
+      "name": "regional_2010",
+      "type": "float",
+      "description": "Retention rate for regional students in 2010"
+    },
+    {
+      "name": "regional_2011_2006_mceetya",
+      "type": "float",
+      "description": "Retention rate for regional students in 2011 (2006 MCEETYA)"
+    },
+    {
+      "name": "regional_2011_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for regional students in 2011 (2011 ASGS)"
+    },
+    {
+      "name": "regional_2012",
+      "type": "float",
+      "description": "Retention rate for regional students in 2012"
+    },
+    {
+      "name": "regional_2013",
+      "type": "float",
+      "description": "Retention rate for regional students in 2013"
+    },
+    {
+      "name": "regional_2014",
+      "type": "float",
+      "description": "Retention rate for regional students in 2014"
+    },
+    {
+      "name": "regional_2015",
+      "type": "float",
+      "description": "Retention rate for regional students in 2015"
+    },
+    {
+      "name": "regional_2016_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for regional students in 2016 (2011 ASGS)"
+    },
+    {
+      "name": "regional_2016_2016_asgs",
+      "type": "float",
+      "description": "Retention rate for regional students in 2016 (2016 ASGS)"
+    },
+    {
+      "name": "regional_2017",
+      "type": "float",
+      "description": "Retention rate for regional students in 2017"
+    },
+    {
+      "name": "regional_2018",
+      "type": "float",
+      "description": "Retention rate for regional students in 2018"
+    },
+    {
+      "name": "regional_2019",
+      "type": "float",
+      "description": "Retention rate for regional students in 2019"
+    },
+    {
+      "name": "regional_2020",
+      "type": "float",
+      "description": "Retention rate for regional students in 2020"
+    },
+    {
+      "name": "regional_2021",
+      "type": "float",
+      "description": "Retention rate for regional students in 2021"
+    },
+    {
+      "name": "remote_2009",
+      "type": "float",
+      "description": "Retention rate for remote students in 2009"
+    },
+    {
+      "name": "remote_2010",
+      "type": "float",
+      "description": "Retention rate for remote students in 2010"
+    },
+    {
+      "name": "remote_2011_2006_mceetya",
+      "type": "float",
+      "description": "Retention rate for remote students in 2011 (2006 MCEETYA)"
+    },
+    {
+      "name": "remote_2011_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for remote students in 2011 (2011 ASGS)"
+    },
+    {
+      "name": "remote_2012",
+      "type": "float",
+      "description": "Retention rate for remote students in 2012"
+    },
+    {
+      "name": "remote_2013",
+      "type": "float",
+      "description": "Retention rate for remote students in 2013"
+    },
+    {
+      "name": "remote_2014",
+      "type": "float",
+      "description": "Retention rate for remote students in 2014"
+    },
+    {
+      "name": "remote_2015",
+      "type": "float",
+      "description": "Retention rate for remote students in 2015"
+    },
+    {
+      "name": "remote_2016_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for remote students in 2016 (2011 ASGS)"
+    },
+    {
+      "name": "remote_2016_2016_asgs",
+      "type": "float",
+      "description": "Retention rate for remote students in 2016 (2016 ASGS)"
+    },
+    {
+      "name": "remote_2017",
+      "type": "float",
+      "description": "Retention rate for remote students in 2017"
+    },
+    {
+      "name": "remote_2018",
+      "type": "float",
+      "description": "Retention rate for remote students in 2018"
+    },
+    {
+      "name": "remote_2019",
+      "type": "float",
+      "description": "Retention rate for remote students in 2019"
+    },
+    {
+      "name": "remote_2020",
+      "type": "float",
+      "description": "Retention rate for remote students in 2020"
+    },
+    {
+      "name": "remote_2021",
+      "type": "float",
+      "description": "Retention rate for remote students in 2021"
+    },
+    {
+      "name": "first_address_regional_2016_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2016 (2011 ASGS)"
+    },
+    {
+      "name": "first_address_regional_2016_2016_asgs",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2016 (2016 ASGS)"
+    },
+    {
+      "name": "first_address_regional_2017",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2017"
+    },
+    {
+      "name": "first_address_regional_2018",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2018"
+    },
+    {
+      "name": "first_address_regional_2019",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2019"
+    },
+    {
+      "name": "first_address_regional_2020",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2020"
+    },
+    {
+      "name": "first_address_regional_2021",
+      "type": "float",
+      "description": "Retention rate for First Address Regional in 2021"
+    },
+    {
+      "name": "first_address_remote_2016_2011_asgs",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2016 (2011 ASGS)"
+    },
+    {
+      "name": "first_address_remote_2016_2016_asgs",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2016 (2016 ASGS)"
+    },
+    {
+      "name": "first_address_remote_2017",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2017"
+    },
+    {
+      "name": "first_address_remote_2018",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2018"
+    },
+    {
+      "name": "first_address_remote_2019",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2019"
+    },
+    {
+      "name": "first_address_remote_2020",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2020"
+    },
+    {
+      "name": "first_address_remote_2021",
+      "type": "float",
+      "description": "Retention rate for First Address Remote in 2021"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2011",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2011"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2012",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2012"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2013",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2013"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2014",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2014"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2015",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2015"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2016_2011_seifa",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2016 (2011 SEIFA)"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2016_2016_seifa",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2016 (2016 SEIFA)"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2017",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2017"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2018",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2018"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2019",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2019"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2020",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2020"
+    },
+    {
+      "name": "undergraduate_low_ses_by_sa1_2021",
+      "type": "float",
+      "description": "Retention rate for Undergraduate Low SES by SA1 in 2021"
+    }
+  ]
+}

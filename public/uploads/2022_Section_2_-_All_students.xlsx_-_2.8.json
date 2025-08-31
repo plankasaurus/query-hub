@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "source": "Table 2.8: All Students by State, Higher Education Institution and Broad Field of Education, Full Year 2022",
+    "filename": "2022 Section 2 - All students.xlsx - 2.8.csv"
+  },
+  "fields": [
+    {
+      "name": "state",
+      "data_type": "categorical",
+      "description": "The state in Australia where the higher education institution is located."
+    },
+    {
+      "name": "institution",
+      "data_type": "categorical",
+      "description": "Name of the higher education institution."
+    },
+    {
+      "name": "natural_and_physical_sciences",
+      "data_type": "string",
+      "description": "Number of students enrolled in Natural and Physical Sciences."
+    },
+    {
+      "name": "information_technology",
+      "data_type": "string",
+      "description": "Number of students enrolled in Information Technology."
+    },
+    {
+      "name": "engineering_and_related_technologies",
+      "data_type": "string",
+      "description": "Number of students enrolled in Engineering and Related Technologies."
+    },
+    {
+      "name": "architecture_and_building",
+      "data_type": "string",
+      "description": "Number of students enrolled in Architecture and Building."
+    },
+    {
+      "name": "agriculture_environmental_and_related_studies",
+      "data_type": "string",
+      "description": "Number of students enrolled in Agriculture, Environmental and Related Studies."
+    },
+    {
+      "name": "health",
+      "data_type": "string",
+      "description": "Number of students enrolled in Health."
+    },
+    {
+      "name": "education",
+      "data_type": "string",
+      "description": "Number of students enrolled in Education."
+    },
+    {
+      "name": "management_and_commerce",
+      "data_type": "string",
+      "description": "Number of students enrolled in Management and Commerce."
+    },
+    {
+      "name": "society_and_culture",
+      "data_type": "string",
+      "description": "Number of students enrolled in Society and Culture."
+    },
+    {
+      "name": "creative_arts",
+      "data_type": "string",
+      "description": "Number of students enrolled in Creative Arts."
+    },
+    {
+      "name": "food_hospitality_and_personal_services",
+      "data_type": "string",
+      "description": "Number of students enrolled in Food, Hospitality and Personal Services."
+    },
+    {
+      "name": "mixed_field_programs",
+      "data_type": "string",
+      "description": "Number of students enrolled in Mixed Field Programs."
+    },
+    {
+      "name": "non_award_courses",
+      "data_type": "string",
+      "description": "Number of students enrolled in Non-award courses."
+    },
+    {
+      "name": "not_provided",
+      "data_type": "string",
+      "description": "Number of students for whom the field of education was not provided."
+    },
+    {
+      "name": "total_a",
+      "data_type": "string",
+      "description": "Total number of students enrolled at the institution. (a) The data takes into account the coding of Combined Courses to two fields of education. As a consequence, counting both fields of education for Combined Courses means that the totals may be less than the sum of all broad fields of education."
+    }
+  ]
+}

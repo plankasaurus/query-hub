@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "source": "The source of the data",
+    "filename": "2022 Section 14 - Award course completions.xlsx - 14.4.csv"
+  },
+  "fields": [
+    {
+      "name": "state",
+      "data_type": "categorical",
+      "description": "Australian state or territory where the higher education institution is located. Includes 'Multi-State' and 'TOTAL'."
+    },
+    {
+      "name": "institution",
+      "data_type": "categorical",
+      "description": "Name of the higher education institution."
+    },
+    {
+      "name": "year_2003",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2003."
+    },
+    {
+      "name": "year_2004",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2004."
+    },
+    {
+      "name": "year_2005",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2005."
+    },
+    {
+      "name": "year_2006",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2006."
+    },
+    {
+      "name": "year_2007",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2007."
+    },
+    {
+      "name": "year_2008",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2008."
+    },
+    {
+      "name": "year_2009",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2009."
+    },
+    {
+      "name": "year_2010",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2010."
+    },
+    {
+      "name": "year_2011",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2011."
+    },
+    {
+      "name": "year_2012",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2012."
+    },
+    {
+      "name": "year_2013",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2013."
+    },
+    {
+      "name": "year_2014",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2014."
+    },
+    {
+      "name": "year_2015",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2015."
+    },
+    {
+      "name": "year_2016",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2016."
+    },
+    {
+      "name": "year_2017",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2017."
+    },
+    {
+      "name": "year_2018",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2018."
+    },
+    {
+      "name": "year_2019",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2019."
+    },
+    {
+      "name": "year_2020",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2020."
+    },
+    {
+      "name": "year_2021",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2021."
+    },
+    {
+      "name": "year_2022",
+      "data_type": "integer",
+      "description": "Award course completions for the year 2022."
+    },
+    {
+      "name": "percentage_change_from_2021",
+      "data_type": "float",
+      "description": "Percentage change in award course completions from 2021 to 2022."
+    }
+  ]
+}

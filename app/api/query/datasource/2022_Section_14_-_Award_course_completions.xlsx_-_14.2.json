@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "source": "Table 14.2: Award Course Completions for All Students by Citizenship and Gender, 2003 to 2022",
+    "filename": "2022 Section 14 - Award course completions.xlsx - 14.2.csv"
+  },
+  "fields": [
+    {
+      "name": "citizenship",
+      "description": "Citizenship status of the students (Domestic Students, Overseas Students, Not provided, All Students)",
+      "data_type": "categorical"
+    },
+    {
+      "name": "gender",
+      "description": "Gender of the students",
+      "data_type": "categorical"
+    },
+    {
+      "name": "year_2003",
+      "description": "Award course completions in 2003",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2004",
+      "description": "Award course completions in 2004",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2005",
+      "description": "Award course completions in 2005",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2006",
+      "description": "Award course completions in 2006",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2007",
+      "description": "Award course completions in 2007",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2008",
+      "description": "Award course completions in 2008",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2009",
+      "description": "Award course completions in 2009",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2010",
+      "description": "Award course completions in 2010",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2011",
+      "description": "Award course completions in 2011",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2012",
+      "description": "Award course completions in 2012",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2013",
+      "description": "Award course completions in 2013",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2014",
+      "description": "Award course completions in 2014",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2015",
+      "description": "Award course completions in 2015",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2016",
+      "description": "Award course completions in 2016",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2017",
+      "description": "Award course completions in 2017",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2018",
+      "description": "Award course completions in 2018",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2019",
+      "description": "Award course completions in 2019",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2020",
+      "description": "Award course completions in 2020",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2021",
+      "description": "Award course completions in 2021",
+      "data_type": "string"
+    },
+    {
+      "name": "year_2022",
+      "description": "Award course completions in 2022",
+      "data_type": "string"
+    },
+    {
+      "name": "percent_change_from_2021",
+      "description": "Percentage change in award course completions from 2021 to 2022",
+      "data_type": "string"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "source": "Table 2.3: All Students by Level of Course and Broad Field of Education, Full Year 2022",
+    "filename": "2022 Section 2 - All students.xlsx - 2.3.csv"
+  },
+  "fields": [
+    {
+      "name": "level_of_course",
+      "type": "categorical",
+      "description": "Level of the course being undertaken by students."
+    },
+    {
+      "name": "natural_and_physical_sciences",
+      "type": "string",
+      "description": "Number of students in Natural and Physical Sciences."
+    },
+    {
+      "name": "information_technology",
+      "type": "string",
+      "description": "Number of students in Information Technology."
+    },
+    {
+      "name": "engineering_and_related_technologies",
+      "type": "string",
+      "description": "Number of students in Engineering and Related Technologies."
+    },
+    {
+      "name": "architecture_and_building",
+      "type": "string",
+      "description": "Number of students in Architecture and Building."
+    },
+    {
+      "name": "agriculture_environmental_and_related_studies",
+      "type": "string",
+      "description": "Number of students in Agriculture, Environmental and Related Studies."
+    },
+    {
+      "name": "health",
+      "type": "string",
+      "description": "Number of students in Health."
+    },
+    {
+      "name": "education",
+      "type": "string",
+      "description": "Number of students in Education."
+    },
+    {
+      "name": "management_and_commerce",
+      "type": "string",
+      "description": "Number of students in Management and Commerce."
+    },
+    {
+      "name": "society_and_culture",
+      "type": "string",
+      "description": "Number of students in Society and Culture."
+    },
+    {
+      "name": "creative_arts",
+      "type": "string",
+      "description": "Number of students in Creative Arts."
+    },
+    {
+      "name": "food_hospitality_and_personal_services",
+      "type": "string",
+      "description": "Number of students in Food, Hospitality and Personal Services."
+    },
+    {
+      "name": "mixed_field_programs",
+      "type": "string",
+      "description": "Number of students in Mixed Field Programs."
+    },
+    {
+      "name": "non_award_courses",
+      "type": "string",
+      "description": "Number of students in Non-award courses."
+    },
+    {
+      "name": "not_provided",
+      "type": "string",
+      "description": "Number of students for whom the field of education was not provided."
+    },
+    {
+      "name": "total",
+      "type": "string",
+      "description": "Total number of students for the given level of course."
+    }
+  ],
+  "data_notes": [
+    "(a) The data takes into account the coding of Combined Courses to two fields of education. As a consequence, counting both fields of education for Combined Courses means that the totals may be less than the sum of all broad fields of education.",
+    "np not published."
+  ]
+}

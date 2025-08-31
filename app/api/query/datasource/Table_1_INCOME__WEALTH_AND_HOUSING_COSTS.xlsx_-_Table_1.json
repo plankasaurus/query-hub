@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Household Financial Resources, December 2020",
+    "filename": "Table 1 INCOME, WEALTH AND HOUSING COSTS.xlsx - Table 1.csv"
+  },
+  "data": [
+    {
+      "indicator": "Private income (weekly)",
+      "unit": "$",
+      "december_2019": 2132,
+      "december_2020": 2086,
+      "type": "ESTIMATES",
+      "statistic": "Mean income"
+    },
+    {
+      "indicator": "Government pensions and allowances (weekly)",
+      "unit": "$",
+      "december_2019": 208,
+      "december_2020": 263,
+      "type": "ESTIMATES",
+      "statistic": "Mean income"
+    },
+    {
+      "indicator": "Gross income (weekly)",
+      "unit": "$",
+      "december_2019": 2340,
+      "december_2020": 2349,
+      "type": "ESTIMATES",
+      "statistic": "Mean income"
+    },
+    {
+      "indicator": "Private income (weekly)",
+      "unit": "$",
+      "december_2019": 1725,
+      "december_2020": 1631,
+      "type": "ESTIMATES",
+      "statistic": "Median income"
+    },
+    {
+      "indicator": "Government pensions and allowances (weekly)",
+      "unit": "$",
+      "december_2019": 0,
+      "december_2020": 0,
+      "type": "ESTIMATES",
+      "statistic": "Median income"
+    },
+    {
+      "indicator": "Gross income (weekly)",
+      "unit": "$",
+      "december_2019": 1847,
+      "december_2020": 1844,
+      "type": "ESTIMATES",
+      "statistic": "Median income"
+    },
+    {
+      "indicator": "Total value of superannuation funds",
+      "unit": "$'000",
+      "december_2019": 231.3,
+      "december_2020": 223.7,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of other financial assets",
+      "unit": "$'000",
+      "december_2019": 161.6,
+      "december_2020": 162.5,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total financial assets",
+      "unit": "$'000",
+      "december_2019": 392.9,
+      "december_2020": 386.2,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of owner occupied dwelling",
+      "unit": "$'000",
+      "december_2019": 489.7,
+      "december_2020": 533.2,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of other property",
+      "unit": "$'000",
+      "december_2019": 164,
+      "december_2020": 197.9,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total property assets",
+      "unit": "$'000",
+      "december_2019": 653.7,
+      "december_2020": 731.1,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of other non-financial assets",
+      "unit": "$'000",
+      "december_2019": 102.6,
+      "december_2020": 104,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total non-financial assets",
+      "unit": "$'000",
+      "december_2019": 757.3,
+      "december_2020": 835,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total assets",
+      "unit": "$'000",
+      "december_2019": 1150.2,
+      "december_2020": 1221.3,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Principal outstanding on loans for owner occupied dwelling",
+      "unit": "$'000",
+      "december_2019": 101.3,
+      "december_2020": 117.5,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Principal outstanding on other property loans",
+      "unit": "$'000",
+      "december_2019": 66.7,
+      "december_2020": 62.2,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total property loans",
+      "unit": "$'000",
+      "december_2019": 168,
+      "december_2020": 179.7,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Amount owing on credit cards",
+      "unit": "$'000",
+      "december_2019": 3.1,
+      "december_2020": 2,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Amount owing on other loans",
+      "unit": "$'000",
+      "december_2019": 18.9,
+      "december_2020": 17.7,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total liabilities",
+      "unit": "$'000",
+      "december_2019": 190,
+      "december_2020": 199.3,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Mean net worth of household",
+      "unit": "$'000",
+      "december_2019": 960.2,
+      "december_2020": 1021.9,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Median net worth of household",
+      "unit": "$'000",
+      "december_2019": 582.1,
+      "december_2020": 632.2,
+      "type": "ESTIMATES",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Mortgage or unsecured loan payment for housing (weekly)",
+      "unit": "$",
+      "december_2019": 152,
+      "december_2020": 161,
+      "type": "ESTIMATES",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Rent payments (weekly)",
+      "unit": "$",
+      "december_2019": 123,
+      "december_2020": 102,
+      "type": "ESTIMATES",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Rate payments (general and water) (weekly)",
+      "unit": "$",
+      "december_2019": 39,
+      "december_2020": 42,
+      "type": "ESTIMATES",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Total housing costs (weekly)",
+      "unit": "$",
+      "december_2019": 314,
+      "december_2020": 305,
+      "type": "ESTIMATES",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "CPI factor",
+      "unit": "no.",
+      "december_2019": 0.991,
+      "december_2020": 1,
+      "type": "ESTIMATES",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Housing costs as a proportion of gross income",
+      "unit": "%",
+      "december_2019": 13.4,
+      "december_2020": 13,
+      "type": "PROPORTION",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Private income (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 2.2,
+      "december_2020": 2.2,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Mean income"
+    },
+    {
+      "indicator": "Government pensions and allowances (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 3.1,
+      "december_2020": 4.9,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Mean income"
+    },
+    {
+      "indicator": "Gross income (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 2,
+      "december_2020": 1.8,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Mean income"
+    },
+    {
+      "indicator": "Private income (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 2.6,
+      "december_2020": 3.6,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Median income"
+    },
+    {
+      "indicator": "Government pensions and allowances (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 0,
+      "december_2020": 0,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Median income"
+    },
+    {
+      "indicator": "Gross income (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 1.4,
+      "december_2020": 2,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Median income"
+    },
+    {
+      "indicator": "Total value of superannuation funds",
+      "unit": "RSE (%)",
+      "december_2019": 3.9,
+      "december_2020": 5.2,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of other financial assets",
+      "unit": "RSE (%)",
+      "december_2019": 9.1,
+      "december_2020": 7.7,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total financial assets",
+      "unit": "RSE (%)",
+      "december_2019": 5.2,
+      "december_2020": 4.9,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of owner occupied dwelling",
+      "unit": "RSE (%)",
+      "december_2019": 3.4,
+      "december_2020": 2.4,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of other property",
+      "unit": "RSE (%)",
+      "december_2019": 6.1,
+      "december_2020": 8.8,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total property assets",
+      "unit": "RSE (%)",
+      "december_2019": 3.2,
+      "december_2020": 3.2,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Value of other non-financial assets",
+      "unit": "RSE (%)",
+      "december_2019": 2.4,
+      "december_2020": 2.7,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total non-financial assets",
+      "unit": "RSE (%)",
+      "december_2019": 2.8,
+      "december_2020": 2.8,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total assets",
+      "unit": "RSE (%)",
+      "december_2019": 2.9,
+      "december_2020": 2.8,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Principal outstanding on loans for owner occupied dwelling",
+      "unit": "RSE (%)",
+      "december_2019": 5.1,
+      "december_2020": 4.5,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Principal outstanding on other property loans",
+      "unit": "RSE (%)",
+      "december_2019": 8.7,
+      "december_2020": 12.4,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total property loans",
+      "unit": "RSE (%)",
+      "december_2019": 5.1,
+      "december_2020": 4.7,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Amount owing on credit cards",
+      "unit": "RSE (%)",
+      "december_2019": 4.8,
+      "december_2020": 7.2,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Amount owing on other loans",
+      "unit": "RSE (%)",
+      "december_2019": 10.2,
+      "december_2020": 13.8,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Total liabilities",
+      "unit": "RSE (%)",
+      "december_2019": 4.5,
+      "december_2020": 4.6,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Mean net worth of household",
+      "unit": "RSE (%)",
+      "december_2019": 3.3,
+      "december_2020": 3.2,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Median net worth of household",
+      "unit": "RSE (%)",
+      "december_2019": 3.3,
+      "december_2020": 3,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean wealth values"
+    },
+    {
+      "indicator": "Mortgage or unsecured loan payment for housing (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 4.1,
+      "december_2020": 4,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Rent payments (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 4,
+      "december_2020": 4.9,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Rate payments (general and water) (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 2.3,
+      "december_2020": 2.1,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Total housing costs (weekly)",
+      "unit": "RSE (%)",
+      "december_2019": 1.9,
+      "december_2020": 2.1,
+      "type": "RELATIVE STANDARD ERROR",
+      "statistic": "Household mean weekly housing costs"
+    },
+    {
+      "indicator": "Housing costs as a proportion of gross income",
+      "unit": "MOE(±)",
+      "december_2019": 0.8,
+      "december_2020": 0.7,
+      "type": "95% MARGIN OF ERROR OF PROPORTION",
+      "statistic": "Household mean weekly housing costs"
+    }
+  ]
+}

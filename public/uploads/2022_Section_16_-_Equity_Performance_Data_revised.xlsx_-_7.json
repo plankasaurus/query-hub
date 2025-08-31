@@ -1,0 +1,533 @@
+{
+  "metadata": {
+    "source": "Table 16.7: Equity - Retention Ratios for Domestic Students at Table A and B Institutions, 2009 to 2021",
+    "filename": "2022 Section 16 - Equity Performance Data_revised.xlsx - 7.csv"
+  },
+  "schema": {
+    "group": {
+      "type": "string",
+      "description": "Group or category of the institution or location (e.g., Australia, State and Territory, Higher Education Institution)"
+    },
+    "institution": {
+      "type": "string",
+      "description": "Name of the institution or location"
+    },
+    "nesb_2009": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2009"
+    },
+    "nesb_2010": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2010"
+    },
+    "nesb_2011": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2011"
+    },
+    "nesb_2012": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2012"
+    },
+    "nesb_2013": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2013"
+    },
+    "nesb_2014": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2014"
+    },
+    "nesb_2015": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2015"
+    },
+    "nesb_2016": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2016"
+    },
+    "nesb_2017": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2017"
+    },
+    "nesb_2018": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2018"
+    },
+    "nesb_2019": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2019"
+    },
+    "nesb_2020": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2020"
+    },
+    "nesb_2021": {
+      "type": "float",
+      "description": "Retention ratio for Non-English Speaking Background students in 2021"
+    },
+    "disability_2009": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2009"
+    },
+    "disability_2010": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2010"
+    },
+    "disability_2011": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2011"
+    },
+    "disability_2012": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2012"
+    },
+    "disability_2013": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2013"
+    },
+    "disability_2014": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2014"
+    },
+    "disability_2015": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2015"
+    },
+    "disability_2016": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2016"
+    },
+    "disability_2017": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2017"
+    },
+    "disability_2018": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2018"
+    },
+    "disability_2019": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2019"
+    },
+    "disability_2020": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2020"
+    },
+    "disability_2021": {
+      "type": "float",
+      "description": "Retention ratio for students with disability in 2021"
+    },
+    "first_nations_2009": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2009"
+    },
+    "first_nations_2010": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2010"
+    },
+    "first_nations_2011": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2011"
+    },
+    "first_nations_2012": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2012"
+    },
+    "first_nations_2013": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2013"
+    },
+    "first_nations_2014": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2014"
+    },
+    "first_nations_2015": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2015"
+    },
+    "first_nations_2016": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2016"
+    },
+    "first_nations_2017": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2017"
+    },
+    "first_nations_2018": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2018"
+    },
+    "first_nations_2019": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2019"
+    },
+    "first_nations_2020": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2020"
+    },
+    "first_nations_2021": {
+      "type": "float",
+      "description": "Retention ratio for First Nations students in 2021"
+    },
+    "low_ses_by_pc_2009": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2009"
+    },
+    "low_ses_by_pc_2010": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2010"
+    },
+    "low_ses_by_pc_2011_2006_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2011 (2006 SEIFA)"
+    },
+    "low_ses_by_pc_2011_2011_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2011 (2011 SEIFA)"
+    },
+    "low_ses_by_pc_2012": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2012"
+    },
+    "low_ses_by_pc_2013": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2013"
+    },
+    "low_ses_by_pc_2014": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2014"
+    },
+    "low_ses_by_pc_2015": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2015"
+    },
+    "low_ses_by_pc_2016_2011_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2016 (2011 SEIFA)"
+    },
+    "low_ses_by_pc_2016_2016_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2016 (2016 SEIFA)"
+    },
+    "low_ses_by_pc_2017": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2017"
+    },
+    "low_ses_by_pc_2018": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2018"
+    },
+    "low_ses_by_pc_2019": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2019"
+    },
+    "low_ses_by_pc_2020": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2020"
+    },
+    "low_ses_by_pc_2021": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by PC in 2021"
+    },
+    "low_ses_by_sa1_2011": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2011"
+    },
+    "low_ses_by_sa1_2012": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2012"
+    },
+    "low_ses_by_sa1_2013": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2013"
+    },
+    "low_ses_by_sa1_2014": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2014"
+    },
+    "low_ses_by_sa1_2015": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2015"
+    },
+    "low_ses_by_sa1_2016_2011_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2016 (2011 SEIFA)"
+    },
+    "low_ses_by_sa1_2016_2016_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2016 (2016 SEIFA)"
+    },
+    "low_ses_by_sa1_2017": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2017"
+    },
+    "low_ses_by_sa1_2018": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2018"
+    },
+    "low_ses_by_sa1_2019": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2019"
+    },
+    "low_ses_by_sa1_2020": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2020"
+    },
+    "low_ses_by_sa1_2021": {
+      "type": "float",
+      "description": "Retention ratio for Low SES students by SA1 in 2021"
+    },
+    "first_address_low_ses_by_sa1_2016_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2016 (2011 ASGS)"
+    },
+    "first_address_low_ses_by_sa1_2016_2016_asgs": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2016 (2016 ASGS)"
+    },
+    "first_address_low_ses_by_sa1_2017": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2017"
+    },
+    "first_address_low_ses_by_sa1_2018": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2018"
+    },
+    "first_address_low_ses_by_sa1_2019": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2019"
+    },
+    "first_address_low_ses_by_sa1_2020": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2020"
+    },
+    "first_address_low_ses_by_sa1_2021": {
+      "type": "float",
+      "description": "Retention ratio for First Address Low SES students by SA1 in 2021"
+    },
+    "regional_2009": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2009"
+    },
+    "regional_2010": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2010"
+    },
+    "regional_2011_2006_mceetya": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2011 (2006 MCEETYA)"
+    },
+    "regional_2011_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2011 (2011 ASGS)"
+    },
+    "regional_2012": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2012"
+    },
+    "regional_2013": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2013"
+    },
+    "regional_2014": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2014"
+    },
+    "regional_2015": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2015"
+    },
+    "regional_2016_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2016 (2011 ASGS)"
+    },
+    "regional_2016_2016_asgs": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2016 (2016 ASGS)"
+    },
+    "regional_2017": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2017"
+    },
+    "regional_2018": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2018"
+    },
+    "regional_2019": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2019"
+    },
+    "regional_2020": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2020"
+    },
+    "regional_2021": {
+      "type": "float",
+      "description": "Retention ratio for Regional students in 2021"
+    },
+    "remote_2009": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2009"
+    },
+    "remote_2010": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2010"
+    },
+    "remote_2011_2006_mceetya": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2011 (2006 MCEETYA)"
+    },
+    "remote_2011_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2011 (2011 ASGS)"
+    },
+    "remote_2012": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2012"
+    },
+    "remote_2013": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2013"
+    },
+    "remote_2014": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2014"
+    },
+    "remote_2015": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2015"
+    },
+    "remote_2016_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2016 (2011 ASGS)"
+    },
+    "remote_2016_2016_asgs": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2016 (2016 ASGS)"
+    },
+    "remote_2017": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2017"
+    },
+    "remote_2018": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2018"
+    },
+    "remote_2019": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2019"
+    },
+    "remote_2020": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2020"
+    },
+    "remote_2021": {
+      "type": "float",
+      "description": "Retention ratio for Remote students in 2021"
+    },
+    "first_address_regional_2016_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2016 (2011 ASGS)"
+    },
+    "first_address_regional_2016_2016_asgs": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2016 (2016 ASGS)"
+    },
+    "first_address_regional_2017": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2017"
+    },
+    "first_address_regional_2018": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2018"
+    },
+    "first_address_regional_2019": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2019"
+    },
+    "first_address_regional_2020": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2020"
+    },
+    "first_address_regional_2021": {
+      "type": "float",
+      "description": "Retention ratio for First Address Regional students in 2021"
+    },
+    "first_address_remote_2016_2011_asgs": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2016 (2011 ASGS)"
+    },
+    "first_address_remote_2016_2016_asgs": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2016 (2016 ASGS)"
+    },
+    "first_address_remote_2017": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2017"
+    },
+    "first_address_remote_2018": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2018"
+    },
+    "first_address_remote_2019": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2019"
+    },
+    "first_address_remote_2020": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2020"
+    },
+    "first_address_remote_2021": {
+      "type": "float",
+      "description": "Retention ratio for First Address Remote students in 2021"
+    },
+    "undergraduate_low_ses_by_sa1_2011": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2011"
+    },
+    "undergraduate_low_ses_by_sa1_2012": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2012"
+    },
+    "undergraduate_low_ses_by_sa1_2013": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2013"
+    },
+    "undergraduate_low_ses_by_sa1_2014": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2014"
+    },
+    "undergraduate_low_ses_by_sa1_2015": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2015"
+    },
+    "undergraduate_low_ses_by_sa1_2016_2011_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2016 (2011 SEIFA)"
+    },
+    "undergraduate_low_ses_by_sa1_2016_2016_seifa": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2016 (2016 SEIFA)"
+    },
+    "undergraduate_low_ses_by_sa1_2017": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2017"
+    },
+    "undergraduate_low_ses_by_sa1_2018": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2018"
+    },
+    "undergraduate_low_ses_by_sa1_2019": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2019"
+    },
+    "undergraduate_low_ses_by_sa1_2020": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2020"
+    },
+    "undergraduate_low_ses_by_sa1_2021": {
+      "type": "float",
+      "description": "Retention ratio for Undergraduate Low SES students by SA1 in 2021"
+    }
+  },
+  "data": []
+}

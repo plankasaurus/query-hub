@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "source": "Table 14.12: Award Course Completions for All Students by State, Higher Education Institution and Citizenship, 2022",
+    "filename": "2022 Section 14 - Award course completions.xlsx - 14.12.csv"
+  },
+  "fields": [
+    {
+      "name": "state",
+      "type": "categorical",
+      "description": "The state where the higher education institution is located."
+    },
+    {
+      "name": "institution",
+      "type": "categorical",
+      "description": "The name of the higher education institution."
+    },
+    {
+      "name": "domestic_students",
+      "type": "string",
+      "description": "The number of domestic students who completed the award course. Values such as 'np' (not published) and '< 5' are preserved as strings."
+    },
+    {
+      "name": "overseas_students",
+      "type": "string",
+      "description": "The number of overseas students who completed the award course. Values such as 'np' (not published) and '< 5' are preserved as strings."
+    },
+    {
+      "name": "not_provided",
+      "type": "integer",
+      "description": "The number of students whose citizenship was not provided."
+    },
+    {
+      "name": "total",
+      "type": "string",
+      "description": "The total number of students who completed the award course. Values such as 'np' (not published) and '< 5' are preserved as strings."
+    }
+  ],
+  "data": [
+    {
+      "state": "New South Wales",
+      "institution": "Charles Sturt University",
+      "domestic_students": "6,878",
+      "overseas_students": "1,562",
+      "not_provided": 0,
+      "total": "8,440"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "Macquarie University",
+      "domestic_students": "6,462",
+      "overseas_students": "np",
+      "not_provided": "< 5",
+      "total": "9,041"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "Southern Cross University",
+      "domestic_students": "3,038",
+      "overseas_students": "1,148",
+      "not_provided": 0,
+      "total": "4,186"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "The University of New England",
+      "domestic_students": "3,378",
+      "overseas_students": "257",
+      "not_provided": 0,
+      "total": "3,635"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "The University of Newcastle",
+      "domestic_students": "6,101",
+      "overseas_students": "1,645",
+      "not_provided": 0,
+      "total": "7,746"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "The University of Sydney",
+      "domestic_students": "np",
+      "overseas_students": "12,523",
+      "not_provided": "< 5",
+      "total": "21,132"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "University of New South Wales",
+      "domestic_students": "9,623",
+      "overseas_students": "8,301",
+      "not_provided": 0,
+      "total": "17,924"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "University of Technology Sydney",
+      "domestic_students": "7,326",
+      "overseas_students": "3,964",
+      "not_provided": 0,
+      "total": "11,290"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "University of Wollongong",
+      "domestic_students": "4,022",
+      "overseas_students": "3,286",
+      "not_provided": 0,
+      "total": "7,308"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "Western Sydney University",
+      "domestic_students": "9,552",
+      "overseas_students": "2,257",
+      "not_provided": 0,
+      "total": "11,809"
+    },
+    {
+      "state": "New South Wales",
+      "institution": "Non-University Higher Education Institutions",
+      "domestic_students": "12,965",
+      "overseas_students": "8,515",
+      "not_provided": 0,
+      "total": "21,480"
+    },
+    {
+      "state": "Victoria",
+      "institution": "Deakin University",
+      "domestic_students": "10,571",
+      "overseas_students": "2,945",
+      "not_provided": 0,
+      "total": "13,516"
+    },
+    {
+      "state": "Victoria",
+      "institution": "Federation University Australia",
+      "domestic_students": "1,795",
+      "overseas_students": "1,273",
+      "not_provided": 0,
+      "total": "3,068"
+    },
+    {
+      "state": "Victoria",
+      "institution": "La Trobe University",
+      "domestic_students": "6,410",
+      "overseas_students": "1,964",
+      "not_provided": 0,
+      "total": "8,374"
+    },
+    {
+      "state": "Victoria",
+      "institution": "Monash University",
+      "domestic_students": "12,605",
+      "overseas_students": "11,563",
+      "not_provided": 0,
+      "total": "24,168"
+    },
+    {
+      "state": "Victoria",
+      "institution": "RMIT University",
+      "domestic_students": "9,771",
+      "overseas_students": "8,872",
+      "not_provided": 0,
+      "total": "18,643"
+    },
+    {
+      "state": "Victoria",
+      "institution": "Swinburne University of Technology",
+      "domestic_students": "5,273",
+      "overseas_students": "np",
+      "not_provided": "< 5",
+      "total": "7,638"
+    },
+    {
+      "state": "Victoria",
+      "institution": "The University of Melbourne",
+      "domestic_students": "12,835",
+      "overseas_students": "8,836",
+      "not_provided": 0,
+      "total": "21,671"
+    },
+    {
+      "state": "Victoria",
+      "institution": "University of Divinity",
+      "domestic_students": "352",
+      "overseas_students": "33",
+      "not_provided": 0,
+      "total": "385"
+    },
+    {
+      "state": "Victoria",
+      "institution": "Victoria University",
+      "domestic_students": "2,392",
+      "overseas_students": "3,256",
+      "not_provided": 0,
+      "total": "5,648"
+    },
+    {
+      "state": "Victoria",
+      "institution": "Non-University Higher Education Institutions",
+      "domestic_students": "2,786",
+      "overseas_students": "6,426",
+      "not_provided": 0,
+      "total": "9,212"
+    },
+    {
+      "state": "Queensland",
+      "institution": "Bond University",
+      "domestic_students": "1,090",
+      "overseas_students": "500",
+      "not_provided": 0,
+      "total": "1,590"
+    },
+    {
+      "state": "Queensland",
+      "institution": "CQUniversity",
+      "domestic_students": "3,507",
+      "overseas_students": "558",
+      "not_provided": 0,
+      "total": "4,065"
+    },
+    {
+      "state": "Queensland",
+      "institution": "Griffith University",
+      "domestic_students": "8,193",
+      "overseas_students": "2,175",
+      "not_provided": 0,
+      "total": "10,368"
+    },
+    {
+      "state": "Queensland",
+      "institution": "James Cook University",
+      "domestic_students": "3,150",
+      "overseas_students": "1,634",
+      "not_provided": 0,
+      "total": "4,784"
+    },
+    {
+      "state": "Queensland",
+      "institution": "Queensland University of Technology",
+      "domestic_students": "9,153",
+      "overseas_students": "2,208",
+      "not_provided": 0,
+      "total": "11,361"
+    },
+    {
+      "state": "Queensland",
+      "institution": "The University of Queensland",
+      "domestic_students": "6,762",
+      "overseas_students": "7,215",
+      "not_provided": 0,
+      "total": "13,977"
+    },
+    {
+      "state": "Queensland",
+      "institution": "University of Southern Queensland",
+      "domestic_students": "3,257",
+      "overseas_students": "473",
+      "not_provided": 0,
+      "total": "3,730"
+    },
+    {
+      "state": "Queensland",
+      "institution": "University of the Sunshine Coast",
+      "domestic_students": "2,409",
+      "overseas_students": "510",
+      "not_provided": 0,
+      "total": "2,919"
+    },
+    {
+      "state": "Queensland",
+      "institution": "Non-University Higher Education Institutions",
+      "domestic_students": "1,458",
+      "overseas_students": "475",
+      "not_provided": 0,
+      "total": "1,933"
+    },
+    {
+      "state": "Western Australia",
+      "institution": "Curtin University",
+      "domestic_students": "6,709",
+      "overseas_students": "3,506",
+      "not_provided": 0,
+      "total": "10,215"
+    },
+    {
+      "state": "Western Australia",
+      "institution": "Edith Cowan University",
+      "domestic_students": "4,610",
+      "overseas_students": "1,782",
+      "not_provided": 0,
+      "total": "6,392"
+    },
+    {
+      "state": "Western Australia",
+      "institution": "Murdoch University",
+      "domestic_students": "2,380",
+      "overseas_students": "2,476",
+      "not_provided": 0,
+      "total": "4,856"
+    },
+    {
+      "state": "Western Australia",
+      "institution": "The University of Notre Dame Australia",
+      "domestic_students": "2,651",
+      "overseas_students": "87",
+      "not_provided": 0,
+      "total": "2,738"
+    },
+    {
+      "state": "Western Australia",
+      "institution": "The University of Western Australia",
+      "domestic_students": "4,700",
+      "overseas_students": "1,678",
+      "not_provided": 0,
+      "total": "6,378"
+    },
+    {
+      "state": "Western Australia",
+      "institution": "Non-University Higher Education Institutions",
+      "domestic_students": "394",
+      "overseas_students": "1,163",
+      "not_provided": 0,
+      "total": "1,557"
+    },
+    {
+      "state": "South Australia",
+      "institution": "Flinders University",
+      "domestic_students": "4,438",
+      "overseas_students": "1,411",
+      "not_provided": 0,
+      "total": "5,849"
+    },
+    {
+      "state": "South Australia",
+      "institution": "The University of Adelaide",
+      "domestic_students": "4,603",
+      "overseas_students": "2,623",
+      "not_provided": 0,
+      "total": "7,226"
+    },
+    {
+      "state": "South Australia",
+      "institution": "Torrens University Australia",
+      "domestic_students": "2,119",
+      "overseas_students": "3,608",
+      "not_provided": 38,
+      "total": "5,765"
+    },
+    {
+      "state": "South Australia",
+      "institution": "University of South Australia",
+      "domestic_students": "6,135",
+      "overseas_students": "1,352",
+      "not_provided": 0,
+      "total": "7,487"
+    },
+    {
+      "state": "South Australia",
+      "institution": "Private Universities (Table C) and Non-University Higher Education Institutions",
+      "domestic_students": "1,543",
+      "overseas_students": "1,148",
+      "not_provided": 0,
+      "total": "2,691"
+    },
+    {
+      "state": "Tasmania",
+      "institution": "University of Tasmania",
+      "domestic_students": "10,658",
+      "overseas_students": "np",
+      "not_provided": "< 5",
+      "total": "12,505"
+    },
+    {
+      "state": "Northern Territory",
+      "institution": "Batchelor Institute of Indigenous Tertiary Education",
+      "domestic_students": 0,
+      "overseas_students": 0,
+      "not_provided": 0,
+      "total": 0
+    },
+    {
+      "state": "Northern Territory",
+      "institution": "Charles Darwin University",
+      "domestic_students": "1,701",
+      "overseas_students": "597",
+      "not_provided": 0,
+      "total": "2,298"
+    },
+    {
+      "state": "Australian Capital Territory",
+      "institution": "The Australian National University",
+      "domestic_students": "3,663",
+      "overseas_students": "3,174",
+      "not_provided": 0,
+      "total": "6,837"
+    },
+    {
+      "state": "Australian Capital Territory",
+      "institution": "University of Canberra",
+      "domestic_students": "2,630",
+      "overseas_students": "1,135",
+      "not_provided": 0,
+      "total": "3,765"
+    },
+    {
+      "state": "Australian Capital Territory",
+      "institution": "Non-University Higher Education Institutions",
+      "domestic_students": "720",
+      "overseas_students": "77",
+      "not_provided": 0,
+      "total": "797"
+    },
+    {
+      "state": "Multi-State",
+      "institution": "Australian Catholic University",
+      "domestic_students": "6,352",
+      "overseas_students": "1,081",
+      "not_provided": 0,
+      "total": "7,433"
+    },
+    {
+      "state": "Multi-State",
+      "institution": "Non-University Higher Education Institutions",
+      "domestic_students": "np",
+      "overseas_students": "np",
+      "not_provided": 0,
+      "total": "751"
+    },
+    {
+      "state": "TOTAL",
+      "institution": null,
+      "domestic_students": "248,446",
+      "overseas_students": "138,092",
+      "not_provided": 43,
+      "total": "386,581"
+    },
+    {
+      "state": "Total 2021",
+      "institution": null,
+      "domestic_students": "248,102",
+      "overseas_students": "159,163",
+      "not_provided": 99,
+      "total": "407,364"
+    },
+    {
+      "state": "% change from 2021",
+      "institution": null,
+      "domestic_students": "0.1%",
+      "overseas_students": "-13.2%",
+      "not_provided": "-56.6%",
+      "total": "-5.1%"
+    },
+    {
+      "state": null,
+      "institution": null,
+      "domestic_students": null,
+      "overseas_students": null,
+      "not_provided": null,
+      "total": null
+    }
+  ]
+}

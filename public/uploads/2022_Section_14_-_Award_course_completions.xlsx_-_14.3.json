@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "source": "Table 14.3: Award Course Completions for All Students by Citizenship and Broad Field of Education, 2003 to 2022",
+    "filename": "2022 Section 14 - Award course completions.xlsx - 14.3.csv"
+  },
+  "fields": [
+    {
+      "name": "citizenship",
+      "type": "categorical",
+      "description": "Citizenship status of the students (Domestic Students, Overseas Students, Not provided, All Students)."
+    },
+    {
+      "name": "broad_field_of_education",
+      "type": "categorical",
+      "description": "Broad field of education for the course completion."
+    },
+    {
+      "name": "year_2003",
+      "type": "string",
+      "description": "Number of award course completions in 2003."
+    },
+    {
+      "name": "year_2004",
+      "type": "string",
+      "description": "Number of award course completions in 2004."
+    },
+    {
+      "name": "year_2005",
+      "type": "string",
+      "description": "Number of award course completions in 2005."
+    },
+    {
+      "name": "year_2006",
+      "type": "string",
+      "description": "Number of award course completions in 2006."
+    },
+    {
+      "name": "year_2007",
+      "type": "string",
+      "description": "Number of award course completions in 2007."
+    },
+    {
+      "name": "year_2008",
+      "type": "string",
+      "description": "Number of award course completions in 2008."
+    },
+    {
+      "name": "year_2009",
+      "type": "string",
+      "description": "Number of award course completions in 2009."
+    },
+    {
+      "name": "year_2010",
+      "type": "string",
+      "description": "Number of award course completions in 2010."
+    },
+    {
+      "name": "year_2011",
+      "type": "string",
+      "description": "Number of award course completions in 2011."
+    },
+    {
+      "name": "year_2012",
+      "type": "string",
+      "description": "Number of award course completions in 2012."
+    },
+    {
+      "name": "year_2013",
+      "type": "string",
+      "description": "Number of award course completions in 2013."
+    },
+    {
+      "name": "year_2014",
+      "type": "string",
+      "description": "Number of award course completions in 2014."
+    },
+    {
+      "name": "year_2015",
+      "type": "string",
+      "description": "Number of award course completions in 2015."
+    },
+    {
+      "name": "year_2016",
+      "type": "string",
+      "description": "Number of award course completions in 2016."
+    },
+    {
+      "name": "year_2017",
+      "type": "string",
+      "description": "Number of award course completions in 2017."
+    },
+    {
+      "name": "year_2018",
+      "type": "string",
+      "description": "Number of award course completions in 2018."
+    },
+    {
+      "name": "year_2019",
+      "type": "string",
+      "description": "Number of award course completions in 2019."
+    },
+    {
+      "name": "year_2020",
+      "type": "string",
+      "description": "Number of award course completions in 2020."
+    },
+    {
+      "name": "year_2021",
+      "type": "string",
+      "description": "Number of award course completions in 2021."
+    },
+    {
+      "name": "year_2022",
+      "type": "string",
+      "description": "Number of award course completions in 2022."
+    },
+    {
+      "name": "percentage_change_from_2021",
+      "type": "string",
+      "description": "Percentage change in award course completions from 2021 to 2022."
+    }
+  ]
+}

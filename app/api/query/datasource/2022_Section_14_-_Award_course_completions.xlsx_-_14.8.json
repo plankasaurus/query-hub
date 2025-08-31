@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "source": "Table 14.8: Award Course Completions for All Students by State, Higher Education Institution and Broad Level of Course, 2022",
+    "filename": "2022 Section 14 - Award course completions.xlsx - 14.8.csv"
+  },
+  "fields": [
+    {
+      "name": "state",
+      "type": "categorical",
+      "description": "The state in Australia where the institution is located."
+    },
+    {
+      "name": "institution",
+      "type": "categorical",
+      "description": "The name of the higher education institution."
+    },
+    {
+      "name": "higher_doctorate",
+      "type": "integer",
+      "description": "Number of Higher Doctorate completions."
+    },
+    {
+      "name": "doctorate_by_research",
+      "type": "integer",
+      "description": "Number of Doctorate by Research completions."
+    },
+    {
+      "name": "doctorate_by_coursework",
+      "type": "integer",
+      "description": "Number of Doctorate by Coursework completions."
+    },
+    {
+      "name": "master_s_extended",
+      "type": "integer",
+      "description": "Number of Master's (Extended) completions."
+    },
+    {
+      "name": "master_s_by_research",
+      "type": "integer",
+      "description": "Number of Master's by Research completions."
+    },
+    {
+      "name": "master_s_by_coursework",
+      "type": "integer",
+      "description": "Number of Master's by Coursework completions."
+    },
+    {
+      "name": "other_postgraduate",
+      "type": "integer",
+      "description": "Number of Other Postgraduate completions."
+    },
+    {
+      "name": "bachelor",
+      "type": "integer",
+      "description": "Number of Bachelor completions."
+    },
+    {
+      "name": "associate_degree",
+      "type": "integer",
+      "description": "Number of Associate Degree completions."
+    },
+    {
+      "name": "other_undergraduate",
+      "type": "integer",
+      "description": "Number of Other Undergraduate completions."
+    },
+    {
+      "name": "not_provided",
+      "type": "integer",
+      "description": "Number of completions for which the level was not provided."
+    },
+    {
+      "name": "total",
+      "type": "integer",
+      "description": "Total number of course completions."
+    }
+  ],
+  "data_notes": "Values denoted as '< 5' have been replaced with 0 for processing. Values denoted as 'np' (not published) have been replaced with null."
+}

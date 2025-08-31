@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "source": "Table 14.7: Award Course Completions for Domestic Students by Level of Course and Broad Field of Education, 2022",
+    "filename": "2022 Section 14 - Award course completions.xlsx - 14.7.csv"
+  },
+  "fields": [
+    {
+      "name": "level_of_course",
+      "type": "categorical",
+      "description": "Level of the course (e.g., Doctorate, Master's, Bachelor's)."
+    },
+    {
+      "name": "natural_and_physical_sciences",
+      "type": "string",
+      "description": "Number of award course completions in Natural and Physical Sciences."
+    },
+    {
+      "name": "information_technology",
+      "type": "string",
+      "description": "Number of award course completions in Information Technology."
+    },
+    {
+      "name": "engineering_and_related_technologies",
+      "type": "string",
+      "description": "Number of award course completions in Engineering and Related Technologies."
+    },
+    {
+      "name": "architecture_and_building",
+      "type": "string",
+      "description": "Number of award course completions in Architecture and Building."
+    },
+    {
+      "name": "agriculture_environmental_and_related_studies",
+      "type": "string",
+      "description": "Number of award course completions in Agriculture, Environmental and Related Studies."
+    },
+    {
+      "name": "health",
+      "type": "string",
+      "description": "Number of award course completions in Health."
+    },
+    {
+      "name": "education",
+      "type": "string",
+      "description": "Number of award course completions in Education."
+    },
+    {
+      "name": "management_and_commerce",
+      "type": "string",
+      "description": "Number of award course completions in Management and Commerce."
+    },
+    {
+      "name": "society_and_culture",
+      "type": "string",
+      "description": "Number of award course completions in Society and Culture."
+    },
+    {
+      "name": "creative_arts",
+      "type": "string",
+      "description": "Number of award course completions in Creative Arts."
+    },
+    {
+      "name": "food_hospitality_and_personal_services",
+      "type": "string",
+      "description": "Number of award course completions in Food, Hospitality and Personal Services."
+    },
+    {
+      "name": "non_award_courses",
+      "type": "string",
+      "description": "Number of non-award course completions."
+    },
+    {
+      "name": "not_provided",
+      "type": "string",
+      "description": "Number of completions where the field of education was not provided."
+    },
+    {
+      "name": "total",
+      "type": "string",
+      "description": "Total number of award course completions for the given level."
+    }
+  ],
+  "data_notes": [
+    "(a) The data takes into account the coding of Combined Courses to two fields of education. As a consequence, counting both fields of education for Combined Courses means that the totals may be less than the sum of all broad fields of education.",
+    "np not published."
+  ]
+}

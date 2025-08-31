@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Assets and Liabilities of Australian Securitisers March 2025",
+    "filename": "Total assets of securitisers - quarterly percentage change.csv"
+  },
+  "fields": [
+    {
+      "name": "quarter",
+      "data_type": "string",
+      "description": "The quarter of the year (Mar, Jun, Sep, Dec) and the year (e.g., 'Mar-20' for March 2020)."
+    },
+    {
+      "name": "quarterly_percentage_change",
+      "data_type": "float",
+      "description": "The quarterly percentage change in the total assets of securitisers."
+    }
+  ],
+  "data": [
+    {
+      "quarter": "Mar-20",
+      "quarterly_percentage_change": 2.3
+    },
+    {
+      "quarter": "Jun-20",
+      "quarterly_percentage_change": -1.6
+    },
+    {
+      "quarter": "Sep-20",
+      "quarterly_percentage_change": -1.5
+    },
+    {
+      "quarter": "Dec-20",
+      "quarterly_percentage_change": 0.1
+    },
+    {
+      "quarter": "Mar-21",
+      "quarterly_percentage_change": -1.9
+    },
+    {
+      "quarter": "Jun-21",
+      "quarterly_percentage_change": 0.8
+    },
+    {
+      "quarter": "Sep-21",
+      "quarterly_percentage_change": 5.4
+    },
+    {
+      "quarter": "Dec-21",
+      "quarterly_percentage_change": 2.2
+    },
+    {
+      "quarter": "Mar-22",
+      "quarterly_percentage_change": 1.4
+    },
+    {
+      "quarter": "Jun-22",
+      "quarterly_percentage_change": 4.8
+    },
+    {
+      "quarter": "Sep-22",
+      "quarterly_percentage_change": 0.5
+    },
+    {
+      "quarter": "Dec-22",
+      "quarterly_percentage_change": -1.4
+    },
+    {
+      "quarter": "Mar-23",
+      "quarterly_percentage_change": -3.2
+    },
+    {
+      "quarter": "Jun-23",
+      "quarterly_percentage_change": 2.3
+    },
+    {
+      "quarter": "Sep-23",
+      "quarterly_percentage_change": 0.3
+    },
+    {
+      "quarter": "Dec-23",
+      "quarterly_percentage_change": 3.7
+    },
+    {
+      "quarter": "Mar-24",
+      "quarterly_percentage_change": 2.6
+    },
+    {
+      "quarter": "Jun-24",
+      "quarterly_percentage_change": 8.4
+    },
+    {
+      "quarter": "Sep-24",
+      "quarterly_percentage_change": -0.9
+    },
+    {
+      "quarter": "Dec-24",
+      "quarterly_percentage_change": 1.9
+    },
+    {
+      "quarter": "Mar-25",
+      "quarterly_percentage_change": 1
+    }
+  ]
+}

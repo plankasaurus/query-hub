@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { QueryBuilder } from '@/components/query-builder'
 import { SourceFileResults } from '@/components/source-file-results'
 import { Button } from '@/components/ui/button'
+import { LoadingSpinner } from '@/components/ui/loading-spinner'
 import { Database, BarChart3, Download, History, ChevronDown } from 'lucide-react'
 import { DataJoinOut } from '@/lib/types'
 import {
@@ -29,6 +30,9 @@ export default function QueryBuilderPage() {
     const handleVoiceInput = (transcript: string) => {
         setQuery(transcript)
         setIsVoiceInput(true)
+        // Clear previous results when starting a new voice input
+        setQueryResults([])
+        setError(null)
         // Reset the flag after a short delay
         setTimeout(() => setIsVoiceInput(false), 3000)
     }
@@ -43,8 +47,10 @@ export default function QueryBuilderPage() {
     const executeQuery = async () => {
         if (!query.trim()) return
 
-        setIsExecuting(true)
+        // Clear previous results and show loading state immediately
+        setQueryResults([])
         setError(null)
+        setIsExecuting(true)
         const startTime = Date.now()
 
         try {
@@ -269,7 +275,7 @@ export default function QueryBuilderPage() {
                 {isExecuting && (
                     <div className="text-center py-20">
                         <div className="max-w-md mx-auto space-y-6">
-                            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto"></div>
+                            <LoadingSpinner size="xl" variant="spinner" className="mx-auto" />
                             <div className="space-y-3">
                                 <h3 className="text-2xl font-semibold">Processing Your Query</h3>
                                 <p className="text-base text-muted-foreground">

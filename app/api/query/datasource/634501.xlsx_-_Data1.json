@@ -1,0 +1,658 @@
+{
+  "field_details": [
+    {
+      "name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Quarterly Index), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Private), and industry (All industries)."
+    },
+    {
+      "name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Quarterly Index), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Public), and industry (All industries)."
+    },
+    {
+      "name": "quarterly_index_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Quarterly Index), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Private and Public), and industry (All industries)."
+    },
+    {
+      "name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Percentage Change from Previous Quarter), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Private), and industry (All industries)."
+    },
+    {
+      "name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Percentage Change from Previous Quarter), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Public), and industry (All industries)."
+    },
+    {
+      "name": "percentage_change_from_previous_quarter_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Percentage Change from Previous Quarter), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Private and Public), and industry (All industries)."
+    },
+    {
+      "name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Percentage Change from Corresponding Quarter of Previous Year), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Private), and industry (All industries)."
+    },
+    {
+      "name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_public_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Percentage Change from Corresponding Quarter of Previous Year), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Public), and industry (All industries)."
+    },
+    {
+      "name": "percentage_change_from_corresponding_quarter_of_previous_year_total_hourly_rates_of_pay_excluding_bonuses_australia_private_and_public_all_industries",
+      "data_type": "string",
+      "description": "Description of the data series. Includes frequency (Percentage Change from Corresponding Quarter of Previous Year), pay type (Total hourly rates of pay excluding bonuses), location (Australia), sector (Private and Public), and industry (All industries)."
+    },
+    {
+      "name": "unit",
+      "data_type": "categorical",
+      "description": "Unit of measurement for the data series (Index Numbers or Percent)."
+    },
+    {
+      "name": "series_type",
+      "data_type": "categorical",
+      "description": "Type of series (Original, Seasonally Adjusted, or Trend)."
+    },
+    {
+      "name": "data_type",
+      "data_type": "categorical",
+      "description": "Type of data (INDEX or PERCENT)."
+    },
+    {
+      "name": "frequency",
+      "data_type": "categorical",
+      "description": "Frequency of the data (Quarter)."
+    },
+    {
+      "name": "collection_month",
+      "data_type": "integer",
+      "description": "Month of data collection (3)."
+    },
+    {
+      "name": "series_start",
+      "data_type": "string",
+      "description": "Start date of the series (e.g., Sep-1997)."
+    },
+    {
+      "name": "series_end",
+      "data_type": "string",
+      "description": "End date of the series (e.g., Jun-2025)."
+    },
+    {
+      "name": "no_obs",
+      "data_type": "integer",
+      "description": "Number of observations in the series (112)."
+    },
+    {
+      "name": "series_id",
+      "data_type": "string",
+      "description": "Unique identifier for the series (e.g., A2603039T)."
+    },
+    {
+      "name": "sep_1997",
+      "data_type": "float",
+      "description": "Data for September 1997."
+    },
+    {
+      "name": "dec_1997",
+      "data_type": "float",
+      "description": "Data for December 1997."
+    },
+    {
+      "name": "mar_1998",
+      "data_type": "float",
+      "description": "Data for March 1998."
+    },
+    {
+      "name": "jun_1998",
+      "data_type": "float",
+      "description": "Data for June 1998."
+    },
+    {
+      "name": "sep_1998",
+      "data_type": "float",
+      "description": "Data for September 1998."
+    },
+    {
+      "name": "dec_1998",
+      "data_type": "float",
+      "description": "Data for December 1998."
+    },
+    {
+      "name": "mar_1999",
+      "data_type": "float",
+      "description": "Data for March 1999."
+    },
+    {
+      "name": "jun_1999",
+      "data_type": "float",
+      "description": "Data for June 1999."
+    },
+    {
+      "name": "sep_1999",
+      "data_type": "float",
+      "description": "Data for September 1999."
+    },
+    {
+      "name": "dec_1999",
+      "data_type": "float",
+      "description": "Data for December 1999."
+    },
+    {
+      "name": "mar_2000",
+      "data_type": "float",
+      "description": "Data for March 2000."
+    },
+    {
+      "name": "jun_2000",
+      "data_type": "float",
+      "description": "Data for June 2000."
+    },
+    {
+      "name": "sep_2000",
+      "data_type": "float",
+      "description": "Data for September 2000."
+    },
+    {
+      "name": "dec_2000",
+      "data_type": "float",
+      "description": "Data for December 2000."
+    },
+    {
+      "name": "mar_2001",
+      "data_type": "float",
+      "description": "Data for March 2001."
+    },
+    {
+      "name": "jun_2001",
+      "data_type": "float",
+      "description": "Data for June 2001."
+    },
+    {
+      "name": "sep_2001",
+      "data_type": "float",
+      "description": "Data for September 2001."
+    },
+    {
+      "name": "dec_2001",
+      "data_type": "float",
+      "description": "Data for December 2001."
+    },
+    {
+      "name": "mar_2002",
+      "data_type": "float",
+      "description": "Data for March 2002."
+    },
+    {
+      "name": "jun_2002",
+      "data_type": "float",
+      "description": "Data for June 2002."
+    },
+    {
+      "name": "sep_2002",
+      "data_type": "float",
+      "description": "Data for September 2002."
+    },
+    {
+      "name": "dec_2002",
+      "data_type": "float",
+      "description": "Data for December 2002."
+    },
+    {
+      "name": "mar_2003",
+      "data_type": "float",
+      "description": "Data for March 2003."
+    },
+    {
+      "name": "jun_2003",
+      "data_type": "float",
+      "description": "Data for June 2003."
+    },
+    {
+      "name": "sep_2003",
+      "data_type": "float",
+      "description": "Data for September 2003."
+    },
+    {
+      "name": "dec_2003",
+      "data_type": "float",
+      "description": "Data for December 2003."
+    },
+    {
+      "name": "mar_2004",
+      "data_type": "float",
+      "description": "Data for March 2004."
+    },
+    {
+      "name": "jun_2004",
+      "data_type": "float",
+      "description": "Data for June 2004."
+    },
+    {
+      "name": "sep_2004",
+      "data_type": "float",
+      "description": "Data for September 2004."
+    },
+    {
+      "name": "dec_2004",
+      "data_type": "float",
+      "description": "Data for December 2004."
+    },
+    {
+      "name": "mar_2005",
+      "data_type": "float",
+      "description": "Data for March 2005."
+    },
+    {
+      "name": "jun_2005",
+      "data_type": "float",
+      "description": "Data for June 2005."
+    },
+    {
+      "name": "sep_2005",
+      "data_type": "float",
+      "description": "Data for September 2005."
+    },
+    {
+      "name": "dec_2005",
+      "data_type": "float",
+      "description": "Data for December 2005."
+    },
+    {
+      "name": "mar_2006",
+      "data_type": "float",
+      "description": "Data for March 2006."
+    },
+    {
+      "name": "jun_2006",
+      "data_type": "float",
+      "description": "Data for June 2006."
+    },
+    {
+      "name": "sep_2006",
+      "data_type": "float",
+      "description": "Data for September 2006."
+    },
+    {
+      "name": "dec_2006",
+      "data_type": "float",
+      "description": "Data for December 2006."
+    },
+    {
+      "name": "mar_2007",
+      "data_type": "float",
+      "description": "Data for March 2007."
+    },
+    {
+      "name": "jun_2007",
+      "data_type": "float",
+      "description": "Data for June 2007."
+    },
+    {
+      "name": "sep_2007",
+      "data_type": "float",
+      "description": "Data for September 2007."
+    },
+    {
+      "name": "dec_2007",
+      "data_type": "float",
+      "description": "Data for December 2007."
+    },
+    {
+      "name": "mar_2008",
+      "data_type": "float",
+      "description": "Data for March 2008."
+    },
+    {
+      "name": "jun_2008",
+      "data_type": "float",
+      "description": "Data for June 2008."
+    },
+    {
+      "name": "sep_2008",
+      "data_type": "float",
+      "description": "Data for September 2008."
+    },
+    {
+      "name": "dec_2008",
+      "data_type": "float",
+      "description": "Data for December 2008."
+    },
+    {
+      "name": "mar_2009",
+      "data_type": "float",
+      "description": "Data for March 2009."
+    },
+    {
+      "name": "jun_2009",
+      "data_type": "float",
+      "description": "Data for June 2009."
+    },
+    {
+      "name": "sep_2009",
+      "data_type": "float",
+      "description": "Data for September 2009."
+    },
+    {
+      "name": "dec_2009",
+      "data_type": "float",
+      "description": "Data for December 2009."
+    },
+    {
+      "name": "mar_2010",
+      "data_type": "float",
+      "description": "Data for March 2010."
+    },
+    {
+      "name": "jun_2010",
+      "data_type": "float",
+      "description": "Data for June 2010."
+    },
+    {
+      "name": "sep_2010",
+      "data_type": "float",
+      "description": "Data for September 2010."
+    },
+    {
+      "name": "dec_2010",
+      "data_type": "float",
+      "description": "Data for December 2010."
+    },
+    {
+      "name": "mar_2011",
+      "data_type": "float",
+      "description": "Data for March 2011."
+    },
+    {
+      "name": "jun_2011",
+      "data_type": "float",
+      "description": "Data for June 2011."
+    },
+    {
+      "name": "sep_2011",
+      "data_type": "float",
+      "description": "Data for September 2011."
+    },
+    {
+      "name": "dec_2011",
+      "data_type": "float",
+      "description": "Data for December 2011."
+    },
+    {
+      "name": "mar_2012",
+      "data_type": "float",
+      "description": "Data for March 2012."
+    },
+    {
+      "name": "jun_2012",
+      "data_type": "float",
+      "description": "Data for June 2012."
+    },
+    {
+      "name": "sep_2012",
+      "data_type": "float",
+      "description": "Data for September 2012."
+    },
+    {
+      "name": "dec_2012",
+      "data_type": "float",
+      "description": "Data for December 2012."
+    },
+    {
+      "name": "mar_2013",
+      "data_type": "float",
+      "description": "Data for March 2013."
+    },
+    {
+      "name": "jun_2013",
+      "data_type": "float",
+      "description": "Data for June 2013."
+    },
+    {
+      "name": "sep_2013",
+      "data_type": "float",
+      "description": "Data for September 2013."
+    },
+    {
+      "name": "dec_2013",
+      "data_type": "float",
+      "description": "Data for December 2013."
+    },
+    {
+      "name": "mar_2014",
+      "data_type": "float",
+      "description": "Data for March 2014."
+    },
+    {
+      "name": "jun_2014",
+      "data_type": "float",
+      "description": "Data for June 2014."
+    },
+    {
+      "name": "sep_2014",
+      "data_type": "float",
+      "description": "Data for September 2014."
+    },
+    {
+      "name": "dec_2014",
+      "data_type": "float",
+      "description": "Data for December 2014."
+    },
+    {
+      "name": "mar_2015",
+      "data_type": "float",
+      "description": "Data for March 2015."
+    },
+    {
+      "name": "jun_2015",
+      "data_type": "float",
+      "description": "Data for June 2015."
+    },
+    {
+      "name": "sep_2015",
+      "data_type": "float",
+      "description": "Data for September 2015."
+    },
+    {
+      "name": "dec_2015",
+      "data_type": "float",
+      "description": "Data for December 2015."
+    },
+    {
+      "name": "mar_2016",
+      "data_type": "float",
+      "description": "Data for March 2016."
+    },
+    {
+      "name": "jun_2016",
+      "data_type": "float",
+      "description": "Data for June 2016."
+    },
+    {
+      "name": "sep_2016",
+      "data_type": "float",
+      "description": "Data for September 2016."
+    },
+    {
+      "name": "dec_2016",
+      "data_type": "float",
+      "description": "Data for December 2016."
+    },
+    {
+      "name": "mar_2017",
+      "data_type": "float",
+      "description": "Data for March 2017."
+    },
+    {
+      "name": "jun_2017",
+      "data_type": "float",
+      "description": "Data for June 2017."
+    },
+    {
+      "name": "sep_2017",
+      "data_type": "float",
+      "description": "Data for September 2017."
+    },
+    {
+      "name": "dec_2017",
+      "data_type": "float",
+      "description": "Data for December 2017."
+    },
+    {
+      "name": "mar_2018",
+      "data_type": "float",
+      "description": "Data for March 2018."
+    },
+    {
+      "name": "jun_2018",
+      "data_type": "float",
+      "description": "Data for June 2018."
+    },
+    {
+      "name": "sep_2018",
+      "data_type": "float",
+      "description": "Data for September 2018."
+    },
+    {
+      "name": "dec_2018",
+      "data_type": "float",
+      "description": "Data for December 2018."
+    },
+    {
+      "name": "mar_2019",
+      "data_type": "float",
+      "description": "Data for March 2019."
+    },
+    {
+      "name": "jun_2019",
+      "data_type": "float",
+      "description": "Data for June 2019."
+    },
+    {
+      "name": "sep_2019",
+      "data_type": "float",
+      "description": "Data for September 2019."
+    },
+    {
+      "name": "dec_2019",
+      "data_type": "float",
+      "description": "Data for December 2019."
+    },
+    {
+      "name": "mar_2020",
+      "data_type": "float",
+      "description": "Data for March 2020."
+    },
+    {
+      "name": "jun_2020",
+      "data_type": "float",
+      "description": "Data for June 2020."
+    },
+    {
+      "name": "sep_2020",
+      "data_type": "float",
+      "description": "Data for September 2020."
+    },
+    {
+      "name": "dec_2020",
+      "data_type": "float",
+      "description": "Data for December 2020."
+    },
+    {
+      "name": "mar_2021",
+      "data_type": "float",
+      "description": "Data for March 2021."
+    },
+    {
+      "name": "jun_2021",
+      "data_type": "float",
+      "description": "Data for June 2021."
+    },
+    {
+      "name": "sep_2021",
+      "data_type": "float",
+      "description": "Data for September 2021."
+    },
+    {
+      "name": "dec_2021",
+      "data_type": "float",
+      "description": "Data for December 2021."
+    },
+    {
+      "name": "mar_2022",
+      "data_type": "float",
+      "description": "Data for March 2022."
+    },
+    {
+      "name": "jun_2022",
+      "data_type": "float",
+      "description": "Data for June 2022."
+    },
+    {
+      "name": "sep_2022",
+      "data_type": "float",
+      "description": "Data for September 2022."
+    },
+    {
+      "name": "dec_2022",
+      "data_type": "float",
+      "description": "Data for December 2022."
+    },
+    {
+      "name": "mar_2023",
+      "data_type": "float",
+      "description": "Data for March 2023."
+    },
+    {
+      "name": "jun_2023",
+      "data_type": "float",
+      "description": "Data for June 2023."
+    },
+    {
+      "name": "sep_2023",
+      "data_type": "float",
+      "description": "Data for September 2023."
+    },
+    {
+      "name": "dec_2023",
+      "data_type": "float",
+      "description": "Data for December 2023."
+    },
+    {
+      "name": "mar_2024",
+      "data_type": "float",
+      "description": "Data for March 2024."
+    },
+    {
+      "name": "jun_2024",
+      "data_type": "float",
+      "description": "Data for June 2024."
+    },
+    {
+      "name": "sep_2024",
+      "data_type": "float",
+      "description": "Data for September 2024."
+    },
+    {
+      "name": "dec_2024",
+      "data_type": "float",
+      "description": "Data for December 2024."
+    },
+    {
+      "name": "mar_2025",
+      "data_type": "float",
+      "description": "Data for March 2025."
+    },
+    {
+      "name": "jun_2025",
+      "data_type": "float",
+      "description": "Data for June 2025."
+    }
+  ],
+  "metadata": {
+    "source": "The source of the data",
+    "filename": "634501.xlsx - Data1.csv"
+  }
+}

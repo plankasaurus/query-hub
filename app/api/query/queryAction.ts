@@ -3,16 +3,16 @@ import path from 'path';
 import { generateWithParts } from '../model';
 import { createPartFromText } from '@google/genai';
 
-const testDataDir = path.join(process.cwd(), 'app/api/query/test-data');
+const dataDir = path.join(process.cwd(), 'app/api/query/datasource');
 
-const testDataFiles = fs.readdirSync(testDataDir)
+const dataSourceFiles = fs.readdirSync(dataDir)
     .filter(file => file.endsWith('.json'))
     .map(file => ({
         filename: file,
-        filepath: path.join(testDataDir, file)
+        filepath: path.join(dataDir, file)
     }));
 
-console.log(`Found ${testDataFiles.length} test data files:`);
+console.log(`Found ${dataSourceFiles.length} test data files:`);
 
 const userQuery = "How has the total number of registered marriages and the crude marriage rate changed year-on-year? What impact did the COVID-19 pandemic (2020-2021) have, and how has recovery progressed?";
 
@@ -24,7 +24,7 @@ export async function querySeedAndKV(userQuery: string) {
     // TODO: read from KV
     const datasets: any[] = [];
     // Map.
-    const mapper = testDataFiles.map(async ({ filename, filepath }) => {
+    const mapper = dataSourceFiles.map(async ({ filename, filepath }) => {
         try {
             console.log(`Processing test data file: ${filename}`);
             const fileContent = fs.readFileSync(filepath, 'utf-8');

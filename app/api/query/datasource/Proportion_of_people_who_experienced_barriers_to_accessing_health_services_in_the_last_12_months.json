@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "source": "Australian Bureau of Statistics, Access to health services",
+    "filename": "Proportion of people who experienced barriers to accessing health services in the last 12 months.csv"
+  },
+  "fields": [
+    {
+      "name": "year",
+      "data_type": "string",
+      "description": "Year of the survey (e.g., 2013-14)"
+    },
+    {
+      "name": "delayed_gp_due_to_cost_percentage",
+      "data_type": "float",
+      "description": "Proportion of people who delayed or did not see a GP when needed due to cost (%)"
+    },
+    {
+      "name": "delayed_specialist_due_to_cost_percentage",
+      "data_type": "float",
+      "description": "Proportion of people who delayed or did not see a medical specialist when needed due to cost (%)"
+    },
+    {
+      "name": "waited_longer_gp_percentage",
+      "data_type": "float",
+      "description": "Proportion of people who waited longer than acceptable to see a GP (%)"
+    },
+    {
+      "name": "waited_longer_specialist_percentage",
+      "data_type": "float",
+      "description": "Proportion of people who waited longer than acceptable to see a medical specialist (%)"
+    }
+  ],
+  "data": [
+    {
+      "year": "2013-14",
+      "delayed_gp_due_to_cost_percentage": 4.9,
+      "delayed_specialist_due_to_cost_percentage": 7.9,
+      "waited_longer_gp_percentage": 22.6,
+      "waited_longer_specialist_percentage": 25
+    },
+    {
+      "year": "2014-15",
+      "delayed_gp_due_to_cost_percentage": 5,
+      "delayed_specialist_due_to_cost_percentage": 8.1,
+      "waited_longer_gp_percentage": 20.8,
+      "waited_longer_specialist_percentage": 23.9
+    },
+    {
+      "year": "2015-16",
+      "delayed_gp_due_to_cost_percentage": 4.1,
+      "delayed_specialist_due_to_cost_percentage": 8.1,
+      "waited_longer_gp_percentage": 18.9,
+      "waited_longer_specialist_percentage": 22.8
+    },
+    {
+      "year": "2016-17",
+      "delayed_gp_due_to_cost_percentage": 4.1,
+      "delayed_specialist_due_to_cost_percentage": 7.3,
+      "waited_longer_gp_percentage": 18.2,
+      "waited_longer_specialist_percentage": 21.1
+    },
+    {
+      "year": "2017-18",
+      "delayed_gp_due_to_cost_percentage": 4,
+      "delayed_specialist_due_to_cost_percentage": 7.9,
+      "waited_longer_gp_percentage": 19.2,
+      "waited_longer_specialist_percentage": 21.6
+    },
+    {
+      "year": "2018-19",
+      "delayed_gp_due_to_cost_percentage": 3.4,
+      "delayed_specialist_due_to_cost_percentage": 7.7,
+      "waited_longer_gp_percentage": 18.8,
+      "waited_longer_specialist_percentage": 23.5
+    },
+    {
+      "year": "2019-20",
+      "delayed_gp_due_to_cost_percentage": 3.7,
+      "delayed_specialist_due_to_cost_percentage": 8,
+      "waited_longer_gp_percentage": 18.7,
+      "waited_longer_specialist_percentage": 22.7
+    },
+    {
+      "year": "2020-21",
+      "delayed_gp_due_to_cost_percentage": 2.4,
+      "delayed_specialist_due_to_cost_percentage": 5.9,
+      "waited_longer_gp_percentage": 16.6,
+      "waited_longer_specialist_percentage": 21.7
+    },
+    {
+      "year": "2021-22",
+      "delayed_gp_due_to_cost_percentage": 3.5,
+      "delayed_specialist_due_to_cost_percentage": 8,
+      "waited_longer_gp_percentage": 23.4,
+      "waited_longer_specialist_percentage": 26.7
+    },
+    {
+      "year": "2022-23",
+      "delayed_gp_due_to_cost_percentage": 7,
+      "delayed_specialist_due_to_cost_percentage": 10.5,
+      "waited_longer_gp_percentage": 29.6,
+      "waited_longer_specialist_percentage": 27.9
+    }
+  ]
+}
