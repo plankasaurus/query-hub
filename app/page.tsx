@@ -48,7 +48,7 @@ export default function HomePage() {
                     </div>
                     <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-border/50 backdrop-blur-sm hover:scale-105 transition-transform duration-200">
                         <div className="text-3xl font-bold text-primary mb-2 " style={{ animationDelay: '3s' }}>📊</div>
-                        <div className="text-sm text-muted-foreground font-medium">Visulize results</div>
+                        <div className="text-sm text-muted-foreground font-medium">Visualize results</div>
                     </div>
                 </div>
             </div>
